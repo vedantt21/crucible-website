@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Nandit Shah placeholder portrait</title>
+  <desc id="desc">A neutral placeholder portrait with the initials NS.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#efe3d3" />
+      <stop offset="100%" stop-color="#d8c6b0" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)" />
+  <rect x="56" y="56" width="688" height="888" rx="28" fill="none" stroke="#5e4d3a" stroke-opacity="0.24" stroke-width="2" />
+  <circle cx="400" cy="336" r="122" fill="#faf6ef" fill-opacity="0.88" />
+  <path d="M218 780c44-126 106-188 182-188s138 62 182 188" fill="#faf6ef" fill-opacity="0.88" />
+  <text x="400" y="862" text-anchor="middle" font-family="Garamond, Georgia, serif" font-size="88" letter-spacing="8" fill="#4f4234">NS</text>
+</svg>
