@@ -8,9 +8,9 @@
       name="description"
       content="Profile page for Vedant Tyagi at Crucible Ventures."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
   </head>
-  <body class="header-visible inner-page">
+  <body class="header-visible inner-page vedant-profile-page">
     <header class="site-header">
       <div class="site-width site-header-inner">
         <a class="site-brand" href="index.html#top">Crucible Ventures</a>
@@ -19,25 +19,41 @@
           <a href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <button
+          class="version-toggle"
+          type="button"
+          data-version-toggle
+          data-active-version="investor"
+          aria-pressed="false"
+          aria-label="Switch to founder version"
+        >
+          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+          <span class="version-toggle-switch" aria-hidden="true">
+            <span class="version-toggle-thumb"></span>
+          </span>
+          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+          <span class="sr-only" data-version-status>Investor version selected</span>
+        </button>
       </div>
     </header>
 
     <main class="page-main">
-      <section class="page-hero profile-hero">
+      <section class="page-hero profile-hero profile-hero-compact">
         <div class="site-width profile-hero-layout">
           <div class="profile-hero-main">
             <a class="profile-back-link" href="about.html">Back to About</a>
             <p class="section-label">Leadership profile</p>
             <h1 class="page-title profile-title">Vedant</h1>
             <p class="page-lead profile-lead">
-              Chief Technology Officer of Crucible Ventures.
+              CTO, aerospace engineer, and computer scientist building across
+              space systems, simulation, and applied AI.
             </p>
           </div>
           <div class="profile-hero-aside">
             <p class="profile-hero-note-label">Current lens</p>
             <p class="profile-hero-note">
-              Technical direction, product shaping, and turning early ideas
-              into working systems.
+              Spacecraft simulation, embedded systems, AI products, and the
+              technical work that turns early ideas into working systems.
             </p>
           </div>
         </div>
@@ -49,8 +65,8 @@
             <div class="team-photo-frame profile-photo-frame">
               <img
                 class="team-photo-image"
-                src="images/team/vedant-tyagi-placeholder.svg"
-                alt="Portrait placeholder for Vedant Tyagi"
+                src="images/team/vedant.jpeg"
+                alt="Portrait of Vedant Tyagi"
                 loading="lazy"
               />
             </div>
@@ -58,27 +74,30 @@
 
           <div class="profile-summary">
             <p class="section-label">Overview</p>
-            <h3>Turning ambitious ideas into working products.</h3>
+            <h3>Building where aerospace, software, and product execution meet.</h3>
             <div class="section-copy">
               <p>
-                I take ideas from 0 to 1, shape the product and technical path,
-                and help teams build systems that can scale.
+                I study Aerospace Engineering and Computer Science at UNSW, and
+                work across simulation, embedded systems, AI tooling, and
+                early-stage product buildout.
               </p>
             </div>
             <div class="profile-meta-grid" aria-label="Vedant Tyagi profile summary">
               <div class="profile-meta-item">
                 <p class="profile-meta-label">Focus</p>
-                <p class="profile-meta-value">Product and engineering</p>
+                <p class="profile-meta-value">Space systems and applied AI</p>
               </div>
               <div class="profile-meta-item">
                 <p class="profile-meta-label">Works across</p>
                 <p class="profile-meta-value">
-                  Technical strategy, systems, execution
+                  Simulation, embedded systems, product buildout
                 </p>
               </div>
               <div class="profile-meta-item">
-                <p class="profile-meta-label">Stage</p>
-                <p class="profile-meta-value">0 to 1 buildout</p>
+                <p class="profile-meta-label">Education</p>
+                <p class="profile-meta-value">
+                  UNSW Aerospace Engineering and Computer Science
+                </p>
               </div>
             </div>
           </div>
@@ -89,38 +108,156 @@
         <div class="site-width profile-sections">
           <article class="profile-panel">
             <p class="section-label">Portfolio</p>
-            <h4>Personal portfolio</h4>
+            <h4>Selected technical work</h4>
             <p class="profile-panel-intro">
-              Space for shipped products, technical work, and selected builds.
+              A snapshot of aerospace, AI, and systems work from industry,
+              research, and student engineering teams.
             </p>
-            <div class="profile-empty-state">
-              <p>Portfolio details will be added here.</p>
-              <div class="profile-empty-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="portfolio-highlight-grid" aria-label="Portfolio highlights">
+              <div class="portfolio-highlight">
+                <span class="portfolio-highlight-number">2023-2027</span>
+                <p>UNSW Aerospace Engineering and Computer Science.</p>
               </div>
+              <div class="portfolio-highlight">
+                <span class="portfolio-highlight-number">10,000 ft</span>
+                <p>Rocket builds with UNSW Rocketry, contributing toward a 50,000 ft vehicle.</p>
+              </div>
+              <div class="portfolio-highlight">
+                <span class="portfolio-highlight-number">RGD 2026</span>
+                <p>Accepted research abstract on DSMC simulation methods.</p>
+              </div>
+            </div>
+
+            <div class="portfolio-stack">
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">
+                  Saber Astronautics / Nov 2025 - May 2026
+                </p>
+                <h5>Spacecraft simulation and modelling</h5>
+                <p>
+                  Built subsystem simulations inside an open-source NASA
+                  mission-grade framework, enabling representative testing of
+                  flight software.
+                </p>
+                <ul class="portfolio-points">
+                  <li>
+                    Designed a multi-zone environmental simulation with
+                    closed-loop control logic.
+                  </li>
+                  <li>
+                    Integrated telemetry and command interfaces for scalable
+                    mission development.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">
+                  Embry-Riddle Aeronautical University / Jan 2025 - Jul 2025
+                </p>
+                <h5>Aerodynamics research and DSMC simulation</h5>
+                <p>
+                  Developed AI-driven optimisation models for aerodynamic nose
+                  cone design and validated concepts with CFD and DSMC
+                  simulation under extreme aerodynamic conditions.
+                </p>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">UNSW Rocketry / 2023 - 2025</p>
+                <h5>Rocket systems and airbrake control</h5>
+                <p>
+                  Co-led aerostructures work and developed a closed-loop
+                  airbrake system using EKF sensor fusion for apogee control.
+                </p>
+                <ul class="portfolio-points">
+                  <li>Designed and built vehicles reaching 10,000 ft.</li>
+                  <li>
+                    Led test planning and engineering documentation for
+                    industry-reviewed design validation.
+                  </li>
+                </ul>
+              </article>
             </div>
           </article>
 
           <article class="profile-panel">
             <p class="section-label">Current work</p>
-            <h4>What Vedant has been working on</h4>
+            <h4>Engineering leadership and active builds</h4>
             <p class="profile-panel-intro">
-              A section for active product work, experiments, and technical
-              initiatives underway.
+              Current work spans venture buildout, applied AI systems, teaching,
+              and student engineering leadership.
             </p>
-            <div class="profile-empty-state">
-              <p>This section is ready for future updates.</p>
-              <div class="profile-empty-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="portfolio-stack">
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">
+                  Crucible Ventures / Jan 2026 - Present
+                </p>
+                <h5>CTO and Co-Founder</h5>
+                <p>
+                  Leads technical strategy and product development across
+                  early-stage ventures, taking products from concept to deployed
+                  systems.
+                </p>
+                <ul class="portfolio-points">
+                  <li>
+                    Works with founders to validate ideas and define technical
+                    roadmaps.
+                  </li>
+                  <li>
+                    Establishes development workflows, infrastructure, and
+                    engineering standards.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">Backpro AI / Sep 2025 - Nov 2025</p>
+                <h5>AI systems engineering</h5>
+                <p>
+                  Built RAG pipelines, real-time analytics interfaces, and
+                  containerized services across React, Node.js, FastAPI, Docker,
+                  and CI/CD workflows.
+                </p>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">UNSW / Jul 2024 - Present</p>
+                <h5>Teaching, projects, and community work</h5>
+                <p>
+                  Delivers mechanical engineering tutorials and labs, with a
+                  9.63/10 teaching rating, while helping organise aerospace,
+                  data, and research communities.
+                </p>
+              </article>
+
+              <div class="portfolio-skill-block">
+                <p class="portfolio-item-kicker">Toolbox</p>
+                <div class="portfolio-tags" aria-label="Vedant Tyagi skills">
+                  <span>Python</span>
+                  <span>C</span>
+                  <span>Java</span>
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>FastAPI</span>
+                  <span>Docker</span>
+                  <span>Linux</span>
+                  <span>Git</span>
+                  <span>CI/CD</span>
+                  <span>SolidWorks</span>
+                  <span>Fusion 360</span>
+                  <span>ANSYS</span>
+                  <span>OpenFOAM</span>
+                  <span>FORTRAN</span>
+                </div>
               </div>
             </div>
           </article>
         </div>
       </section>
     </main>
+    <script src="script.js?v=scroll-speed-20260415"></script>
   </body>
 </html>

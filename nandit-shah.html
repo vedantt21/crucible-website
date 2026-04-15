@@ -8,7 +8,7 @@
       name="description"
       content="Profile page for Nandit Shah at Crucible Ventures."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
   </head>
   <body class="header-visible inner-page">
     <header class="site-header">
@@ -19,6 +19,21 @@
           <a href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <button
+          class="version-toggle"
+          type="button"
+          data-version-toggle
+          data-active-version="investor"
+          aria-pressed="false"
+          aria-label="Switch to founder version"
+        >
+          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+          <span class="version-toggle-switch" aria-hidden="true">
+            <span class="version-toggle-thumb"></span>
+          </span>
+          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+          <span class="sr-only" data-version-status>Investor version selected</span>
+        </button>
       </div>
     </header>
 
@@ -30,13 +45,15 @@
             <p class="section-label">Leadership profile</p>
             <h1 class="page-title profile-title">Nandit</h1>
             <p class="page-lead profile-lead">
-              Chief Executive Officer of Crucible Ventures.
+              CEO, mechatronics engineer, and commerce student working across
+              venture strategy, finance, and technical execution.
             </p>
           </div>
           <div class="profile-hero-aside">
             <p class="profile-hero-note-label">Current lens</p>
             <p class="profile-hero-note">
-              Vision, operating structure, and long-horizon company building.
+              Company vision, commercial judgement, and turning technical
+              ideas into ventures with clear operating plans.
             </p>
           </div>
         </div>
@@ -48,8 +65,8 @@
             <div class="team-photo-frame profile-photo-frame">
               <img
                 class="team-photo-image"
-                src="images/team/nandit-shah-placeholder.svg"
-                alt="Portrait placeholder for Nandit Shah"
+                src="images/team/nandit.jpeg"
+                alt="Portrait of Nandit Shah"
                 loading="lazy"
               />
             </div>
@@ -57,26 +74,30 @@
 
           <div class="profile-summary">
             <p class="section-label">Overview</p>
-            <h3>Setting the overall direction of the studio.</h3>
+            <h3>Building at the intersection of engineering, finance, and startups.</h3>
             <div class="section-copy">
               <p>
-                I set the direction of the studio, work closely with founders,
-                and help turn strong ideas into companies that can actually
-                scale.
+                I study Mechatronics Engineering and Finance at UNSW, combining
+                technical systems thinking with valuation, portfolio analysis,
+                and early-stage venture building.
               </p>
             </div>
             <div class="profile-meta-grid" aria-label="Nandit Shah profile summary">
               <div class="profile-meta-item">
                 <p class="profile-meta-label">Focus</p>
-                <p class="profile-meta-value">Studio direction</p>
+                <p class="profile-meta-value">Venture strategy and finance</p>
               </div>
               <div class="profile-meta-item">
                 <p class="profile-meta-label">Works across</p>
-                <p class="profile-meta-value">Strategy, growth, execution</p>
+                <p class="profile-meta-value">
+                  Mechatronics, investing, operations
+                </p>
               </div>
               <div class="profile-meta-item">
-                <p class="profile-meta-label">Stage</p>
-                <p class="profile-meta-value">From 0 to scale</p>
+                <p class="profile-meta-label">Education</p>
+                <p class="profile-meta-value">
+                  UNSW Engineering Honours and Commerce
+                </p>
               </div>
             </div>
           </div>
@@ -87,38 +108,145 @@
         <div class="site-width profile-sections">
           <article class="profile-panel">
             <p class="section-label">Portfolio</p>
-            <h4>Personal portfolio</h4>
+            <h4>Selected venture and technical work</h4>
             <p class="profile-panel-intro">
-              Space for featured ventures, investments, and personal work.
+              A focused look at Nandit's engineering leadership, finance work,
+              consulting experience, and startup projects.
             </p>
-            <div class="profile-empty-state">
-              <p>Portfolio details will be added here.</p>
-              <div class="profile-empty-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="portfolio-highlight-grid" aria-label="Portfolio highlights">
+              <div class="portfolio-highlight">
+                <span class="portfolio-highlight-number">Top100</span>
+                <p>Future Leaders Innovation Award finalist for 2026.</p>
               </div>
+            </div>
+
+            <div class="portfolio-stack">
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">Atomcraft / 2025</p>
+                <h5>Embedded systems team leadership</h5>
+                <p>
+                  Leads a 12-engineer sub-team contributing to a student-led
+                  nuclear fusion reactor project, shaping technical strategy,
+                  roadmap planning, and iterative engineering delivery.
+                </p>
+                <ul class="portfolio-points">
+                  <li>
+                    Designed and tested FPGA-based and high-power electronics
+                    systems for closed-loop control applications.
+                  </li>
+                  <li>
+                    Operated in a startup-style project environment using agile
+                    planning and fast iteration.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">Hive / 2023</p>
+                <h5>Startup founder and product lead</h5>
+                <p>
+                  Co-founded Hive, a university social networking platform, and
+                  led development, design direction, user engagement, strategic
+                  planning, and the UNSW Founders pitch process.
+                </p>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">
+                  UNSW Global Consulting Group / 2024
+                </p>
+                <h5>Equity research and consulting</h5>
+                <p>
+                  Conducted DCF, CAPM, and comparable company analysis across
+                  ASX and US equities, managed a multi-asset portfolio, and
+                  supported Guide Dogs NSW with a data-backed consulting
+                  solution.
+                </p>
+              </article>
             </div>
           </article>
 
           <article class="profile-panel">
             <p class="section-label">Current work</p>
-            <h4>What Nandit has been working on</h4>
+            <h4>Operating work and active projects</h4>
             <p class="profile-panel-intro">
-              A flexible section for current initiatives, operating priorities,
-              and active company-building work.
+              Current work spans Crucible's company direction, technical
+              project leadership, customer-facing sales, and finance analysis.
             </p>
-            <div class="profile-empty-state">
-              <p>This section is ready for future updates.</p>
-              <div class="profile-empty-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="portfolio-stack">
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">Crucible Ventures / Present</p>
+                <h5>CEO and company direction</h5>
+                <p>
+                  Sets the studio direction, works closely with founders, and
+                  turns early opportunities into clear operating plans,
+                  commercial narratives, and execution priorities.
+                </p>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">
+                  The Robot Factory / Oct 2025 - Dec 2025
+                </p>
+                <h5>Mechatronics engineering internship</h5>
+                <p>
+                  Explored robotic solutions for client manufacturing and
+                  product problems, translating direct customer feedback into
+                  working technical concepts.
+                </p>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">
+                  Inspirations Paint Epping / May 2024 - Present
+                </p>
+                <h5>Sales, operations, and customer judgement</h5>
+                <p>
+                  Supports retail and trade customers across product selection,
+                  tinting, inventory, and store operations, contributing to a
+                  40% year-to-date sales increase.
+                </p>
+              </article>
+
+              <article class="portfolio-item">
+                <p class="portfolio-item-kicker">Case competitions / 2023 - 2025</p>
+                <h5>Commercial problem solving</h5>
+                <p>
+                  Reached the semi-finals of the Commonwealth Bank Interest
+                  Hedging case competition with an options-based risk mitigation
+                  strategy, and participated in JPM and Aurecon case
+                  competitions.
+                </p>
+              </article>
+
+              <div class="portfolio-skill-block">
+                <p class="portfolio-item-kicker">Toolbox</p>
+                <div class="portfolio-tags" aria-label="Nandit Shah skills">
+                  <span>C</span>
+                  <span>C++</span>
+                  <span>JavaScript</span>
+                  <span>Python</span>
+                  <span>MATLAB</span>
+                  <span>RStudio</span>
+                  <span>DCF analysis</span>
+                  <span>Portfolio management</span>
+                  <span>Capital budgeting</span>
+                  <span>SolidWorks</span>
+                  <span>Fusion 360</span>
+                  <span>Verilog</span>
+                  <span>Vivado</span>
+                  <span>LTspice</span>
+                  <span>Arduino</span>
+                  <span>3D printing</span>
+                </div>
               </div>
             </div>
           </article>
         </div>
       </section>
     </main>
+    <script src="script.js?v=scroll-speed-20260415"></script>
   </body>
 </html>
