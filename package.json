@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "lint": "node tests/site-lint.mjs",
+    "test": "node tests/site-smoke.test.mjs"
+  }
+}

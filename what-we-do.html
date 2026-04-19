@@ -8,7 +8,7 @@
       name="description"
       content="See where Crucible Ventures spends time across software, infrastructure, and applied AI."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
   </head>
   <body class="header-visible inner-page">
     <header class="site-header">
@@ -19,6 +19,21 @@
           <a aria-current="page" href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <button
+          class="version-toggle"
+          type="button"
+          data-version-toggle
+          data-active-version="investor"
+          aria-pressed="false"
+          aria-label="Switch to founder version"
+        >
+          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+          <span class="version-toggle-switch" aria-hidden="true">
+            <span class="version-toggle-thumb"></span>
+          </span>
+          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+          <span class="sr-only" data-version-status>Investor version selected</span>
+        </button>
       </div>
     </header>
 
@@ -26,10 +41,19 @@
       <section class="page-hero">
         <div class="site-width">
           <p class="section-label">What we do</p>
-          <h1 class="page-title">Backing grounded startups.</h1>
+          <h1 class="page-title">
+            <span data-version-variant="investor">Find investable companies.</span>
+            <span data-version-variant="entrepreneur">Backing grounded startups.</span>
+          </h1>
           <p class="page-lead">
-            We partner early with founders building durable companies across a
-            focused set of categories.
+            <span data-version-variant="investor">
+              We surface growing companies across focused categories so you can invest
+              with clearer conviction.
+            </span>
+            <span data-version-variant="entrepreneur">
+              We partner early with founders building durable companies across a
+              focused set of categories.
+            </span>
           </p>
         </div>
       </section>
@@ -37,31 +61,52 @@
       <section class="content-section content-section-muted">
         <div class="site-width">
           <p class="section-label">Focus</p>
-          <h3 class="section-heading">Where we spend time.</h3>
+          <h3 class="section-heading">
+            <span data-version-variant="investor">Where we look.</span>
+            <span data-version-variant="entrepreneur">Where we spend time.</span>
+          </h3>
           <div class="focus-grid">
             <article class="focus-card">
               <h4>Vertical software</h4>
               <p>
-                Products that become core workflows for teams in complex
-                industries.
+                <span data-version-variant="investor">
+                  Companies with recurring workflow demand, clear buyers, and room
+                  to compound.
+                </span>
+                <span data-version-variant="entrepreneur">
+                  Products that become core workflows for teams in complex
+                  industries.
+                </span>
               </p>
             </article>
             <article class="focus-card">
               <h4>Infrastructure</h4>
               <p>
-                Practical systems that reduce friction for builders and
-                operators.
+                <span data-version-variant="investor">
+                  Durable systems with technical leverage and adoption from builders
+                  and operators.
+                </span>
+                <span data-version-variant="entrepreneur">
+                  Practical systems that reduce friction for builders and
+                  operators.
+                </span>
               </p>
             </article>
             <article class="focus-card">
               <h4>Applied AI</h4>
               <p>
-                Tools where automation makes the product meaningfully better.
+                <span data-version-variant="investor">
+                  AI products where automation improves outcomes, not just demos.
+                </span>
+                <span data-version-variant="entrepreneur">
+                  Tools where automation makes the product meaningfully better.
+                </span>
               </p>
             </article>
           </div>
         </div>
       </section>
     </main>
+    <script src="script.js?v=scroll-speed-20260415"></script>
   </body>
 </html>

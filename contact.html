@@ -8,7 +8,7 @@
       name="description"
       content="Contact Crucible Ventures with a short note about your company and traction."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
   </head>
   <body class="header-visible inner-page">
     <header class="site-header">
@@ -19,6 +19,21 @@
           <a href="what-we-do.html">What we do</a>
           <a aria-current="page" href="contact.html">Contact us</a>
         </nav>
+        <button
+          class="version-toggle"
+          type="button"
+          data-version-toggle
+          data-active-version="investor"
+          aria-pressed="false"
+          aria-label="Switch to founder version"
+        >
+          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+          <span class="version-toggle-switch" aria-hidden="true">
+            <span class="version-toggle-thumb"></span>
+          </span>
+          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+          <span class="sr-only" data-version-status>Investor version selected</span>
+        </button>
       </div>
     </header>
 
@@ -54,5 +69,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js?v=scroll-speed-20260415"></script>
   </body>
 </html>

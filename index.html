@@ -8,7 +8,7 @@
       name="description"
       content="Crucible Ventures backs practical founders building durable companies."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
   </head>
   <body>
     <header class="site-header" data-site-header>
@@ -19,6 +19,21 @@
           <a href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <button
+          class="version-toggle"
+          type="button"
+          data-version-toggle
+          data-active-version="investor"
+          aria-pressed="false"
+          aria-label="Switch to founder version"
+        >
+          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+          <span class="version-toggle-switch" aria-hidden="true">
+            <span class="version-toggle-thumb"></span>
+          </span>
+          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+          <span class="sr-only" data-version-status>Investor version selected</span>
+        </button>
       </div>
     </header>
 
@@ -41,10 +56,18 @@
         <section class="hero-section" aria-label="Backing grounded startups">
           <div class="site-width hero-layout">
             <div class="hero-copy">
-              <h2>Backing grounded startups.</h2>
+              <h2>
+                <span data-version-variant="investor">Find growing companies.</span>
+                <span data-version-variant="entrepreneur">Backing grounded startups.</span>
+              </h2>
               <p class="hero-text">
-                We partner early with founders building durable companies across
-                software, infrastructure, and applied AI.
+                <span data-version-variant="investor">
+                  We find growing companies so you can invest in them with confidence.
+                </span>
+                <span data-version-variant="entrepreneur">
+                  We partner early with founders building durable companies across software,
+                  infrastructure, and applied AI.
+                </span>
               </p>
             </div>
           </div>
@@ -73,6 +96,6 @@
       </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=scroll-speed-20260415"></script>
   </body>
 </html>

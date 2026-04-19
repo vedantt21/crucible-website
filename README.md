@@ -22,3 +22,23 @@ python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+## Test
+
+Run the static lint checks with:
+
+```bash
+npm run lint
+```
+
+Run the static site smoke tests with:
+
+```bash
+npm test
+```
+
+The linter checks text hygiene, basic HTML accessibility conventions, JSON
+syntax, CSS brace balance, and JavaScript syntax. The smoke test checks that
+pages include their shared assets, local links and images resolve, key scroll
+tuning variables are present, and referenced JavaScript has valid syntax. Both
+commands run in GitHub Actions via `.github/workflows/ci.yml`.
