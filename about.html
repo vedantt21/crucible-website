@@ -8,58 +8,144 @@
       name="description"
       content="Learn about how Crucible Ventures works with grounded founders building durable companies."
     />
-    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
+    <link rel="stylesheet" href="styles.css?v=ui-refresh-20260505" />
   </head>
   <body class="header-visible inner-page about-page">
     <header class="site-header">
       <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top">Crucible Ventures</a>
+        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
+          <span class="brand-mark" aria-hidden="true">CV</span>
+          <span class="brand-text">Crucible Ventures</span>
+        </a>
         <nav class="site-nav" aria-label="Primary">
           <a aria-current="page" href="about.html">About</a>
           <a href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <div class="header-actions">
+          <a class="nav-cta" href="contact.html">Start a conversation</a>
+          <button
+            class="version-toggle"
+            type="button"
+            data-version-toggle
+            data-active-version="investor"
+            aria-pressed="false"
+            aria-label="Investor version selected. Switch to founder version"
+          >
+            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+            <span class="version-toggle-switch" aria-hidden="true">
+              <span class="version-toggle-thumb"></span>
+            </span>
+            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+            <span class="sr-only" data-version-status>Investor version selected</span>
+          </button>
+        </div>
         <button
-          class="version-toggle"
+          class="menu-toggle"
           type="button"
-          data-version-toggle
-          data-active-version="investor"
-          aria-pressed="false"
-          aria-label="Switch to founder version"
+          data-menu-toggle
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
         >
-          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-          <span class="version-toggle-switch" aria-hidden="true">
-            <span class="version-toggle-thumb"></span>
-          </span>
-          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-          <span class="sr-only" data-version-status>Investor version selected</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <div class="site-width mobile-menu-inner">
+          <nav class="mobile-nav" aria-label="Mobile primary">
+            <a aria-current="page" href="about.html">About</a>
+            <a href="what-we-do.html">What we do</a>
+            <a href="contact.html">Contact us</a>
+          </nav>
+          <div class="mobile-menu-actions">
+            <a class="button button-primary" href="contact.html">Start a conversation</a>
+            <button
+              class="version-toggle"
+              type="button"
+              data-version-toggle
+              data-active-version="investor"
+              aria-pressed="false"
+              aria-label="Investor version selected. Switch to founder version"
+            >
+              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+              <span class="version-toggle-switch" aria-hidden="true">
+                <span class="version-toggle-thumb"></span>
+              </span>
+              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+              <span class="sr-only" data-version-status>Investor version selected</span>
+            </button>
+          </div>
+          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
+        </div>
       </div>
     </header>
 
     <main class="page-main">
-      <section class="about-intro-section" data-about-intro>
-        <div class="about-intro-stage">
-          <div class="about-intro-panel">
-            <div class="about-intro-shell">
-              <div class="about-intro-inner">
-                <p class="section-label about-intro-label">About</p>
-                <h1 class="about-intro-title">
-                  <span class="about-intro-line">The team behind</span>
-                  <span class="about-intro-line about-intro-line-strong">Crucible Ventures.</span>
-                </h1>
-                <p class="about-intro-lead">
-                  A small operating team working across company design, capital, and
-                  product execution.
-                </p>
-              </div>
+      <section class="page-hero about-intro-section" data-about-intro>
+        <div class="site-width about-hero-layout">
+          <div>
+            <p class="section-label about-intro-label">About</p>
+            <h1 class="page-title about-intro-title">
+              <span class="about-intro-line">The operating team behind</span>
+              <span class="about-intro-line about-intro-line-strong">
+                Crucible Ventures.
+              </span>
+            </h1>
+          </div>
+          <div class="about-hero-card">
+            <p class="about-intro-lead">
+              We are a small team working across company design, capital,
+              technical execution, and early operating discipline.
+            </p>
+            <div class="mini-stat-row" aria-label="Team snapshot">
+              <span>3 leaders</span>
+              <span>Product to finance</span>
+              <span>Sydney based</span>
             </div>
           </div>
         </div>
       </section>
 
+      <section class="content-section content-section-ink about-principles-section">
+        <div class="site-width section-header-row">
+          <div>
+            <p class="section-label">How we work</p>
+            <h3 class="section-heading">Clear thinking, fast proof, durable foundations.</h3>
+          </div>
+          <p class="section-side-copy">
+            We prefer useful questions, practical product evidence, and honest
+            commercial judgement.
+          </p>
+        </div>
+        <div class="site-width principles-grid">
+          <article class="principle-card">
+            <span class="card-index">01</span>
+            <h4>Founder close</h4>
+            <p>We work with the person carrying the insight, not just the deck.</p>
+          </article>
+          <article class="principle-card">
+            <span class="card-index">02</span>
+            <h4>Operator useful</h4>
+            <p>We help shape product, technical roadmaps, model quality, and execution.</p>
+          </article>
+          <article class="principle-card">
+            <span class="card-index">03</span>
+            <h4>Built to last</h4>
+            <p>We care about markets, margins, workflows, and customer trust from day one.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="content-section about-members-section">
         <div class="about-members-container">
+          <div class="section-header-row">
+            <div>
+              <p class="section-label">Leadership</p>
+              <h3 class="section-heading">Three lenses on early company building.</h3>
+            </div>
+          </div>
           <div class="about-members-grid">
             <a
               class="about-member-link"
@@ -91,15 +177,8 @@
                 <div class="about-member-card-overlay">
                   <p class="about-member-card-name">Vedant Tyagi</p>
                   <p class="about-member-card-copy">
-                    As CTO of Crucible Ventures, I lead the technical vision and
-                    product development side of the venture studio, working closely
-                    with teams to take ideas from 0 to 1 and turn them into scalable,
-                    high-impact products. My role involves shaping technical strategy,
-                    guiding product execution, and ensuring that concepts are translated
-                    into real, functional solutions with strong foundations. I focus on
-                    building systems, products, and technical roadmaps that allow
-                    ventures to move from early idea stage to something tangible,
-                    valuable, and capable of growing into a meaningful business.
+                    Technical vision, product development, and the engineering
+                    systems that move ideas from concept to deployed product.
                   </p>
                 </div>
               </div>
@@ -126,8 +205,8 @@
                 </div>
                 <div class="about-member-copy">
                   <p class="about-member-bio about-member-bio-short">
-                    I shape the studio's direction and work with founders on how new
-                    ventures get built and scaled.
+                    I shape the studio's direction and work with founders on how
+                    new ventures get built and scaled.
                   </p>
                 </div>
                 <hr class="about-member-divider" />
@@ -135,15 +214,8 @@
                 <div class="about-member-card-overlay">
                   <p class="about-member-card-name">Nandit Shah</p>
                   <p class="about-member-card-copy">
-                    As CEO of Crucible Ventures, I lead the company's vision, strategy,
-                    and overall execution, working closely with founders, operators,
-                    and investors to build and scale high-potential companies. My role
-                    is centered on identifying strong opportunities, setting the
-                    long-term direction of the venture studio, and ensuring that each
-                    venture is built with ambition, structure, and clarity. I focus on
-                    creating the right environment for ideas to grow into real
-                    businesses by driving strategy, aligning teams, and pushing
-                    execution across every stage of the company-building process.
+                    Company vision, venture strategy, commercial narrative, and
+                    practical operating plans for ambitious early teams.
                   </p>
                 </div>
               </div>
@@ -170,8 +242,8 @@
                 </div>
                 <div class="about-member-copy">
                   <p class="about-member-bio about-member-bio-short">
-                    I evaluate early opportunities, structure the financial side, and
-                    pressure-test business models.
+                    I evaluate early opportunities, structure the financial side,
+                    and pressure-test business models.
                   </p>
                 </div>
                 <hr class="about-member-divider" />
@@ -179,16 +251,8 @@
                 <div class="about-member-card-overlay">
                   <p class="about-member-card-name">Dyashothan Suresh Kumar</p>
                   <p class="about-member-card-copy">
-                    As CFO of Crucible Ventures, I oversee the financial strategy,
-                    investment evaluation, and broader structuring of the venture
-                    studio. My work focuses on assessing early-stage opportunities
-                    through the lens of valuation, market size, business viability,
-                    and long-term growth potential. I also play a key role in refining
-                    monetisation strategies, supporting financial decision-making, and
-                    helping ventures navigate critical stages such as customer
-                    validation, commercial planning, and early scaling. Through this,
-                    I aim to ensure that each venture is built on strong financial
-                    foundations and positioned for sustainable success.
+                    Financial strategy, investment evaluation, market sizing,
+                    and the commercial discipline behind venture decisions.
                   </p>
                 </div>
               </div>
@@ -196,8 +260,47 @@
           </div>
         </div>
       </section>
+
+      <section class="content-section final-cta-section">
+        <div class="site-width final-cta">
+          <div>
+            <p class="section-label">Work with us</p>
+            <h3>Bring a specific problem and a sharp point of view.</h3>
+            <p>
+              We are most helpful when a founder has a real market signal and
+              wants to turn it into a company with structure.
+            </p>
+          </div>
+          <div class="final-cta-actions">
+            <a class="button button-primary" href="contact.html">Start a conversation</a>
+            <a class="button button-secondary" href="what-we-do.html">See our focus</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <script src="script.js?v=scroll-speed-20260415"></script>
+    <footer class="site-footer">
+      <div class="site-width footer-grid">
+        <div>
+          <a class="site-brand footer-brand" href="index.html#top">
+            <span class="brand-mark" aria-hidden="true">CV</span>
+            <span class="brand-text">Crucible Ventures</span>
+          </a>
+          <p>Backing practical founders building durable companies.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="about.html">About</a>
+          <a href="what-we-do.html">What we do</a>
+          <a href="contact.html">Contact us</a>
+          <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
+        </nav>
+        <div class="footer-contact">
+          <p>Sydney and remote</p>
+          <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js?v=ui-refresh-20260505"></script>
   </body>
 </html>

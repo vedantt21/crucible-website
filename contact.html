@@ -8,55 +8,131 @@
       name="description"
       content="Contact Crucible Ventures with a short note about your company and traction."
     />
-    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
+    <link rel="stylesheet" href="styles.css?v=ui-refresh-20260505" />
   </head>
   <body class="header-visible inner-page">
     <header class="site-header">
       <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top">Crucible Ventures</a>
+        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
+          <span class="brand-mark" aria-hidden="true">CV</span>
+          <span class="brand-text">Crucible Ventures</span>
+        </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html">About</a>
           <a href="what-we-do.html">What we do</a>
           <a aria-current="page" href="contact.html">Contact us</a>
         </nav>
+        <div class="header-actions">
+          <a class="nav-cta" href="contact.html">Start a conversation</a>
+          <button
+            class="version-toggle"
+            type="button"
+            data-version-toggle
+            data-active-version="investor"
+            aria-pressed="false"
+            aria-label="Investor version selected. Switch to founder version"
+          >
+            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+            <span class="version-toggle-switch" aria-hidden="true">
+              <span class="version-toggle-thumb"></span>
+            </span>
+            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+            <span class="sr-only" data-version-status>Investor version selected</span>
+          </button>
+        </div>
         <button
-          class="version-toggle"
+          class="menu-toggle"
           type="button"
-          data-version-toggle
-          data-active-version="investor"
-          aria-pressed="false"
-          aria-label="Switch to founder version"
+          data-menu-toggle
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
         >
-          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-          <span class="version-toggle-switch" aria-hidden="true">
-            <span class="version-toggle-thumb"></span>
-          </span>
-          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-          <span class="sr-only" data-version-status>Investor version selected</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <div class="site-width mobile-menu-inner">
+          <nav class="mobile-nav" aria-label="Mobile primary">
+            <a href="about.html">About</a>
+            <a href="what-we-do.html">What we do</a>
+            <a aria-current="page" href="contact.html">Contact us</a>
+          </nav>
+          <div class="mobile-menu-actions">
+            <a class="button button-primary" href="contact.html">Start a conversation</a>
+            <button
+              class="version-toggle"
+              type="button"
+              data-version-toggle
+              data-active-version="investor"
+              aria-pressed="false"
+              aria-label="Investor version selected. Switch to founder version"
+            >
+              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+              <span class="version-toggle-switch" aria-hidden="true">
+                <span class="version-toggle-thumb"></span>
+              </span>
+              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+              <span class="sr-only" data-version-status>Investor version selected</span>
+            </button>
+          </div>
+          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
+        </div>
       </div>
     </header>
 
     <main class="page-main">
-      <section class="page-hero">
-        <div class="site-width">
-          <p class="section-label">Contact us</p>
-          <h1 class="page-title">Start with a short note.</h1>
-          <p class="page-lead">
-            Share the problem, why now, and what early traction looks like.
-          </p>
+      <section class="page-hero page-hero-split">
+        <div class="site-width page-hero-layout">
+          <div>
+            <p class="section-label">Contact us</p>
+            <h1 class="page-title">Start with a short note.</h1>
+          </div>
+          <div class="page-hero-aside">
+            <p class="page-lead">
+              Share the problem, why now, and what early traction looks like.
+              We read concise founder and investor updates.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="mailto:crucible.venture@gmail.com">
+                Email Crucible
+              </a>
+              <a class="button button-secondary" href="https://au.linkedin.com/company/crucible-ventures">
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="content-section">
         <div class="site-width contact-layout">
-          <div>
-            <p class="section-label">Reach out</p>
-            <h3>We read concise founder updates.</h3>
+          <div class="contact-note-panel">
+            <p class="section-label">What helps</p>
+            <h3>We can move faster when the signal is specific.</h3>
             <p class="section-copy">
-              The clearest first message usually covers the problem, the wedge,
-              and why this team is right to build it.
+              A useful first message usually includes the customer pain, the
+              wedge you are testing, the evidence you already have, and where
+              you want help next.
             </p>
+            <div class="contact-prompt-grid" aria-label="Suggested note structure">
+              <article>
+                <span class="card-index">01</span>
+                <h4>Problem</h4>
+                <p>Who feels the pain and what changes if it is solved?</p>
+              </article>
+              <article>
+                <span class="card-index">02</span>
+                <h4>Proof</h4>
+                <p>What customer, market, or technical signal have you seen?</p>
+              </article>
+              <article>
+                <span class="card-index">03</span>
+                <h4>Ask</h4>
+                <p>What decision, build step, or capital question is next?</p>
+              </article>
+            </div>
           </div>
           <div class="contact-card">
             <p class="contact-label">Email</p>
@@ -65,14 +141,43 @@
             </p>
             <p class="contact-label">LinkedIn</p>
             <p class="contact-value">
-              <a href="https://au.linkedin.com/company/crucible-ventures">au.linkedin.com/company/crucible-ventures</a>
+              <a href="https://au.linkedin.com/company/crucible-ventures">
+                au.linkedin.com/company/crucible-ventures
+              </a>
             </p>
             <p class="contact-label">Location</p>
             <p class="contact-value">Sydney and remote</p>
+            <div class="contact-card-footer">
+              <p>Best first note</p>
+              <strong>5 to 8 sentences with one clear next step.</strong>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <script src="script.js?v=scroll-speed-20260415"></script>
+
+    <footer class="site-footer">
+      <div class="site-width footer-grid">
+        <div>
+          <a class="site-brand footer-brand" href="index.html#top">
+            <span class="brand-mark" aria-hidden="true">CV</span>
+            <span class="brand-text">Crucible Ventures</span>
+          </a>
+          <p>Backing practical founders building durable companies.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="about.html">About</a>
+          <a href="what-we-do.html">What we do</a>
+          <a href="contact.html">Contact us</a>
+          <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
+        </nav>
+        <div class="footer-contact">
+          <p>Sydney and remote</p>
+          <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js?v=ui-refresh-20260505"></script>
   </body>
 </html>

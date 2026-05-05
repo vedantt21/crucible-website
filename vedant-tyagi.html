@@ -8,32 +8,77 @@
       name="description"
       content="Profile page for Vedant Tyagi at Crucible Ventures."
     />
-    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
+    <link rel="stylesheet" href="styles.css?v=ui-refresh-20260505" />
   </head>
   <body class="header-visible inner-page vedant-profile-page">
     <header class="site-header">
       <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top">Crucible Ventures</a>
+        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
+          <span class="brand-mark" aria-hidden="true">CV</span>
+          <span class="brand-text">Crucible Ventures</span>
+        </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html">About</a>
           <a href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <div class="header-actions">
+          <a class="nav-cta" href="contact.html">Start a conversation</a>
+          <button
+            class="version-toggle"
+            type="button"
+            data-version-toggle
+            data-active-version="investor"
+            aria-pressed="false"
+            aria-label="Investor version selected. Switch to founder version"
+          >
+            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+            <span class="version-toggle-switch" aria-hidden="true">
+              <span class="version-toggle-thumb"></span>
+            </span>
+            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+            <span class="sr-only" data-version-status>Investor version selected</span>
+          </button>
+        </div>
         <button
-          class="version-toggle"
+          class="menu-toggle"
           type="button"
-          data-version-toggle
-          data-active-version="investor"
-          aria-pressed="false"
-          aria-label="Switch to founder version"
+          data-menu-toggle
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
         >
-          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-          <span class="version-toggle-switch" aria-hidden="true">
-            <span class="version-toggle-thumb"></span>
-          </span>
-          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-          <span class="sr-only" data-version-status>Investor version selected</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <div class="site-width mobile-menu-inner">
+          <nav class="mobile-nav" aria-label="Mobile primary">
+            <a href="about.html">About</a>
+            <a href="what-we-do.html">What we do</a>
+            <a href="contact.html">Contact us</a>
+          </nav>
+          <div class="mobile-menu-actions">
+            <a class="button button-primary" href="contact.html">Start a conversation</a>
+            <button
+              class="version-toggle"
+              type="button"
+              data-version-toggle
+              data-active-version="investor"
+              aria-pressed="false"
+              aria-label="Investor version selected. Switch to founder version"
+            >
+              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+              <span class="version-toggle-switch" aria-hidden="true">
+                <span class="version-toggle-thumb"></span>
+              </span>
+              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+              <span class="sr-only" data-version-status>Investor version selected</span>
+            </button>
+          </div>
+          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
+        </div>
       </div>
     </header>
 
@@ -264,6 +309,27 @@
         </div>
       </section>
     </main>
-    <script src="script.js?v=scroll-speed-20260415"></script>
+    <footer class="site-footer">
+      <div class="site-width footer-grid">
+        <div>
+          <a class="site-brand footer-brand" href="index.html#top">
+            <span class="brand-mark" aria-hidden="true">CV</span>
+            <span class="brand-text">Crucible Ventures</span>
+          </a>
+          <p>Backing practical founders building durable companies.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="about.html">About</a>
+          <a href="what-we-do.html">What we do</a>
+          <a href="contact.html">Contact us</a>
+          <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
+        </nav>
+        <div class="footer-contact">
+          <p>Sydney and remote</p>
+          <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js?v=ui-refresh-20260505"></script>
   </body>
 </html>
