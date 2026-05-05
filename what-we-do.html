@@ -8,105 +8,258 @@
       name="description"
       content="See where Crucible Ventures spends time across software, infrastructure, and applied AI."
     />
-    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
+    <link rel="stylesheet" href="styles.css?v=ui-refresh-20260505" />
   </head>
   <body class="header-visible inner-page">
     <header class="site-header">
       <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top">Crucible Ventures</a>
+        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
+          <span class="brand-mark" aria-hidden="true">CV</span>
+          <span class="brand-text">Crucible Ventures</span>
+        </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html">About</a>
           <a aria-current="page" href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <div class="header-actions">
+          <a class="nav-cta" href="contact.html">Start a conversation</a>
+          <button
+            class="version-toggle"
+            type="button"
+            data-version-toggle
+            data-active-version="investor"
+            aria-pressed="false"
+            aria-label="Investor version selected. Switch to founder version"
+          >
+            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+            <span class="version-toggle-switch" aria-hidden="true">
+              <span class="version-toggle-thumb"></span>
+            </span>
+            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+            <span class="sr-only" data-version-status>Investor version selected</span>
+          </button>
+        </div>
         <button
-          class="version-toggle"
+          class="menu-toggle"
           type="button"
-          data-version-toggle
-          data-active-version="investor"
-          aria-pressed="false"
-          aria-label="Switch to founder version"
+          data-menu-toggle
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
         >
-          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-          <span class="version-toggle-switch" aria-hidden="true">
-            <span class="version-toggle-thumb"></span>
-          </span>
-          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-          <span class="sr-only" data-version-status>Investor version selected</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <div class="site-width mobile-menu-inner">
+          <nav class="mobile-nav" aria-label="Mobile primary">
+            <a href="about.html">About</a>
+            <a aria-current="page" href="what-we-do.html">What we do</a>
+            <a href="contact.html">Contact us</a>
+          </nav>
+          <div class="mobile-menu-actions">
+            <a class="button button-primary" href="contact.html">Start a conversation</a>
+            <button
+              class="version-toggle"
+              type="button"
+              data-version-toggle
+              data-active-version="investor"
+              aria-pressed="false"
+              aria-label="Investor version selected. Switch to founder version"
+            >
+              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+              <span class="version-toggle-switch" aria-hidden="true">
+                <span class="version-toggle-thumb"></span>
+              </span>
+              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+              <span class="sr-only" data-version-status>Investor version selected</span>
+            </button>
+          </div>
+          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
+        </div>
       </div>
     </header>
 
     <main class="page-main">
-      <section class="page-hero">
-        <div class="site-width">
-          <p class="section-label">What we do</p>
-          <h1 class="page-title">
-            <span data-version-variant="investor">Find investable companies.</span>
-            <span data-version-variant="entrepreneur">Backing grounded startups.</span>
-          </h1>
-          <p class="page-lead">
-            <span data-version-variant="investor">
-              We surface growing companies across focused categories so you can invest
-              with clearer conviction.
-            </span>
-            <span data-version-variant="entrepreneur">
-              We partner early with founders building durable companies across a
-              focused set of categories.
-            </span>
-          </p>
+      <section class="page-hero page-hero-split">
+        <div class="site-width page-hero-layout">
+          <div>
+            <p class="section-label">What we do</p>
+            <h1 class="page-title">
+              <span data-version-variant="investor">Find investable companies.</span>
+              <span data-version-variant="entrepreneur">Backing grounded startups.</span>
+            </h1>
+          </div>
+          <div class="page-hero-aside">
+            <p class="page-lead">
+              <span data-version-variant="investor">
+                We surface growing companies across focused categories so you
+                can invest with clearer conviction.
+              </span>
+              <span data-version-variant="entrepreneur">
+                We partner early with founders building durable companies across
+                a focused set of categories.
+              </span>
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="contact.html">Start a conversation</a>
+              <a class="button button-secondary" href="#focus">See focus areas</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="content-section content-section-muted">
+      <section class="content-section split-section">
+        <div class="site-width editorial-feature">
+          <div class="editorial-feature-image">
+            <img
+              src="image1.jpg"
+              alt="Placeholder image for Crucible Ventures focus"
+              loading="lazy"
+            />
+          </div>
+          <div class="editorial-feature-copy">
+            <p class="section-label">Operating model</p>
+            <h3>First, we pressure-test whether the wedge deserves a company.</h3>
+            <p class="section-copy">
+              Great early companies are rarely tidy at the start. We help
+              translate rough market signal into a product path, a funding story,
+              and a focused operating cadence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section content-section-ink" id="focus">
         <div class="site-width">
           <p class="section-label">Focus</p>
           <h3 class="section-heading">
             <span data-version-variant="investor">Where we look.</span>
             <span data-version-variant="entrepreneur">Where we spend time.</span>
           </h3>
-          <div class="focus-grid">
-            <article class="focus-card">
-              <h4>Vertical software</h4>
-              <p>
-                <span data-version-variant="investor">
-                  Companies with recurring workflow demand, clear buyers, and room
-                  to compound.
-                </span>
-                <span data-version-variant="entrepreneur">
-                  Products that become core workflows for teams in complex
-                  industries.
-                </span>
-              </p>
+        </div>
+        <div class="site-width focus-grid">
+          <article class="focus-card">
+            <p class="focus-card-kicker">Vertical software</p>
+            <h4>Workflow depth</h4>
+            <p>
+              <span data-version-variant="investor">
+                Companies with recurring workflow demand, clear buyers, and
+                room to compound.
+              </span>
+              <span data-version-variant="entrepreneur">
+                Products that become core workflows for teams in complex
+                industries.
+              </span>
+            </p>
+          </article>
+          <article class="focus-card focus-card-featured">
+            <p class="focus-card-kicker">Infrastructure</p>
+            <h4>Technical leverage</h4>
+            <p>
+              <span data-version-variant="investor">
+                Durable systems with technical leverage and adoption from
+                builders and operators.
+              </span>
+              <span data-version-variant="entrepreneur">
+                Practical systems that reduce friction for builders and
+                operators.
+              </span>
+            </p>
+          </article>
+          <article class="focus-card">
+            <p class="focus-card-kicker">Applied AI</p>
+            <h4>Better outcomes</h4>
+            <p>
+              <span data-version-variant="investor">
+                AI products where automation improves outcomes, not just demos.
+              </span>
+              <span data-version-variant="entrepreneur">
+                Tools where automation makes the product meaningfully better.
+              </span>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="site-width section-grid">
+          <div class="section-copy-block">
+            <p class="section-label">How it works</p>
+            <h3 class="section-heading">A simple path from signal to structure.</h3>
+            <p class="section-copy">
+              The work changes with the company, but the rhythm stays grounded:
+              ask better questions, build real proof, then prepare the venture
+              for sharper decisions.
+            </p>
+          </div>
+          <div class="process-grid">
+            <article class="process-card">
+              <span class="card-index">01</span>
+              <h4>Market read</h4>
+              <p>Clarify the buyer, urgency, pain, alternatives, and timing.</p>
             </article>
-            <article class="focus-card">
-              <h4>Infrastructure</h4>
-              <p>
-                <span data-version-variant="investor">
-                  Durable systems with technical leverage and adoption from builders
-                  and operators.
-                </span>
-                <span data-version-variant="entrepreneur">
-                  Practical systems that reduce friction for builders and
-                  operators.
-                </span>
-              </p>
+            <article class="process-card">
+              <span class="card-index">02</span>
+              <h4>Product proof</h4>
+              <p>Define a first product that can expose real customer demand.</p>
             </article>
-            <article class="focus-card">
-              <h4>Applied AI</h4>
-              <p>
-                <span data-version-variant="investor">
-                  AI products where automation improves outcomes, not just demos.
-                </span>
-                <span data-version-variant="entrepreneur">
-                  Tools where automation makes the product meaningfully better.
-                </span>
-              </p>
+            <article class="process-card">
+              <span class="card-index">03</span>
+              <h4>Capital shape</h4>
+              <p>Build a financial and investor narrative around the actual wedge.</p>
+            </article>
+            <article class="process-card">
+              <span class="card-index">04</span>
+              <h4>Operating cadence</h4>
+              <p>Set the rhythm, roles, and metrics that keep the team honest.</p>
             </article>
           </div>
         </div>
       </section>
+
+      <section class="content-section final-cta-section">
+        <div class="site-width final-cta">
+          <div>
+            <p class="section-label">Founder or investor</p>
+            <h3>Send the signal you are seeing.</h3>
+            <p>
+              A short note is enough: problem, category, customer pull, and why
+              this should exist now.
+            </p>
+          </div>
+          <div class="final-cta-actions">
+            <a class="button button-primary" href="contact.html">Contact us</a>
+            <a class="button button-secondary" href="about.html">Meet the team</a>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="script.js?v=scroll-speed-20260415"></script>
+
+    <footer class="site-footer">
+      <div class="site-width footer-grid">
+        <div>
+          <a class="site-brand footer-brand" href="index.html#top">
+            <span class="brand-mark" aria-hidden="true">CV</span>
+            <span class="brand-text">Crucible Ventures</span>
+          </a>
+          <p>Backing practical founders building durable companies.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="about.html">About</a>
+          <a href="what-we-do.html">What we do</a>
+          <a href="contact.html">Contact us</a>
+          <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
+        </nav>
+        <div class="footer-contact">
+          <p>Sydney and remote</p>
+          <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js?v=ui-refresh-20260505"></script>
   </body>
 </html>

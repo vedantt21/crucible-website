@@ -8,32 +8,77 @@
       name="description"
       content="Crucible Ventures backs practical founders building durable companies."
     />
-    <link rel="stylesheet" href="styles.css?v=scroll-speed-20260415" />
+    <link rel="stylesheet" href="styles.css?v=ui-refresh-20260505" />
   </head>
   <body>
     <header class="site-header" data-site-header>
       <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top">Crucible Ventures</a>
+        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
+          <span class="brand-mark" aria-hidden="true">CV</span>
+          <span class="brand-text">Crucible Ventures</span>
+        </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html">About</a>
           <a href="what-we-do.html">What we do</a>
           <a href="contact.html">Contact us</a>
         </nav>
+        <div class="header-actions">
+          <a class="nav-cta" href="contact.html">Start a conversation</a>
+          <button
+            class="version-toggle"
+            type="button"
+            data-version-toggle
+            data-active-version="investor"
+            aria-pressed="false"
+            aria-label="Investor version selected. Switch to founder version"
+          >
+            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+            <span class="version-toggle-switch" aria-hidden="true">
+              <span class="version-toggle-thumb"></span>
+            </span>
+            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+            <span class="sr-only" data-version-status>Investor version selected</span>
+          </button>
+        </div>
         <button
-          class="version-toggle"
+          class="menu-toggle"
           type="button"
-          data-version-toggle
-          data-active-version="investor"
-          aria-pressed="false"
-          aria-label="Switch to founder version"
+          data-menu-toggle
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
         >
-          <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-          <span class="version-toggle-switch" aria-hidden="true">
-            <span class="version-toggle-thumb"></span>
-          </span>
-          <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-          <span class="sr-only" data-version-status>Investor version selected</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <div class="site-width mobile-menu-inner">
+          <nav class="mobile-nav" aria-label="Mobile primary">
+            <a href="about.html">About</a>
+            <a href="what-we-do.html">What we do</a>
+            <a href="contact.html">Contact us</a>
+          </nav>
+          <div class="mobile-menu-actions">
+            <a class="button button-primary" href="contact.html">Start a conversation</a>
+            <button
+              class="version-toggle"
+              type="button"
+              data-version-toggle
+              data-active-version="investor"
+              aria-pressed="false"
+              aria-label="Investor version selected. Switch to founder version"
+            >
+              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
+              <span class="version-toggle-switch" aria-hidden="true">
+                <span class="version-toggle-thumb"></span>
+              </span>
+              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
+              <span class="sr-only" data-version-status>Investor version selected</span>
+            </button>
+          </div>
+          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
+        </div>
       </div>
     </header>
 
@@ -42,6 +87,7 @@
         <div class="intro-stage">
           <h1 class="sr-only">Crucible Ventures.</h1>
           <div class="intro-mark">
+            <p class="intro-kicker">Early conviction studio</p>
             <div class="intro-line intro-line-top">
               <span class="intro-text">Crucible</span>
             </div>
@@ -53,49 +99,218 @@
       </section>
 
       <div class="website-shell">
-        <section class="hero-section" aria-label="Backing grounded startups">
+        <section class="hero-section" id="home" aria-label="Backing grounded startups">
           <div class="site-width hero-layout">
             <div class="hero-copy">
+              <p class="section-label">Venture studio and early capital</p>
               <h2>
-                <span data-version-variant="investor">Find growing companies.</span>
-                <span data-version-variant="entrepreneur">Backing grounded startups.</span>
+                <span data-version-variant="investor">
+                  Find practical companies before they look obvious.
+                </span>
+                <span data-version-variant="entrepreneur">
+                  Build the company your market has been waiting for.
+                </span>
               </h2>
               <p class="hero-text">
                 <span data-version-variant="investor">
-                  We find growing companies so you can invest in them with confidence.
+                  Crucible Ventures identifies grounded early companies across
+                  focused markets and turns noisy signals into sharper conviction.
                 </span>
                 <span data-version-variant="entrepreneur">
-                  We partner early with founders building durable companies across software,
-                  infrastructure, and applied AI.
+                  We work with founders from the first rough wedge through
+                  product, market clarity, capital strategy, and launch discipline.
                 </span>
               </p>
+              <div class="hero-actions" aria-label="Primary actions">
+                <a class="button button-primary" href="contact.html">Start a conversation</a>
+                <a class="button button-secondary" href="what-we-do.html">Explore our focus</a>
+              </div>
+            </div>
+            <div class="hero-visual" aria-label="Crucible Ventures visual preview">
+              <img
+                class="hero-image"
+                src="image.jpg"
+                alt="Placeholder editorial image for Crucible Ventures"
+              />
+              <div class="hero-visual-panel hero-visual-panel-top">
+                <p>Studio lens</p>
+                <strong>Software, infrastructure, applied AI.</strong>
+              </div>
+              <div class="hero-visual-panel hero-visual-panel-bottom">
+                <span>3 operators</span>
+                <span>Sydney and remote</span>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="content-section" id="contact">
-          <div class="site-width home-contact-grid">
-            <div class="home-contact-item">
-              <p class="contact-label">Email</p>
-              <p class="contact-value">
-                <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
-              </p>
+        <section class="content-section stats-section" aria-label="Crucible snapshot">
+          <div class="site-width stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <p>Operating partners across product, strategy, and finance.</p>
             </div>
-            <div class="home-contact-item">
-              <p class="contact-label">LinkedIn</p>
-              <p class="contact-value">
-                <a href="https://au.linkedin.com/company/crucible-ventures">au.linkedin.com/company/crucible-ventures</a>
-              </p>
+            <div class="stat-item">
+              <span class="stat-number">0 to 1</span>
+              <p>Hands-on company formation from idea to working product.</p>
             </div>
-            <div class="home-contact-item">
-              <p class="contact-label">Location</p>
-              <p class="contact-value">Sydney and remote</p>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <p>Focused categories where durable customer demand can compound.</p>
             </div>
           </div>
         </section>
+
+        <section class="content-section split-section">
+          <div class="site-width section-grid">
+            <div class="section-copy-block">
+              <p class="section-label">What we do</p>
+              <h3 class="section-heading">We turn early signal into company momentum.</h3>
+              <p class="section-copy">
+                Crucible is built for founders and investors who prefer clear
+                thinking over theatre. We test markets, shape the product wedge,
+                map the capital path, and help teams move with discipline.
+              </p>
+            </div>
+            <div class="thesis-list" aria-label="Crucible operating model">
+              <article class="thesis-card">
+                <span class="card-index">01</span>
+                <h4>Find the wedge</h4>
+                <p>Frame the painful workflow, buyer, timing, and first proof point.</p>
+              </article>
+              <article class="thesis-card">
+                <span class="card-index">02</span>
+                <h4>Build the proof</h4>
+                <p>Create practical product paths that reveal demand quickly.</p>
+              </article>
+              <article class="thesis-card">
+                <span class="card-index">03</span>
+                <h4>Prepare the company</h4>
+                <p>Clarify financial, operational, and investor-facing foundations.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section content-section-ink">
+          <div class="site-width section-header-row">
+            <div>
+              <p class="section-label">Focus areas</p>
+              <h3 class="section-heading">Where durable startups get forged.</h3>
+            </div>
+            <a class="text-link" href="what-we-do.html">See the full thesis</a>
+          </div>
+          <div class="site-width focus-grid">
+            <article class="focus-card">
+              <p class="focus-card-kicker">Workflow depth</p>
+              <h4>Vertical software</h4>
+              <p>
+                Products that become core operating systems for teams inside
+                complex industries.
+              </p>
+            </article>
+            <article class="focus-card focus-card-featured">
+              <p class="focus-card-kicker">Technical leverage</p>
+              <h4>Infrastructure</h4>
+              <p>
+                Practical systems that reduce friction for builders, operators,
+                and technical teams.
+              </p>
+            </article>
+            <article class="focus-card">
+              <p class="focus-card-kicker">Better outcomes</p>
+              <h4>Applied AI</h4>
+              <p>
+                Automation that improves a workflow, a decision, or a customer
+                result in a measurable way.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section team-preview-section">
+          <div class="site-width section-header-row">
+            <div>
+              <p class="section-label">Team</p>
+              <h3 class="section-heading">A small team with operator range.</h3>
+            </div>
+            <a class="text-link" href="about.html">Meet the team</a>
+          </div>
+          <div class="site-width team-preview-grid">
+            <a class="team-preview-card" href="vedant-tyagi.html">
+              <img src="images/team/vedant.jpeg" alt="Portrait of Vedant Tyagi" loading="lazy" />
+              <div>
+                <p class="team-preview-role">Chief Technology Officer</p>
+                <h4>Vedant Tyagi</h4>
+                <p>Technical strategy, product buildout, and 0 to 1 systems.</p>
+              </div>
+            </a>
+            <a class="team-preview-card" href="nandit-shah.html">
+              <img src="images/team/nandit.jpeg" alt="Portrait of Nandit Shah" loading="lazy" />
+              <div>
+                <p class="team-preview-role">Chief Executive Officer</p>
+                <h4>Nandit Shah</h4>
+                <p>Company direction, venture strategy, and operating plans.</p>
+              </div>
+            </a>
+            <a class="team-preview-card" href="dyashothan-suresh-kumar.html">
+              <img
+                src="images/team/dyashothan-suresh-kumar.jpeg"
+                alt="Portrait of Dyashothan Suresh Kumar"
+                loading="lazy"
+              />
+              <div>
+                <p class="team-preview-role">Chief Financial Officer</p>
+                <h4>Dyashothan Suresh Kumar</h4>
+                <p>Investment evaluation, business models, and financial structure.</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section class="content-section final-cta-section" id="contact">
+          <div class="site-width final-cta">
+            <div>
+              <p class="section-label">Get involved</p>
+              <h3>Bring the rough version. We will help sharpen it.</h3>
+              <p>
+                Send a concise note with the problem, the wedge, and what you
+                have learned so far.
+              </p>
+            </div>
+            <div class="final-cta-actions">
+              <a class="button button-primary" href="mailto:crucible.venture@gmail.com">
+                Email Crucible
+              </a>
+              <a class="button button-secondary" href="contact.html">View contact details</a>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="site-width footer-grid">
+            <div>
+              <a class="site-brand footer-brand" href="index.html#top">
+                <span class="brand-mark" aria-hidden="true">CV</span>
+                <span class="brand-text">Crucible Ventures</span>
+              </a>
+              <p>Backing practical founders building durable companies.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer">
+              <a href="about.html">About</a>
+              <a href="what-we-do.html">What we do</a>
+              <a href="contact.html">Contact us</a>
+              <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
+            </nav>
+            <div class="footer-contact">
+              <p>Sydney and remote</p>
+              <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
+            </div>
+          </div>
+        </footer>
       </div>
     </main>
 
-    <script src="script.js?v=scroll-speed-20260415"></script>
+    <script src="script.js?v=ui-refresh-20260505"></script>
   </body>
 </html>

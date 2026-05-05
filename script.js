@@ -2,8 +2,10 @@ const intro = document.querySelector("[data-scroll-intro]");
 const aboutIntro = document.querySelector("[data-about-intro]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const body = document.body;
-const versionToggle = document.querySelector("[data-version-toggle]");
-const versionStatus = document.querySelector("[data-version-status]");
+const versionToggles = [...document.querySelectorAll("[data-version-toggle]")];
+const versionStatuses = [...document.querySelectorAll("[data-version-status]")];
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mobileMenu = document.querySelector("[data-mobile-menu]");
 const versionStorageKey = "crucible-site-version";
 const investorVersion = "investor";
 const entrepreneurVersion = "entrepreneur";
@@ -85,25 +87,23 @@ const setSiteVersion = (version, shouldStore = true) => {
   const nextVersion =
     version === entrepreneurVersion ? entrepreneurVersion : investorVersion;
   const isEntrepreneur = nextVersion === entrepreneurVersion;
+  const activeLabel = isEntrepreneur ? "Founder" : "Investor";
+  const nextLabel = isEntrepreneur ? "investor" : "founder";
 
   body.dataset.siteVersion = nextVersion;
 
-  if (versionToggle) {
-    versionToggle.dataset.activeVersion = nextVersion;
-    versionToggle.setAttribute("aria-pressed", String(isEntrepreneur));
-    versionToggle.setAttribute(
+  versionToggles.forEach((toggle) => {
+    toggle.dataset.activeVersion = nextVersion;
+    toggle.setAttribute("aria-pressed", String(isEntrepreneur));
+    toggle.setAttribute(
       "aria-label",
-      (isEntrepreneur ? "Founder" : "Investor") +
-        " version selected. Switch to " +
-        (isEntrepreneur ? "investor" : "founder") +
-        " version"
+      activeLabel + " version selected. Switch to " + nextLabel + " version"
     );
-  }
+  });
 
-  if (versionStatus) {
-    versionStatus.textContent =
-      (isEntrepreneur ? "Founder" : "Investor") + " version selected";
-  }
+  versionStatuses.forEach((status) => {
+    status.textContent = activeLabel + " version selected";
+  });
 
   if (shouldStore) {
     storeVersion(nextVersion);
@@ -112,8 +112,8 @@ const setSiteVersion = (version, shouldStore = true) => {
 
 setSiteVersion(getStoredVersion(), false);
 
-if (versionToggle) {
-  versionToggle.addEventListener("click", () => {
+versionToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
     const nextVersion =
       body.dataset.siteVersion === entrepreneurVersion
         ? investorVersion
@@ -121,6 +121,64 @@ if (versionToggle) {
 
     setSiteVersion(nextVersion);
   });
+});
+
+let mobileMenuCloseTimer = 0;
+
+const setMobileMenuOpen = (isOpen) => {
+  if (!menuToggle || !mobileMenu) {
+    return;
+  }
+
+  if (mobileMenuCloseTimer) {
+    window.clearTimeout(mobileMenuCloseTimer);
+    mobileMenuCloseTimer = 0;
+  }
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  menuToggle.classList.toggle("is-open", isOpen);
+  body.classList.toggle("menu-open", isOpen);
+
+  if (isOpen) {
+    mobileMenu.hidden = false;
+    body.classList.add("header-visible");
+    window.requestAnimationFrame(() => {
+      mobileMenu.classList.add("is-open");
+    });
+    return;
+  }
+
+  mobileMenu.classList.remove("is-open");
+  mobileMenuCloseTimer = window.setTimeout(() => {
+    mobileMenu.hidden = true;
+  }, prefersReducedMotion.matches ? 0 : 220);
+};
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    setMobileMenuOpen(!body.classList.contains("menu-open"));
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      setMobileMenuOpen(false);
+    });
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileMenuOpen(false);
+    }
+  });
+
+  window
+    .matchMedia("(min-width: 861px)")
+    .addEventListener("change", (event) => {
+      if (event.matches) {
+        setMobileMenuOpen(false);
+      }
+    });
 }
 
 if (intro && !prefersReducedMotion.matches) {
@@ -143,7 +201,9 @@ if (intro && !prefersReducedMotion.matches) {
     body.classList.add("header-visible");
     clearHeaderTimer();
     headerTimer = window.setTimeout(() => {
-      body.classList.remove("header-visible");
+      if (!body.classList.contains("menu-open")) {
+        body.classList.remove("header-visible");
+      }
     }, 2600);
   };
 
@@ -199,7 +259,7 @@ if (aboutIntro && !prefersReducedMotion.matches) {
     const progress = clamp(window.scrollY / scrollable, 0, 1);
 
     body.style.setProperty("--about-progress", progress.toFixed(4));
-    body.classList.toggle("header-visible", progress < 0.78);
+    body.classList.add("header-visible");
     ticking = false;
   };
 
