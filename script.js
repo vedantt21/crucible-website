@@ -1,4 +1,5 @@
 const intro = document.querySelector("[data-scroll-intro]");
+const introGlow = document.querySelector("[data-intro-glow]");
 const aboutIntro = document.querySelector("[data-about-intro]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const body = document.body;
@@ -11,6 +12,11 @@ const investorVersion = "investor";
 const entrepreneurVersion = "entrepreneur";
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const smoothstep = (start, end, value) => {
+  const progress = clamp((value - start) / (end - start), 0, 1);
+
+  return progress * progress * (3 - 2 * progress);
+};
 const getNumericCssVariable = (name, fallback) => {
   const rawValue = window
     .getComputedStyle(document.documentElement)
@@ -119,7 +125,11 @@ versionToggles.forEach((toggle) => {
         ? investorVersion
         : entrepreneurVersion;
 
-    setSiteVersion(nextVersion);
+    if (document.startViewTransition && !prefersReducedMotion.matches) {
+      document.startViewTransition(() => setSiteVersion(nextVersion));
+    } else {
+      setSiteVersion(nextVersion);
+    }
   });
 });
 
@@ -200,20 +210,28 @@ if (intro && !prefersReducedMotion.matches) {
 
     body.classList.add("header-visible");
     clearHeaderTimer();
-    headerTimer = window.setTimeout(() => {
-      if (!body.classList.contains("menu-open")) {
-        body.classList.remove("header-visible");
-      }
-    }, 2600);
   };
 
   const updatePageState = () => {
     const rect = intro.getBoundingClientRect();
     const scrollable = Math.max(intro.offsetHeight - window.innerHeight, 1);
     const progress = clamp(-rect.top / scrollable, 0, 1);
-    const nextPastIntro = progress > 0.62;
+    const nextPastIntro = progress > 0.7;
+    const titleOpacity = 1 - smoothstep(0.14, 0.48, progress);
+    const resolutionOpacity = smoothstep(0.42, 0.68, progress);
+    const farOpacity = smoothstep(0.08, 0.3, progress);
+    const midOpacity = smoothstep(0.34, 0.58, progress);
+    const foreOpacity = smoothstep(0.64, 0.9, progress);
 
     intro.style.setProperty("--intro-progress", progress.toFixed(4));
+    intro.style.setProperty("--intro-title-opacity", titleOpacity.toFixed(4));
+    intro.style.setProperty(
+      "--intro-resolution-opacity",
+      resolutionOpacity.toFixed(4)
+    );
+    intro.style.setProperty("--intro-far-opacity", farOpacity.toFixed(4));
+    intro.style.setProperty("--intro-mid-opacity", midOpacity.toFixed(4));
+    intro.style.setProperty("--intro-fore-opacity", foreOpacity.toFixed(4));
 
     if (nextPastIntro !== pastIntro) {
       pastIntro = nextPastIntro;
@@ -248,7 +266,43 @@ if (intro && !prefersReducedMotion.matches) {
   window.addEventListener("keydown", engageHeader);
 } else if (intro) {
   intro.style.setProperty("--intro-progress", "1");
+  intro.style.setProperty("--intro-title-opacity", "0");
+  intro.style.setProperty("--intro-resolution-opacity", "1");
+  intro.style.setProperty("--intro-far-opacity", "1");
+  intro.style.setProperty("--intro-mid-opacity", "1");
+  intro.style.setProperty("--intro-fore-opacity", "1");
   body.classList.add("header-visible");
+}
+
+if (intro && introGlow && !prefersReducedMotion.matches) {
+  let glowFrame = 0;
+  let glowX = window.innerWidth * 0.72;
+  let glowY = window.innerHeight * 0.16;
+  let glowHalfSize = introGlow.getBoundingClientRect().width / 2;
+
+  const positionGlow = () => {
+    introGlow.style.transform = `translate3d(${glowX - glowHalfSize}px, ${glowY - glowHalfSize}px, 0)`;
+    glowFrame = 0;
+  };
+
+  intro.addEventListener(
+    "pointermove",
+    (event) => {
+      glowX = event.clientX;
+      glowY = event.clientY;
+
+      if (!glowFrame) {
+        glowFrame = window.requestAnimationFrame(positionGlow);
+      }
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", () => {
+    glowHalfSize = introGlow.getBoundingClientRect().width / 2;
+  });
+
+  positionGlow();
 }
 
 if (aboutIntro && !prefersReducedMotion.matches) {
@@ -278,4 +332,113 @@ if (aboutIntro && !prefersReducedMotion.matches) {
 } else if (aboutIntro) {
   body.style.setProperty("--about-progress", "1");
   body.classList.add("header-visible");
+}
+
+const revealSelectors = [
+  ".hero-copy",
+  ".hero-visual",
+  ".stat-item",
+  ".section-copy-block",
+  ".thesis-card",
+  ".section-header-row",
+  ".focus-card",
+  ".team-preview-card",
+  ".final-cta",
+  ".page-hero-layout > *",
+  ".about-hero-layout > *",
+  ".editorial-feature > *",
+  ".process-card",
+  ".principle-card",
+  ".about-member-link",
+  ".profile-layout > *",
+  ".profile-panel",
+  ".contact-layout > *",
+  ".contact-prompt-grid article",
+];
+
+const revealItems = [...document.querySelectorAll(revealSelectors.join(","))];
+
+revealItems.forEach((item, index) => {
+  item.dataset.reveal = "";
+  item.dataset.revealDelay = String((index % 3) * 70);
+});
+
+if (revealItems.length) {
+  document.documentElement.classList.add("motion-ready");
+
+  if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          revealObserver.unobserve(entry.target);
+          window.setTimeout(() => {
+            entry.target.classList.add("is-visible");
+          }, Number(entry.target.dataset.revealDelay) || 0);
+        });
+      },
+      {
+        rootMargin: "0px 0px -10%",
+        threshold: 0.12,
+      }
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+}
+
+const tiltCards = [...document.querySelectorAll("[data-tilt-card]")];
+const canUseTilt =
+  !prefersReducedMotion.matches &&
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+if (canUseTilt) {
+  tiltCards.forEach((card) => {
+    let tiltFrame = 0;
+    let tiltX = 0;
+    let tiltY = 0;
+    let tiltBounds = null;
+
+    const renderTilt = () => {
+      card.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
+      card.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
+      tiltFrame = 0;
+    };
+
+    card.addEventListener("pointerenter", () => {
+      tiltBounds = card.getBoundingClientRect();
+    });
+
+    card.addEventListener("pointermove", (event) => {
+      const bounds = tiltBounds || card.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+      tiltX = y * -3.2;
+      tiltY = x * 3.2;
+
+      if (!tiltFrame) {
+        tiltFrame = window.requestAnimationFrame(renderTilt);
+      }
+    });
+
+    card.addEventListener("pointerleave", () => {
+      tiltX = 0;
+      tiltY = 0;
+      tiltBounds = null;
+
+      if (!tiltFrame) {
+        tiltFrame = window.requestAnimationFrame(renderTilt);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      tiltBounds = null;
+    });
+  });
 }
