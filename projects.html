@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..600&family=Fragment+Mono&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=84">
+<link rel="stylesheet" href="styles.css?v=89">
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -86,39 +86,30 @@
         <p class="lbl label" data-reveal>Partners</p>
         <h2 class="h2" data-split>The teams we build with.</h2>
       </div>
-<!-- PARTNER BOARD: shared by home and projects.
-     Teams and groups are from Crucible's Website Data doc. Links were checked on 2026-10-23: MacroChef, Enactus UNSW and
-     the UNSW AI Society are confirmed. After8 (after8.app) is a likely match that Crucible still needs to confirm.
-     No site was found for Tapback, Hailstrum Robotics (its .com is parked), Casecrest, Passionfruitfy, Hack for
-     Humanity or UTS TechSoc. Teams without a site open a small pop-up instead (board.js), with the blurb from their hidden .pb-more. The blurbs
-     only use facts from the Website Data doc. To add a site, turn its <button class="pb-card"> into an <a> like the
-     others and drop its .pb-more. -->
+<!-- Partner board: company links and logos, with details for teams without a public site. -->
       <div class="pboard" data-board>
         <div class="pb-hub">
           <svg class="pb-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
           <span class="lbl">Crucible Ventures</span>
+          <span class="lbl">Portfolio</span>
         </div>
         <ul class="pb-grps" aria-hidden="true">
           <li class="pb-grp lbl" data-g="portfolio">Portfolio</li>
           <li class="pb-grp lbl" data-g="startups">Early-stage startups</li>
           <li class="pb-grp lbl" data-g="incubator">Incubator teams</li>
           <li class="pb-grp lbl" data-g="hack">Hackathon</li>
-          <li class="pb-grp lbl" data-g="soc">Societies</li>
         </ul>
         <ul class="pb-nodes">
-          <li class="pb-node pb-major" data-g="portfolio" data-n="after8"><a class="pb-card" href="https://after8.app" target="_blank" rel="noopener"><span class="pb-tag lbl">Portfolio</span><span class="pb-name">After8</span><span class="pb-desc">Same-night hotel deals</span><span class="pb-url">after8.app<i aria-hidden="true">↗</i></span></a></li>
-          <li class="pb-node pb-major" data-g="portfolio" data-n="tapback"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Portfolio</span><span class="pb-name">Tapback</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>One of our two main portfolio companies, alongside After8. A full write-up on what they're building and how we work with them is coming soon.</p><dl><div><dt>Group</dt><dd>Portfolio company</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
-          <li class="pb-node" data-g="startups" data-n="hailstrum"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Early-stage startup</span><span class="pb-name">Hailstrum Robotics</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>An early-stage robotics team. We add the engineering, testing and commercial help that a young team doesn't have yet.</p><dl><div><dt>Group</dt><dd>Early-stage startup</dd></div><div><dt>Field</dt><dd>Robotics</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
-          <li class="pb-node" data-g="startups" data-n="casecrest"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Early-stage startup</span><span class="pb-name">Casecrest</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>An early-stage startup we work with on engineering, testing the idea with customers, and getting it to market.</p><dl><div><dt>Group</dt><dd>Early-stage startup</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
-          <li class="pb-node" data-g="incubator" data-n="macrochef"><a class="pb-card" href="https://www.macrochef.com.au" target="_blank" rel="noopener"><span class="pb-tag lbl">Incubator team</span><span class="pb-name">MacroChef</span><span class="pb-desc">Recipes that hit your macros</span><span class="pb-url">macrochef.com.au<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node pb-major" data-g="portfolio" data-n="after8"><a class="pb-card pb-brand-card" href="https://www.instagram.com/after8.sydney/" target="_blank" rel="noopener"><span class="pb-name">After8</span><img class="pb-logo" src="assets/img/partners/after8.jpg" alt="" width="64" height="64"><span class="pb-url">@after8.sydney<i aria-hidden="true">&#8599;</i></span></a></li>
+          <li class="pb-node pb-major" data-g="portfolio" data-n="tampkit"><a class="pb-card pb-brand-card" href="https://tampkit.app/" target="_blank" rel="noopener"><span class="pb-name">Tampkit</span><img class="pb-logo" src="assets/img/partners/tampkit.png" alt="" width="64" height="64"><span class="pb-url">tampkit.app<i aria-hidden="true">&#8599;</i></span></a></li>
+          <li class="pb-node" data-g="startups" data-n="hailstrum"><a class="pb-card pb-brand-card" href="https://www.instagram.com/hailstrum_robotics/" target="_blank" rel="noopener"><span class="pb-name">Hailstrum Robotics</span><img class="pb-logo" src="assets/img/partners/hailstrum.jpg" alt="" width="64" height="64"><span class="pb-url">@hailstrum_robotics<i aria-hidden="true">&#8599;</i></span></a></li>
+          <li class="pb-node" data-g="startups" data-n="casecrest"><a class="pb-card pb-brand-card" href="https://www.instagram.com/casecrest/" target="_blank" rel="noopener"><span class="pb-name">CaseCrest</span><img class="pb-logo" src="assets/img/partners/casecrest.jpg" alt="" width="64" height="64"><span class="pb-url">@casecrest<i aria-hidden="true">&#8599;</i></span></a></li>
+          <li class="pb-node" data-g="incubator" data-n="macrochef"><a class="pb-card pb-brand-card" href="https://www.macrochef.com.au/" target="_blank" rel="noopener"><span class="pb-name">MacroChef</span><img class="pb-logo" src="assets/img/partners/macrochef.png" alt="" width="64" height="64"><span class="pb-url">macrochef.com.au<i aria-hidden="true">&#8599;</i></span></a></li>
           <li class="pb-node" data-g="incubator" data-n="passionfruitfy"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Incubator team</span><span class="pb-name">Passionfruitfy</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>A team from one of our three incubators. We helped them build their first working version and get their pitch ready.</p><dl><div><dt>Group</dt><dd>Incubator team</dd></div><div><dt>With us</dt><dd>First version, pitch</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
-          <li class="pb-node" data-g="hack" data-n="h4h"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Hackathon</span><span class="pb-name">Hack for Humanity</span><span class="pb-desc">We judged it, and now work with the winners</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>A student hackathon run by UTS TechSoc, NCS UNSW and others in September 2026. We were invited to judge, and now we're connecting the winning team with investors.</p><dl><div><dt>Group</dt><dd>Hackathon</dd></div><div><dt>With us</dt><dd>Judging, investor introductions</dd></div><div><dt>Website</dt><dd>Not public</dd></div></dl></div></li>
-          <li class="pb-node" data-g="soc" data-n="enactus"><a class="pb-card" href="https://enactusunsw.org" target="_blank" rel="noopener"><span class="pb-tag lbl">Society</span><span class="pb-name">Enactus UNSW</span><span class="pb-desc">Social impact projects</span><span class="pb-url">enactusunsw.org<i aria-hidden="true">↗</i></span></a></li>
-          <li class="pb-node" data-g="soc" data-n="aisoc"><a class="pb-card" href="https://unswaisoc.com" target="_blank" rel="noopener"><span class="pb-tag lbl">Society</span><span class="pb-name">UNSW AI Society</span><span class="pb-url">unswaisoc.com<i aria-hidden="true">↗</i></span></a></li>
-          <li class="pb-node" data-g="soc" data-n="techsoc"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Society</span><span class="pb-name">UTS TechSoc</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>The tech society at UTS, and one of the groups behind Hack for Humanity. We run pitching workshops with student societies like this one.</p><dl><div><dt>Group</dt><dd>Society</dd></div><div><dt>With us</dt><dd>Workshops, Hack for Humanity</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="hack" data-n="h4h"><a class="pb-card pb-brand-card" href="https://luma.com/4xrd7ja0" target="_blank" rel="noopener"><span class="pb-name">Hack for Humanity</span><img class="pb-logo pb-logo-event" src="assets/img/partners/hack-for-humanity.png" alt="" width="96" height="96"><span class="pb-url">Event page<i aria-hidden="true">&#8599;</i></span></a></li>
         </ul>
       </div>
-      <p class="pb-note lbl" data-reveal>Startups, incubator teams and societies we've worked with. Teams marked ↗ link to their own site.</p>
+      <p class="pb-note lbl" data-reveal>Portfolio companies, startups, incubator teams and hackathons we work with. Teams marked ↗ link to their own site.</p>
     </div>
   </section>
 
@@ -212,7 +203,7 @@
 <script src="intro.js?v=3" defer></script>
 <script src="main.js?v=31" defer></script>
 <script src="seams.js?v=3" defer></script>
-<script src="board.js?v=11" defer></script>
+<script src="board.js?v=16" defer></script>
 <script src="ascii.js?v=23" defer></script>
 <script src="ornaments.js?v=10" defer></script>
 <script src="linework.js?v=3" defer></script>

@@ -1059,6 +1059,12 @@ html[data-cursor="frame"] .cur-lbl { color: var(--fc); font-weight: 500; }
 .pboard.pb-live .pb-grp { transform: translate(-50%, calc(-100% - 6px)); background: var(--paper); padding: 1px 4px; font: 9.5px var(--f-mono); letter-spacing: .06em; color: var(--ink-2); }
 .pb-tall.pb-live .pb-grp { transform: translate(10px, -50%); }
 
+/* Company names and logos sit directly on the board. */
+.pboard .pb-node .pb-brand-card { align-items: center; text-align: center; padding: 10px 12px; gap: 8px; background: transparent; border: 0; border-radius: 0; }
+.pboard .pb-node .pb-brand-card::before, .pboard .pb-node .pb-brand-card::after { display: none; }
+.pb-logo { display: block; width: 64px; height: 64px; object-fit: contain; margin: 5px 0; }
+.pb-logo-event { width: 96px; height: 96px; }
+
 /* Teams without a site: the card is a button that opens a small pop-up beside it (board.js), 2026-10-23 */
 button.pb-card { font: inherit; text-align: left; width: 100%; cursor: pointer; }
 .pb-cue i { font-style: normal; display: inline-block; transition: transform .35s var(--ease); }

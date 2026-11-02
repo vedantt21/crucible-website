@@ -1,6 +1,6 @@
 /* Crucible Ventures — partner board, Oct 2026.
    The teams Crucible works with, drawn as a board: Crucible in the middle, a junction for each kind of partner
-   (portfolio, early-stage startups, incubator teams, hackathon, societies) and a card for each team, joined by wires.
+   (portfolio, early-stage startups, incubator teams, hackathon) and a card for each team, joined by wires.
    The cards are plain links in the HTML (a simple list when this script doesn't run); this script places them and
    draws the wires in the Circuit look (picked 2026-10-26): micrographic, straight hairlines, rulers and codes, on a
    Warm graphite section. Wide boards use a hand-placed layout. Narrow ones (phones) get one tall layout with a bus
@@ -21,10 +21,10 @@
 
   // The wide layout, in percent of the board: the hub, each group junction (g) and each team card (n).
   // h is the board's height as a share of its width.
-  const WIDE = { h: .52, hub: [50, 50],
-    g: { portfolio: [35, 26], startups: [63, 21], incubator: [68, 74], hack: [47, 84], soc: [26, 62] },
-    n: { after8: [13, 12], tapback: [37, 8], hailstrum: [62, 7], casecrest: [86, 17], macrochef: [88, 52],
-      passionfruitfy: [85, 87], h4h: [61, 93], enactus: [10, 40], aisoc: [10, 80], techsoc: [33, 93] } };
+  const WIDE = { h: .56, hub: [50, 50],
+    g: { portfolio: [32, 30], startups: [70, 32], incubator: [64, 72], hack: [30, 55] },
+    n: { after8: [14, 18], tampkit: [42, 12], hailstrum: [76, 14], casecrest: [88, 47], macrochef: [78, 82],
+      passionfruitfy: [46, 90], h4h: [14, 72] } };
   const NARROW = 700;     // below this board width, the tall layout
 
   /* ---------- Geometry ---------- */
@@ -107,7 +107,7 @@
         });
         H = y;
       } else {
-        H = Math.max(600, W * WIDE.h);
+        H = Math.max(660, W * WIDE.h);
         const at = (p) => ({ x: p[0] / 100 * W, y: p[1] / 100 * H });
         items.hub = { ...hubS, ...at(WIDE.hub), fixed: true };
         groups.forEach((g) => { items['g:' + g.dataset.g] = { ...size(g), ...at(WIDE.g[g.dataset.g]), fixed: true, pt: true }; });
