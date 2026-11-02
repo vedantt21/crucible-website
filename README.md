@@ -4,6 +4,8 @@ This is our editable copy of the Crucible Ventures site previously hosted at
 [crucible-ventures-draft.netlify.app](https://crucible-ventures-draft.netlify.app/).
 The HTML, CSS, JavaScript and images are in this repository. The `consultancy-site`
 branch is for review; the existing Vercel Production deployment still uses `main`.
+The [latest review preview](https://crucible-website-git-consultancy-site-vedants-projects-c2d219e2.vercel.app/)
+requires access to the Vercel project.
 
 ## Run locally
 
