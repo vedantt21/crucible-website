@@ -41,8 +41,9 @@ git push -u origin your-change-name
 ```
 
 Open a pull request into `consultancy-site`. Pushing a branch gives it a Vercel
-preview; it does not replace Production. Once this site is approved and moved
-to `main`, future changes to `main` will update the Vercel Production site.
+preview, currently viewable by people with access to the Vercel project; it does
+not replace Production. Once this site is approved and merged into `main`, future
+changes to `main` will update the Vercel Production site.
 Netlify access is not needed to edit or deploy this copy.
 
 ## Before replacing Production
