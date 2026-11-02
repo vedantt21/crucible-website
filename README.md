@@ -1,18 +1,18 @@
 # Crucible Ventures website
 
-This is our editable copy of the Crucible Ventures site previously hosted at
-[crucible-ventures-draft.netlify.app](https://crucible-ventures-draft.netlify.app/).
+This is our editable copy of the Crucible Ventures site captured from
+[crucible-ventures-draft.netlify.app](https://crucible-ventures-draft.netlify.app/)
+on 2 November 2026.
 The HTML, CSS, JavaScript and images are in this repository. The `consultancy-site`
-branch is for review; the existing Vercel Production deployment still uses `main`.
-The [latest review preview](https://crucible-website-git-consultancy-site-vedants-projects-c2d219e2.vercel.app/)
-requires access to the Vercel project.
+branch brought this copy into the repository. Once merged, `main` is the source
+for the Vercel Production deployment. Feature branches get Vercel previews.
 
 ## Run locally
 
 You need Python 3:
 
 ```bash
-git clone --branch consultancy-site https://github.com/vedantt21/crucible-website.git
+git clone https://github.com/vedantt21/crucible-website.git
 cd crucible-website
 python3 tools/serve.py
 ```
@@ -42,13 +42,12 @@ git commit -m "Describe your change"
 git push -u origin your-change-name
 ```
 
-Open a pull request into `consultancy-site`. Pushing a branch gives it a Vercel
-preview, currently viewable by people with access to the Vercel project; it does
-not replace Production. Once this site is approved and merged into `main`, future
-changes to `main` will update the Vercel Production site.
+Open a pull request into `main`. Pushing a feature branch gives it a Vercel
+preview, currently viewable by people with access to the Vercel project. Merging
+into `main` automatically deploys the update to Vercel Production.
 Netlify access is not needed to edit or deploy this copy.
 
-## Before replacing Production
+## Contact form
 
 The contact form currently shows a success message but has no delivery backend.
 Connect it to a form service before relying on submissions.
