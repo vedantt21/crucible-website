@@ -103,31 +103,69 @@
     if (hasGSAP) setTimeout(() => ScrollTrigger.refresh(), 600);
   }));
 
-  /* ---------- Contact form (draft: no backend yet) ---------- */
+  /* ---------- Contact form: email delivery through FormSubmit ---------- */
   const form = $('.contact-form');
-  const t0 = Date.now();
+  let sending = false;
   const who = new URLSearchParams(location.search).get('who');   // set by the "Who we work with" links
   if (form && who && $(`#f-who option[value="${CSS.escape(who)}"]`)) $('#f-who').value = who;
-  if (form) form.addEventListener('submit', (e) => {
+  if (form) form.noValidate = true; // Keep native validation available if JavaScript does not load.
+  if (form) form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (sending || form.elements.namedItem('_honey').value) return;
     const msg = $('.form-msg', form);
-    // Bot filter: honeypot filled, or sent faster than a person could type.
-    const isBot = form.website.value !== '' || Date.now() - t0 < 3000;
     const fields = $$('input[required], select[required], textarea[required]', form);
     let firstBad = null;
     fields.forEach((f) => {
+      if (f.tagName !== 'SELECT') f.value = f.value.trim();
       const bad = !f.checkValidity();
       f.setAttribute('aria-invalid', bad);
       if (bad && !firstBad) firstBad = f;
     });
-    if (firstBad && !isBot) {
+    if (firstBad) {
       msg.textContent = firstBad.type === 'email' && firstBad.value ? 'That email address looks wrong.' : 'Please fill in every field.';
       firstBad.focus();
       return;
     }
-    // TODO before launch: POST to a form service (Formspree / Web3Forms) that emails admin@crucibleventures.vc.
-    form.innerHTML = '<div class="form-done"><p class="h3">Thanks, message received.</p><p>We\'ll reply within a few days. If it\'s urgent, email admin@crucibleventures.vc.</p></div>';
-    if (hasGSAP) ScrollTrigger.refresh();
+
+    const button = $('button[type="submit"]', form);
+    const label = $('span', button);
+    const originalLabel = label.textContent;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    const data = new FormData(form);
+    const audience = form.elements.namedItem('who');
+    data.set('who', audience.selectedOptions[0].textContent);
+    data.set('_replyto', form.elements.namedItem('email').value);
+    data.set('_url', location.href.split('#')[0]);
+    const endpoint = new URL(form.action);
+    endpoint.pathname = '/ajax' + endpoint.pathname;
+    sending = true;
+    button.disabled = true;
+    label.textContent = 'Sending…';
+    form.setAttribute('aria-busy', 'true');
+    msg.textContent = 'Sending your message…';
+
+    try {
+      const response = await fetch(endpoint.href, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data)),
+        signal: controller.signal,
+      });
+      const result = await response.json();
+      if (!response.ok || (result.success !== true && result.success !== 'true')) throw new Error('Submission was not accepted.');
+      form.innerHTML = '<div class="form-done" role="status" tabindex="-1"><p class="h3">Thanks, your message has been submitted.</p><p>We\'ll reply within a few days. If it\'s urgent, email <a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a>.</p></div>';
+      $('.form-done', form).focus({ preventScroll: true });
+      if (hasGSAP) ScrollTrigger.refresh();
+    } catch {
+      msg.textContent = 'Your message could not be sent. Please try again or email admin@crucibleventures.vc directly.';
+    } finally {
+      clearTimeout(timeout);
+      sending = false;
+      button.disabled = false;
+      label.textContent = originalLabel;
+      form.removeAttribute('aria-busy');
+    }
   });
 
   /* ---------- Custom cursor: the frame (styles.css) ---------- */

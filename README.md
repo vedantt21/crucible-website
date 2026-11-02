@@ -49,5 +49,19 @@ Netlify access is not needed to edit or deploy this copy.
 
 ## Contact form
 
-The contact form currently shows a success message but has no delivery backend.
-Connect it to a form service before relying on submissions.
+The homepage and Contact page send enquiries to `admin@crucibleventures.vc`
+through [FormSubmit](https://formsubmit.co/). There are no API keys or mail
+passwords in the website. The visitor's email becomes the reply-to address.
+
+The mailbox owner must click the FormSubmit activation link sent after the
+first submission. Check the inbox and spam folder. FormSubmit queues submissions
+until activation; after activation, submit another enquiry and confirm receipt
+in the inbox before relying on the form. Keep the activation link private.
+
+With JavaScript, submissions stay on the page and only show confirmation after
+FormSubmit accepts the request. Failed requests preserve the message for retry.
+Without JavaScript, the browser posts directly to FormSubmit and uses its
+confirmation page and CAPTCHA. The hidden `_honey` field filters obvious bots.
+
+Code changes must be deployed to Vercel before the live `.vc` forms use this
+connection. Local previews also submit real enquiries when sending succeeds.

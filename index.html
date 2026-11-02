@@ -332,7 +332,9 @@
         </ul>
       </div>
 
-      <form class="contact-form" novalidate data-reveal>
+      <form class="contact-form" action="https://formsubmit.co/admin@crucibleventures.vc" method="POST" data-reveal>
+        <input type="hidden" name="_subject" value="New website enquiry | Crucible Ventures">
+        <input type="hidden" name="_template" value="table">
         <div class="field">
           <label for="f-name" class="lbl">Name</label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -358,7 +360,7 @@
           <textarea id="f-msg" name="message" rows="4" required></textarea>
         </div>
         <!-- Bot trap: hidden from people, filled in by bots -->
-        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-blue" type="submit"><span>Send message</span><i aria-hidden="true">→</i></button>
         <p class="form-msg lbl" role="status" aria-live="polite"></p>
       </form>
@@ -392,7 +394,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="intro.js?v=4" defer></script>
-<script src="main.js?v=31" defer></script>
+<script src="main.js?v=32" defer></script>
 <script src="seams.js?v=3" defer></script>
 <script src="board.js?v=16" defer></script>
 <script src="ascii.js?v=23" defer></script>
