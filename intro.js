@@ -105,7 +105,7 @@ window.cvIntro = (() => {
           if (!n.textContent.trim()) continue;
           const el = n.parentElement, cs = getComputedStyle(el);
           if (cs.visibility === 'hidden' || el.closest('.btn-ink, .menu-btn, .sr, [aria-hidden="true"]')) continue;
-          o.fillStyle = '#f00';
+          o.fillStyle = el.closest('.hero-title .hl') ? '#00f' : '#f00';
           if (el.classList.contains('wi')) {
             const r = el.parentElement.getBoundingClientRect();
             if (!vis(r)) continue;
@@ -121,8 +121,6 @@ window.cvIntro = (() => {
         root.querySelectorAll('.btn-ink').forEach((b) => { const r = b.getBoundingClientRect(); if (vis(r)) { o.fillStyle = '#f00'; o.fillRect(r.left, r.top, r.width, r.height); } });
         root.querySelectorAll('.btn:not(.btn-ink)').forEach((b) => { const r = b.getBoundingClientRect(); if (vis(r)) { o.strokeStyle = '#f00'; o.lineWidth = ch * .5; o.strokeRect(r.left, r.top, r.width, r.height); } });
       }
-      const hl = $('.hero .hl');
-      if (hl) { const r = hl.getBoundingClientRect(); o.fillStyle = '#00f'; o.fillRect(r.left, r.bottom - r.height * .1, r.width, Math.max(ch * .6, r.height * .07)); }
       const meta = $('.hero-meta');
       if (meta) { const r = meta.getBoundingClientRect(); o.fillStyle = '#f00'; o.globalAlpha = .3; o.fillRect(r.left, r.bottom - ch * .2, r.width, ch * .4); o.globalAlpha = 1; }
       const bm = $('.nav .brand-mark');

@@ -201,6 +201,8 @@ ul, ol { list-style: none; }
   content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .075em;
   background: var(--blue); transform-origin: left; transform: scaleX(var(--hl, 1));
 }
+.hero-title .hl { color: var(--blue); }
+.hero-title .hl::after { content: none; }
 .hero-foot { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px var(--gutter); align-items: end; margin-top: clamp(40px, 8vh, 96px); }
 .hero-intro { grid-column: 1 / span 6; }
 .lede { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45; max-width: 36ch; }
