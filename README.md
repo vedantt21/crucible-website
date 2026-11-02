@@ -1,44 +1,53 @@
-# Crucible Ventures Sample Website
+# Crucible Ventures website
 
-This is a small static sample repository for a simple "Crucible Ventures" website.
-
-## Files
-
-- `index.html` - homepage with the scroll intro
-- `about.html` - about page
-- `what-we-do.html` - focus areas page
-- `contact.html` - contact page
-- `styles.css` - page styling
-- `script.js` - intro scroll animation and auto-hiding header behavior
+This is our editable copy of the Crucible Ventures site captured from
+[crucible-ventures-draft.netlify.app](https://crucible-ventures-draft.netlify.app/)
+on 2 November 2026.
+The HTML, CSS, JavaScript and images are in this repository. The `consultancy-site`
+branch brought this copy into the repository. Once merged, `main` is the source
+for the Vercel Production deployment. Feature branches get Vercel previews.
 
 ## Run locally
 
-Because this site is fully static, you can open `index.html` directly in a browser.
-
-If you want to serve it locally instead:
+You need Python 3:
 
 ```bash
-python3 -m http.server 8000
+git clone https://github.com/vedantt21/crucible-website.git
+cd crucible-website
+python3 tools/serve.py
 ```
 
-Then visit `http://localhost:8000`.
+Open [http://localhost:8000/](http://localhost:8000/). The local server supports
+the site's page URLs, such as `/what-we-do`, and disables browser caching.
+Fonts and animation libraries load from public CDNs, so use an internet
+connection for the complete design.
 
-## Test
+## Edit the site
 
-Run the static lint checks with:
+- Edit `index.html`, `what-we-do.html`, `projects.html`, `community.html`,
+  `team.html` or `contact.html` for page content.
+- Edit `styles.css` for design and the root `.js` files for interactions.
+- Add or replace images in `assets/img/`, then update their paths in the HTML.
+
+There is no build step. Save a file and refresh the local page. When changing
+CSS or JavaScript, update its `?v=` number in the HTML pages that load it so
+visitors get the new version after deployment.
+
+To share a change for review:
 
 ```bash
-npm run lint
+git switch -c your-change-name
+git add -A
+git commit -m "Describe your change"
+git push -u origin your-change-name
 ```
 
-Run the static site smoke tests with:
+Open a pull request into `main`. Pushing a feature branch gives it a Vercel
+preview, currently viewable by people with access to the Vercel project. Merging
+into `main` automatically deploys the update to Vercel Production.
+Netlify access is not needed to edit or deploy this copy.
 
-```bash
-npm test
-```
+## Contact form
 
-The linter checks text hygiene, basic HTML accessibility conventions, JSON
-syntax, CSS brace balance, and JavaScript syntax. The smoke test checks that
-pages include their shared assets, local links and images resolve, key scroll
-tuning variables are present, and referenced JavaScript has valid syntax. Both
-commands run in GitHub Actions via `.github/workflows/ci.yml`.
+The contact form currently shows a success message but has no delivery backend.
+Connect it to a form service before relying on submissions.

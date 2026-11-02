@@ -1,265 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What We Do | Crucible Ventures</title>
-    <meta
-      name="description"
-      content="See where Crucible Ventures spends time across software, infrastructure, and applied AI."
-    />
-    <link rel="stylesheet" href="styles.css?v=investor-motion-20260906" />
-  </head>
-  <body class="header-visible inner-page">
-    <header class="site-header">
-      <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
-          <span class="brand-mark" aria-hidden="true">CV</span>
-          <span class="brand-text">Crucible Ventures</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <a aria-current="page" href="what-we-do.html">What we do</a>
-          <a href="contact.html">Contact us</a>
-        </nav>
-        <div class="header-actions">
-          <a class="nav-cta" href="contact.html">Start a conversation</a>
-          <button
-            class="version-toggle"
-            type="button"
-            data-version-toggle
-            data-active-version="investor"
-            aria-pressed="false"
-            aria-label="Investor version selected. Switch to founder version"
-          >
-            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-            <span class="version-toggle-switch" aria-hidden="true">
-              <span class="version-toggle-thumb"></span>
-            </span>
-            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-            <span class="sr-only" data-version-status>Investor version selected</span>
-          </button>
-        </div>
-        <button
-          class="menu-toggle"
-          type="button"
-          data-menu-toggle
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          aria-label="Open menu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
+<!doctype html>
+<!-- Edit this page directly; see the repository README. -->
+<html lang="en-AU" data-cursor="frame" data-page="what-we-do">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What we do · Crucible Ventures</title>
+<meta name="description" content="How Crucible takes a deep tech idea to a company in three steps: test the idea, build the prototype, find the first customers.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<script>
+  // Set state before first paint: motion and the intro.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('anim');
+      var seen = false;
+      try { seen = sessionStorage.getItem('cv-intro') === '1'; } catch (e) {}
+      // A refresh always plays it again; going back to Home from another page does not.
+      try { var nav = performance.getEntriesByType('navigation')[0]; if (nav && nav.type === 'reload') seen = false; } catch (e) {}
+      if (!seen && d.dataset.page === 'home') d.classList.add('intro-on');   // the opening animation lives on the home page only
+    }
+    // If the animation libraries fail to load, show everything.
+    setTimeout(function () { if (!window.gsap) d.classList.remove('anim', 'intro-on'); }, 4000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..600&family=Fragment+Mono&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=84">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-in wrap">
+    <a aria-label='Crucible Ventures, home' class='brand' href='/'>
+      <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+      <span>Crucible Ventures</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a aria-current='page' href='/what-we-do'>What we do</a>
+      <a href='/projects'>Projects</a>
+      <a href='/community'>Community</a>
+      <a href='/team'>Team</a>
+    </nav>
+    <a class='btn btn-ink nav-cta' href='/contact'><span>Work with us</span><i aria-hidden="true">→</i></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="wrap menu-links" aria-label="Mobile">
+    <a href='/'>Home</a>
+    <a aria-current='page' href='/what-we-do'>What we do</a>
+    <a href='/projects'>Projects</a>
+    <a href='/community'>Community</a>
+    <a href='/team'>Team</a>
+  </nav>
+  <div class="wrap menu-foot">
+    <a class='btn btn-ink menu-cta' href='/contact'>Work with us <i aria-hidden="true">→</i></a>
+    <p class="lbl"><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a></p>
+    <p class="lbl menu-social"><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram ↗</a><span>Sydney, Australia</span></p>
+  </div>
+</div>
+
+<main id="main">
+  <!-- PAGE HEAD -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="lbl label" data-hero><span class="lbl-n">01</span>Services</p>
+      <h1 class="page-title" data-hero-title>What we do</h1>
+      <p class="lede page-lede" data-hero>We help deep tech ideas become companies. Engineers build the technology, and we test it with the people who would pay for it.</p>
+    </div>
+  </section>
+
+
+  <!-- IMAGE BAND: abstract stock, duotoned (sources in assets/img/stock/CREDITS.md) -->
+  <figure class="band" aria-hidden="true"><img src="assets/img/stock/grinding-sparks.jpg" alt="" loading="lazy" style="object-position:50% 55%"><div class="lw" data-lw="sparks" aria-hidden="true"></div><figcaption class="lbl">Metal, shaped</figcaption></figure>
+
+  <!-- PROCESS: the three steps as one line -->
+  <section class="process">
+    <div class="wrap">
+      <ol class="flow">
+        <li class="flow-step" data-reveal>
+          <span class="flow-node" aria-hidden="true"></span>
+          <p class="lbl flow-n">Step 01</p>
+          <h2 class="h3">Test the idea</h2>
+          <p class="flow-text">We find out who has the problem, how often it happens and what it costs them. If there's no company worth building, we find that out early, while changing direction is still cheap.</p>
+          <ul class="flow-list"><li>Customer interviews</li><li>Market research</li><li>Business model</li><li>Technical feasibility</li><li>Team formation</li></ul>
+        </li>
+        <li class="flow-step" data-reveal>
+          <span class="flow-node" aria-hidden="true"></span>
+          <p class="lbl flow-n">Step 02</p>
+          <h2 class="h3">Build the prototype</h2>
+          <p class="flow-text">Our engineers find the riskiest technical question and build to answer it first. Then the prototype leaves the workbench and goes into a real site, like a mine, a farm or a factory.</p>
+          <ul class="flow-list"><li>Robotics and autonomy</li><li>Electronics and embedded systems</li><li>Mechanical design and CAD</li><li>Software and AI</li><li>Pilot testing</li></ul>
+        </li>
+        <li class="flow-step" data-reveal>
+          <span class="flow-node" aria-hidden="true"></span>
+          <p class="lbl flow-n">Step 03</p>
+          <h2 class="h3">Find the first customers</h2>
+          <p class="flow-text">We work out who buys, who signs off, and what it takes to turn a conversation into a paid pilot. Then we get the team ready to talk to investors.</p>
+          <ul class="flow-list"><li>Pilot design</li><li>Founder-led sales</li><li>Pricing</li><li>Partnerships</li><li>Investor readiness</li></ul>
+        </li>
+      </ol>
+      <div class="flow-extra" data-reveal>
+        <p class="lbl label">Going further</p>
+        <p class="body-l">For some ventures we join the founding team itself, and fill whichever gap is biggest: engineering, sales, hiring or operations.</p>
       </div>
-      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
-        <div class="site-width mobile-menu-inner">
-          <nav class="mobile-nav" aria-label="Mobile primary">
-            <a href="about.html">About</a>
-            <a aria-current="page" href="what-we-do.html">What we do</a>
-            <a href="contact.html">Contact us</a>
-          </nav>
-          <div class="mobile-menu-actions">
-            <a class="button button-primary" href="contact.html">Start a conversation</a>
-            <button
-              class="version-toggle"
-              type="button"
-              data-version-toggle
-              data-active-version="investor"
-              aria-pressed="false"
-              aria-label="Investor version selected. Switch to founder version"
-            >
-              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-              <span class="version-toggle-switch" aria-hidden="true">
-                <span class="version-toggle-thumb"></span>
-              </span>
-              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-              <span class="sr-only" data-version-status>Investor version selected</span>
-            </button>
-          </div>
-          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
-        </div>
+    </div>
+  </section>
+
+  <!-- SERVICES INDEX -->
+  <section class="svc">
+    <div class="wrap svc-grid">
+      <div class="svc-head">
+        <p class="lbl label" data-reveal>Everything we help with</p>
+        <h2 class="h2" data-split>Seven ways in.</h2>
       </div>
-    </header>
+      <ol class="svc-list"><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">01</span><span class="svc-name">Commercial validation</span><span class="lbl svc-tag">Step 01</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>We look for evidence that a real problem exists and that someone cares enough to solve it. We talk to users, buyers and decision makers about how they deal with the problem today and what it costs them. Then we push past “that’s interesting” towards stronger signs, like a trial, or someone committing money or time.</p></div></div></li><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">02</span><span class="svc-name">Engineering</span><span class="lbl svc-tag">Step 02</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>Our engineers turn ideas into prototypes and working systems. We find the technical question with the most uncertainty and build to answer it first. The first prototype doesn’t need to look good. It needs to answer something important.</p></div></div></li><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">03</span><span class="svc-name">Prototype to pilot</span><span class="lbl svc-tag">Step 02</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>A system that works on the workbench can behave very differently in a mine, a warehouse or a factory. We set up pilots around measurable outcomes, so the startup and the customer both know what success looks like.</p></div></div></li><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">04</span><span class="svc-name">Technical commercialisation</span><span class="lbl svc-tag">Step 03</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>Deep tech ventures often fail in the gap between a promising technology and a viable company. We help engineers turn what they can build into commercial value, and help customers and investors see what the technology can realistically deliver.</p></div></div></li><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">05</span><span class="svc-name">Go-to-market</span><span class="lbl svc-tag">Step 03</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>We find a repeatable path from the product to the customer. That means working out who the first customers should be, who makes the buying decision, and how a first conversation becomes a pilot, a contract or a long-term customer.</p></div></div></li><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">06</span><span class="svc-name">Venture building</span><span class="lbl svc-tag">Going further</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>We break big ideas into specific assumptions and test them before serious time or money goes in. The aim isn’t to make an idea look investable. It’s to find out whether there’s a company worth building, and if there is, help build it.</p></div></div></li><li data-reveal><button class="svc-row" type="button" aria-expanded="false"><span class="lbl svc-n">07</span><span class="svc-name">Venture partnering</span><span class="lbl svc-tag">Going further</span><i class="svc-plus" aria-hidden="true">+</i></button><div class="svc-more"><div><p>For selected ventures we work alongside the founding team instead of advising from outside. That can cover engineering, customers, partnerships, hiring and operations, wherever the company’s biggest gap is.</p></div></div></li></ol>
+    </div>
+  </section>
 
-    <main class="page-main">
-      <section class="page-hero page-hero-split">
-        <div class="site-width page-hero-layout">
-          <div>
-            <p class="section-label">What we do</p>
-            <h1 class="page-title">
-              <span data-version-variant="investor">Find investable companies.</span>
-              <span data-version-variant="entrepreneur">Backing grounded startups.</span>
-            </h1>
-          </div>
-          <div class="page-hero-aside">
-            <p class="page-lead">
-              <span data-version-variant="investor">
-                We surface growing companies across focused categories so you
-                can invest with clearer conviction.
-              </span>
-              <span data-version-variant="entrepreneur">
-                We partner early with founders building durable companies across
-                a focused set of categories.
-              </span>
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="contact.html">Start a conversation</a>
-              <a class="button button-secondary" href="#focus">See focus areas</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section split-section">
-        <div class="site-width editorial-feature">
-          <div class="editorial-feature-image">
-            <img
-              src="image1.jpg"
-              alt="Placeholder image for Crucible Ventures focus"
-              loading="lazy"
-            />
-          </div>
-          <div class="editorial-feature-copy">
-            <p class="section-label">Operating model</p>
-            <h3>First, we pressure-test whether the wedge deserves a company.</h3>
-            <p class="section-copy">
-              Great early companies are rarely tidy at the start. We help
-              translate rough market signal into a product path, a funding story,
-              and a focused operating cadence.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section content-section-ink" id="focus">
-        <div class="site-width">
-          <p class="section-label">Focus</p>
-          <h3 class="section-heading">
-            <span data-version-variant="investor">Where we look.</span>
-            <span data-version-variant="entrepreneur">Where we spend time.</span>
-          </h3>
-        </div>
-        <div class="site-width focus-grid">
-          <article class="focus-card">
-            <p class="focus-card-kicker">Vertical software</p>
-            <h4>Workflow depth</h4>
-            <p>
-              <span data-version-variant="investor">
-                Companies with recurring workflow demand, clear buyers, and
-                room to compound.
-              </span>
-              <span data-version-variant="entrepreneur">
-                Products that become core workflows for teams in complex
-                industries.
-              </span>
-            </p>
-          </article>
-          <article class="focus-card focus-card-featured">
-            <p class="focus-card-kicker">Infrastructure</p>
-            <h4>Technical leverage</h4>
-            <p>
-              <span data-version-variant="investor">
-                Durable systems with technical leverage and adoption from
-                builders and operators.
-              </span>
-              <span data-version-variant="entrepreneur">
-                Practical systems that reduce friction for builders and
-                operators.
-              </span>
-            </p>
-          </article>
-          <article class="focus-card">
-            <p class="focus-card-kicker">Applied AI</p>
-            <h4>Better outcomes</h4>
-            <p>
-              <span data-version-variant="investor">
-                AI products where automation improves outcomes, not just demos.
-              </span>
-              <span data-version-variant="entrepreneur">
-                Tools where automation makes the product meaningfully better.
-              </span>
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="site-width section-grid">
-          <div class="section-copy-block">
-            <p class="section-label">How it works</p>
-            <h3 class="section-heading">A simple path from signal to structure.</h3>
-            <p class="section-copy">
-              The work changes with the company, but the rhythm stays grounded:
-              ask better questions, build real proof, then prepare the venture
-              for sharper decisions.
-            </p>
-          </div>
-          <div class="process-grid">
-            <article class="process-card">
-              <span class="card-index">01</span>
-              <h4>Market read</h4>
-              <p>Clarify the buyer, urgency, pain, alternatives, and timing.</p>
-            </article>
-            <article class="process-card">
-              <span class="card-index">02</span>
-              <h4>Product proof</h4>
-              <p>Define a first product that can expose real customer demand.</p>
-            </article>
-            <article class="process-card">
-              <span class="card-index">03</span>
-              <h4>Capital shape</h4>
-              <p>Build a financial and investor narrative around the actual wedge.</p>
-            </article>
-            <article class="process-card">
-              <span class="card-index">04</span>
-              <h4>Operating cadence</h4>
-              <p>Set the rhythm, roles, and metrics that keep the team honest.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section final-cta-section">
-        <div class="site-width final-cta">
-          <div>
-            <p class="section-label">Founder or investor</p>
-            <h3>Send the signal you are seeing.</h3>
-            <p>
-              A short note is enough: problem, category, customer pull, and why
-              this should exist now.
-            </p>
-          </div>
-          <div class="final-cta-actions">
-            <a class="button button-primary" href="contact.html">Contact us</a>
-            <a class="button button-secondary" href="about.html">Meet the team</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-width footer-grid">
-        <div>
-          <a class="site-brand footer-brand" href="index.html#top">
-            <span class="brand-mark" aria-hidden="true">CV</span>
-            <span class="brand-text">Crucible Ventures</span>
-          </a>
-          <p>Backing practical founders building durable companies.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="about.html">About</a>
-          <a href="what-we-do.html">What we do</a>
-          <a href="contact.html">Contact us</a>
-          <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
-        </nav>
-        <div class="footer-contact">
-          <p>Sydney and remote</p>
-          <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
-        </div>
+  <!-- WHO WE WORK WITH: the same list as the home page -->
+  <section class="audience tone-graphite">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lbl label" data-reveal>Who we work with</p>
+        <h2 class="h2" data-split>Find yourself on this list.</h2>
       </div>
-    </footer>
+      <ul class="aud-list">
+        <li><a data-reveal href='/contact?who=startup'><span class="aud-name">Early-stage startups</span><span class="aud-text">You have an idea or a product, and need engineering, testing or commercial help to move it forward.</span><i aria-hidden="true">→</i></a></li>
+        <li><a data-reveal href='/contact?who=founder'><span class="aud-name">Technical founders</span><span class="aud-text">You can build the technology. We bring the business side and the team around it.</span><i aria-hidden="true">→</i></a></li>
+        <li><a data-reveal href='/contact?who=industry'><span class="aud-name">Industry partners</span><span class="aud-text">Run a pilot, test new technology or sponsor a project. We're currently working in forestry and construction.</span><i aria-hidden="true">→</i></a></li>
+        <li><a data-reveal href='/contact?who=uni'><span class="aud-name">Universities and societies</span><span class="aud-text">Bring us in for workshops, incubators, competitions and technical projects.</span><i aria-hidden="true">→</i></a></li>
+        <li><a data-reveal href='/contact?who=investor'><span class="aud-name">Investors</span><span class="aud-text">Meet early teams with tested technology and real evidence from customers.</span><i aria-hidden="true">→</i></a></li>
+      </ul>
+    </div>
+  </section>
 
-    <script src="script.js?v=investor-motion-20260906"></script>
-  </body>
+  <!-- NEXT PAGE -->
+  <a class='next' href='/projects'>
+    <span class="wrap next-in"><span class="lbl label">Next</span><span class="next-title">Projects</span><i aria-hidden="true">→</i></span>
+  </a>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a aria-label='Crucible Ventures, home' class='brand brand-light' href='/'>
+        <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+        <span>Crucible Ventures</span>
+      </a>
+      <p class="foot-line">Built, not discovered.</p>
+    </div>
+    <div class="foot-cols">
+      <div><p class="lbl">Site</p><a href='/'>Home</a><a aria-current='page' href='/what-we-do'>What we do</a><a href='/projects'>Projects</a><a href='/community'>Community</a><a href='/team'>Team</a></div>
+      <div><p class="lbl">Elsewhere</p><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram</a></div>
+      <div><p class="lbl">Contact</p><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a><span>Sydney, Australia</span></div>
+      <div class="asc foot-obj" data-asc="logo" data-asc-dark data-asc-tilt="-.2" data-asc-swing=".5" data-asc-speed=".45" data-asc-fit="1.6" aria-hidden="true"></div>
+    </div>
+    <div class="foot-base">
+      <p>We acknowledge the Traditional Custodians of the lands where we live and work, and pay our respects to Elders past and present.</p>
+      <p class="lbl">© 2026 Crucible Ventures</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="intro.js?v=3" defer></script>
+<script src="main.js?v=31" defer></script>
+<script src="seams.js?v=3" defer></script>
+<script src="board.js?v=11" defer></script>
+<script src="ascii.js?v=23" defer></script>
+<script src="ornaments.js?v=10" defer></script>
+<script src="linework.js?v=3" defer></script>
+</body>
 </html>

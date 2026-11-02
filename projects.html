@@ -1,0 +1,220 @@
+<!doctype html>
+<!-- Edit this page directly; see the repository README. -->
+<html lang="en-AU" data-cursor="frame" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Crucible Ventures</title>
+<meta name="description" content="What Crucible is building right now: a levelling device for logging machinery, low-light drone mapping for mining, and an exoskeleton.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<script>
+  // Set state before first paint: motion and the intro.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('anim');
+      var seen = false;
+      try { seen = sessionStorage.getItem('cv-intro') === '1'; } catch (e) {}
+      // A refresh always plays it again; going back to Home from another page does not.
+      try { var nav = performance.getEntriesByType('navigation')[0]; if (nav && nav.type === 'reload') seen = false; } catch (e) {}
+      if (!seen && d.dataset.page === 'home') d.classList.add('intro-on');   // the opening animation lives on the home page only
+    }
+    // If the animation libraries fail to load, show everything.
+    setTimeout(function () { if (!window.gsap) d.classList.remove('anim', 'intro-on'); }, 4000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..600&family=Fragment+Mono&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=84">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-in wrap">
+    <a aria-label='Crucible Ventures, home' class='brand' href='/'>
+      <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+      <span>Crucible Ventures</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href='/what-we-do'>What we do</a>
+      <a aria-current='page' href='/projects'>Projects</a>
+      <a href='/community'>Community</a>
+      <a href='/team'>Team</a>
+    </nav>
+    <a class='btn btn-ink nav-cta' href='/contact'><span>Work with us</span><i aria-hidden="true">→</i></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="wrap menu-links" aria-label="Mobile">
+    <a href='/'>Home</a>
+    <a href='/what-we-do'>What we do</a>
+    <a aria-current='page' href='/projects'>Projects</a>
+    <a href='/community'>Community</a>
+    <a href='/team'>Team</a>
+  </nav>
+  <div class="wrap menu-foot">
+    <a class='btn btn-ink menu-cta' href='/contact'>Work with us <i aria-hidden="true">→</i></a>
+    <p class="lbl"><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a></p>
+    <p class="lbl menu-social"><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram ↗</a><span>Sydney, Australia</span></p>
+  </div>
+</div>
+
+<main id="main">
+  <!-- PAGE HEAD -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="lbl label" data-hero><span class="lbl-n">02</span>Portfolio</p>
+      <h1 class="page-title" data-hero-title>Projects</h1>
+      <p class="lede page-lede" data-hero>What we're building right now, with founders and industry partners.</p>
+    </div>
+  </section>
+
+
+  <!-- IMAGE BAND: abstract stock, duotoned (sources in assets/img/stock/CREDITS.md) -->
+  <figure class="band" aria-hidden="true"><img src="assets/img/stock/circuit-board.jpg" alt="" loading="lazy" style="object-position:50% 50%"><div class="lw" data-lw="board" aria-hidden="true"></div><figcaption class="lbl">Hardware, assembled</figcaption></figure>
+
+  <!-- PARTNERS: the teams Crucible works with, as a board (see board.js). Same board as the home page. -->
+  <section class="partners-sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lbl label" data-reveal>Partners</p>
+        <h2 class="h2" data-split>The teams we build with.</h2>
+      </div>
+<!-- PARTNER BOARD: shared by home and projects.
+     Teams and groups are from Crucible's Website Data doc. Links were checked on 2026-10-23: MacroChef, Enactus UNSW and
+     the UNSW AI Society are confirmed. After8 (after8.app) is a likely match that Crucible still needs to confirm.
+     No site was found for Tapback, Hailstrum Robotics (its .com is parked), Casecrest, Passionfruitfy, Hack for
+     Humanity or UTS TechSoc. Teams without a site open a small pop-up instead (board.js), with the blurb from their hidden .pb-more. The blurbs
+     only use facts from the Website Data doc. To add a site, turn its <button class="pb-card"> into an <a> like the
+     others and drop its .pb-more. -->
+      <div class="pboard" data-board>
+        <div class="pb-hub">
+          <svg class="pb-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+          <span class="lbl">Crucible Ventures</span>
+        </div>
+        <ul class="pb-grps" aria-hidden="true">
+          <li class="pb-grp lbl" data-g="portfolio">Portfolio</li>
+          <li class="pb-grp lbl" data-g="startups">Early-stage startups</li>
+          <li class="pb-grp lbl" data-g="incubator">Incubator teams</li>
+          <li class="pb-grp lbl" data-g="hack">Hackathon</li>
+          <li class="pb-grp lbl" data-g="soc">Societies</li>
+        </ul>
+        <ul class="pb-nodes">
+          <li class="pb-node pb-major" data-g="portfolio" data-n="after8"><a class="pb-card" href="https://after8.app" target="_blank" rel="noopener"><span class="pb-tag lbl">Portfolio</span><span class="pb-name">After8</span><span class="pb-desc">Same-night hotel deals</span><span class="pb-url">after8.app<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node pb-major" data-g="portfolio" data-n="tapback"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Portfolio</span><span class="pb-name">Tapback</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>One of our two main portfolio companies, alongside After8. A full write-up on what they're building and how we work with them is coming soon.</p><dl><div><dt>Group</dt><dd>Portfolio company</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="startups" data-n="hailstrum"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Early-stage startup</span><span class="pb-name">Hailstrum Robotics</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>An early-stage robotics team. We add the engineering, testing and commercial help that a young team doesn't have yet.</p><dl><div><dt>Group</dt><dd>Early-stage startup</dd></div><div><dt>Field</dt><dd>Robotics</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="startups" data-n="casecrest"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Early-stage startup</span><span class="pb-name">Casecrest</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>An early-stage startup we work with on engineering, testing the idea with customers, and getting it to market.</p><dl><div><dt>Group</dt><dd>Early-stage startup</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="incubator" data-n="macrochef"><a class="pb-card" href="https://www.macrochef.com.au" target="_blank" rel="noopener"><span class="pb-tag lbl">Incubator team</span><span class="pb-name">MacroChef</span><span class="pb-desc">Recipes that hit your macros</span><span class="pb-url">macrochef.com.au<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node" data-g="incubator" data-n="passionfruitfy"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Incubator team</span><span class="pb-name">Passionfruitfy</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>A team from one of our three incubators. We helped them build their first working version and get their pitch ready.</p><dl><div><dt>Group</dt><dd>Incubator team</dd></div><div><dt>With us</dt><dd>First version, pitch</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="hack" data-n="h4h"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Hackathon</span><span class="pb-name">Hack for Humanity</span><span class="pb-desc">We judged it, and now work with the winners</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>A student hackathon run by UTS TechSoc, NCS UNSW and others in September 2026. We were invited to judge, and now we're connecting the winning team with investors.</p><dl><div><dt>Group</dt><dd>Hackathon</dd></div><div><dt>With us</dt><dd>Judging, investor introductions</dd></div><div><dt>Website</dt><dd>Not public</dd></div></dl></div></li>
+          <li class="pb-node" data-g="soc" data-n="enactus"><a class="pb-card" href="https://enactusunsw.org" target="_blank" rel="noopener"><span class="pb-tag lbl">Society</span><span class="pb-name">Enactus UNSW</span><span class="pb-desc">Social impact projects</span><span class="pb-url">enactusunsw.org<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node" data-g="soc" data-n="aisoc"><a class="pb-card" href="https://unswaisoc.com" target="_blank" rel="noopener"><span class="pb-tag lbl">Society</span><span class="pb-name">UNSW AI Society</span><span class="pb-url">unswaisoc.com<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node" data-g="soc" data-n="techsoc"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Society</span><span class="pb-name">UTS TechSoc</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>The tech society at UTS, and one of the groups behind Hack for Humanity. We run pitching workshops with student societies like this one.</p><dl><div><dt>Group</dt><dd>Society</dd></div><div><dt>With us</dt><dd>Workshops, Hack for Humanity</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+        </ul>
+      </div>
+      <p class="pb-note lbl" data-reveal>Startups, incubator teams and societies we've worked with. Teams marked ↗ link to their own site.</p>
+    </div>
+  </section>
+
+  <!-- CASE FILES: one spec sheet per project -->
+  <section class="cases">
+    <div class="wrap">
+      <nav class="case-index" aria-label="Projects on this page"><ol><li><a href="#p-forestry"><span class="lbl-n">01</span>Levelling system</a></li><li><a href="#p-drone"><span class="lbl-n">02</span>Low-light mapping</a></li><li><a href="#p-exo"><span class="lbl-n">03</span>Exoskeleton</a></li></ol></nav>
+
+      <article class="case" id="p-forestry">
+        <header class="case-head">
+          <span class="case-n" data-reveal>01</span>
+          <h2 class="h2 case-title" data-split>A levelling device for heavy logging machinery</h2>
+        </header>
+        <figure class="fig case-fig" data-clip>
+          <!-- drawing:forestry --><svg viewBox="0 0 600 450" data-draw aria-hidden="true"><defs><pattern id="h-forestry" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hx" x1="0" y1="0" x2="0" y2="7"/></pattern></defs><g class="s-sheet"><rect class="fr-o" x="8" y="8" width="584" height="434"/><rect class="fr-i" x="20" y="20" width="560" height="410"/><line class="fr-t" x1="160" y1="8" x2="160" y2="20"/><line class="fr-t" x1="160" y1="430" x2="160" y2="442"/><line class="fr-t" x1="300" y1="8" x2="300" y2="20"/><line class="fr-t" x1="300" y1="430" x2="300" y2="442"/><line class="fr-t" x1="440" y1="8" x2="440" y2="20"/><line class="fr-t" x1="440" y1="430" x2="440" y2="442"/><line class="fr-t" x1="8" y1="156.7" x2="20" y2="156.7"/><line class="fr-t" x1="580" y1="156.7" x2="592" y2="156.7"/><line class="fr-t" x1="8" y1="293.3" x2="20" y2="293.3"/><line class="fr-t" x1="580" y1="293.3" x2="592" y2="293.3"/><text class="t-z" x="90" y="17" text-anchor="middle">1</text><text class="t-z" x="90" y="439" text-anchor="middle">1</text><text class="t-z" x="230" y="17" text-anchor="middle">2</text><text class="t-z" x="230" y="439" text-anchor="middle">2</text><text class="t-z" x="370" y="17" text-anchor="middle">3</text><text class="t-z" x="370" y="439" text-anchor="middle">3</text><text class="t-z" x="510" y="17" text-anchor="middle">4</text><text class="t-z" x="510" y="439" text-anchor="middle">4</text><text class="t-z" x="14" y="90.8" text-anchor="middle">A</text><text class="t-z" x="586" y="90.8" text-anchor="middle">A</text><text class="t-z" x="14" y="227.5" text-anchor="middle">B</text><text class="t-z" x="586" y="227.5" text-anchor="middle">B</text><text class="t-z" x="14" y="364.2" text-anchor="middle">C</text><text class="t-z" x="586" y="364.2" text-anchor="middle">C</text></g><g class="s-fill"><path class="earth" fill="url(#h-forestry)" d="M20,369.5 580,165.6 580,430 20,430Z"/><path class="hl" d="M114.8,275.3 231.3,232.9 114.8,232.9Z"/></g><g class="s-ink"><line x1="20" y1="369.5" x2="580" y2="165.6"/><g transform="translate(187.8 282.8) rotate(-20)"><rect x="-104" y="-22" width="208" height="44" rx="22"/><rect class="thin" x="-96" y="-15" width="192" height="30" rx="15"/><circle cx="-82" cy="0" r="16"/><circle cx="82" cy="0" r="16"/><circle cx="-40" cy="7" r="7"/><circle cx="-13" cy="7" r="7"/><circle cx="13" cy="7" r="7"/><circle cx="40" cy="7" r="7"/><rect x="-66" y="-32" width="132" height="10"/></g><path class="hl-ln" d="M114.8,275.3 231.3,232.9 114.8,232.9Z"/><rect class="hl-ln" x="125.7" y="245.9" width="12" height="17.3" rx="2"/><line class="hl-ln" x1="131.7" y1="235.9" x2="131.7" y2="245.9"/><g class="hl-ln"><circle cx="131.7" cy="269.2" r="3.5"/><circle cx="131.7" cy="232.9" r="3.5"/><circle cx="231.3" cy="232.9" r="6"/></g><rect x="106" y="220.9" width="158" height="12"/><path d="M184,220.9 184,154.9 236,154.9 252,182.9 252,220.9"/><path class="thin" d="M193,164.9 231,164.9 242,183.9 242,202.9 193,202.9Z"/><rect x="114" y="188.9" width="66" height="32" rx="3"/><line class="thin" x1="124" y1="196.9" x2="124" y2="212.9"/><line class="thin" x1="131" y1="196.9" x2="131" y2="212.9"/><line class="thin" x1="138" y1="196.9" x2="138" y2="212.9"/><line class="thin" x1="145" y1="196.9" x2="145" y2="212.9"/><line class="thin" x1="152" y1="196.9" x2="152" y2="212.9"/><line class="thin" x1="159" y1="196.9" x2="159" y2="212.9"/><line class="thin" x1="166" y1="196.9" x2="166" y2="212.9"/><path d="M114 194.9H102V230.9H106"/><path d="M256.7,213.4L370.7,131.4A8 8 0 0 0 361.3,118.4L247.3,200.4A8 8 0 0 0 256.7,213.4Z"/><path d="M363.7,129.9L457.7,173.9A5.5 5.5 0 0 0 462.3,164L368.3,120A5.5 5.5 0 0 0 363.7,129.9Z"/><g><circle cx="252" cy="206.9" r="4"/><circle cx="366" cy="124.9" r="5"/><circle cx="460" cy="168.9" r="3.5"/></g><path class="thin" d="M238.1,219.7L281.2,187.2A3.5 3.5 0 0 0 277,181.6L233.9,214.1A3.5 3.5 0 0 0 238.1,219.7Z"/><line class="thin" x1="279.1" y1="184.4" x2="318" y2="154.9"/><path d="M480 202V64q4 -6 8 0t8 0V196.2"/><rect class="mask" x="456" y="162.9" width="28" height="50" rx="4"/><path d="M484 170.9q14 0 14 9M484 204.9q14 0 14 -9"/><line class="thin" x1="454" y1="218.9" x2="502" y2="218.9"/></g><g class="s-note"><g transform="translate(187.8 282.8) rotate(-20)"><line class="cl" x1="-104" y1="0" x2="-60" y2="0"/><line class="cl" x1="-82" y1="-22" x2="-82" y2="22"/><line class="cl" x1="60" y1="0" x2="104" y2="0"/><line class="cl" x1="82" y1="-22" x2="82" y2="22"/></g><line class="cl" x1="48" y1="232.9" x2="104" y2="232.9"/><line class="cl" x1="266" y1="232.9" x2="330" y2="232.9"/><text class="t" x="48" y="226.9">Level</text><line class="ext" x1="318" y1="261" x2="450" y2="261"/><path class="dl" d="M423.2,222.7A112 112 0 0 1 430,261"/><path class="ah" d="M423.2,222.7L428.2,229.5L423.2,231.1Z"/><path class="ah" d="M430,261L427.1,253.1L432.3,252.9Z"/><text class="t t-dim k" x="398.5" y="247.8" text-anchor="middle">Slope</text><g class="bn"><line class="ld" x1="69" y1="321.7" x2="114.2" y2="320.3"/><circle class="ld-dot" cx="114.2" cy="320.3" r="2.4"/><circle class="bn-c" cx="58" cy="322" r="11"/><text class="bn-t" x="58" y="326.2" text-anchor="middle">1</text></g><g class="bn"><line class="ld" x1="70.5" y1="264.7" x2="125.7" y2="247.2"/><circle class="ld-dot" cx="125.7" cy="247.2" r="2.4"/><circle class="bn-c" cx="60" cy="268" r="11"/><text class="bn-t" x="60" y="272.2" text-anchor="middle">2</text></g><g class="bn"><line class="ld" x1="311" y1="235.6" x2="237.3" y2="232.9"/><circle class="ld-dot" cx="237.3" cy="232.9" r="2.4"/><circle class="bn-c" cx="322" cy="236" r="11"/><text class="bn-t" x="322" y="240.2" text-anchor="middle">3</text></g><g class="bn"><line class="ld" x1="198.3" y1="102.8" x2="214" y2="176.9"/><circle class="ld-dot" cx="214" cy="176.9" r="2.4"/><circle class="bn-c" cx="196" cy="92" r="11"/><text class="bn-t" x="196" y="96.2" text-anchor="middle">4</text></g><g class="bn"><line class="ld" x1="540.2" y1="135.7" x2="482" y2="192.9"/><circle class="ld-dot" cx="482" cy="192.9" r="2.4"/><circle class="bn-c" cx="548" cy="128" r="11"/><text class="bn-t" x="548" y="132.2" text-anchor="middle">5</text></g><g class="tb"><rect class="tb-bg" x="366" y="380" width="214" height="50"/><line class="tb-ln" x1="366" y1="398" x2="580" y2="398"/><line class="tb-ln" x1="530" y1="380" x2="530" y2="430"/><text class="t-tb" x="374" y="392.5">Crucible Ventures</text><text class="t-tb t-tb-b" x="538" y="392.5">Fig. 01</text><text class="t-tb t-tb-b" x="374" y="411">Levelling device, side elevation</text><text class="t-tb" x="374" y="423">Illustration, not to scale</text><text class="t-tb" x="538" y="411">Sheet</text><text class="t-tb" x="538" y="423">01 of 03</text></g></g></svg><!-- /drawing -->
+          <figcaption><ol class="legend"><li><b>1</b>Machine base, on the slope</li><li><b>2</b>Levelling device</li><li><b>3</b>Pivot</li><li><b>4</b>Cab, held level</li><li><b>5</b>Harvester head</li></ol><p class="lbl fig-note">Illustration only, not the actual design.</p></figcaption>
+        </figure>
+        <div class="case-body">
+          <p class="body-l" data-reveal>We're working with a logging company in far north Queensland on a device that helps their heavy machinery stay level on rugged terrain.</p>
+          <dl class="spec" data-reveal><div><dt class="lbl">Sector</dt><dd>Forestry</dd></div><div><dt class="lbl">Where</dt><dd>Far north Queensland</dd></div><div><dt class="lbl">Partner</dt><dd>A logging company</dd></div><div><dt class="lbl">Status</dt><dd>In development</dd></div></dl>
+          <p class="lbl note">Project name to be confirmed</p>
+        </div>
+      </article>
+
+      <article class="case" id="p-drone">
+        <header class="case-head">
+          <span class="case-n" data-reveal>02</span>
+          <h2 class="h2 case-title" data-split>Drone mapping that works in low light</h2>
+        </header>
+        <figure class="fig case-fig" data-clip>
+          <!-- drawing:drone --><svg viewBox="0 0 600 450" data-draw aria-hidden="true"><defs><pattern id="h-drone" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hx" x1="0" y1="0" x2="0" y2="7"/></pattern></defs><g class="s-sheet"><rect class="fr-o" x="8" y="8" width="584" height="434"/><rect class="fr-i" x="20" y="20" width="560" height="410"/><line class="fr-t" x1="160" y1="8" x2="160" y2="20"/><line class="fr-t" x1="160" y1="430" x2="160" y2="442"/><line class="fr-t" x1="300" y1="8" x2="300" y2="20"/><line class="fr-t" x1="300" y1="430" x2="300" y2="442"/><line class="fr-t" x1="440" y1="8" x2="440" y2="20"/><line class="fr-t" x1="440" y1="430" x2="440" y2="442"/><line class="fr-t" x1="8" y1="156.7" x2="20" y2="156.7"/><line class="fr-t" x1="580" y1="156.7" x2="592" y2="156.7"/><line class="fr-t" x1="8" y1="293.3" x2="20" y2="293.3"/><line class="fr-t" x1="580" y1="293.3" x2="592" y2="293.3"/><text class="t-z" x="90" y="17" text-anchor="middle">1</text><text class="t-z" x="90" y="439" text-anchor="middle">1</text><text class="t-z" x="230" y="17" text-anchor="middle">2</text><text class="t-z" x="230" y="439" text-anchor="middle">2</text><text class="t-z" x="370" y="17" text-anchor="middle">3</text><text class="t-z" x="370" y="439" text-anchor="middle">3</text><text class="t-z" x="510" y="17" text-anchor="middle">4</text><text class="t-z" x="510" y="439" text-anchor="middle">4</text><text class="t-z" x="14" y="90.8" text-anchor="middle">A</text><text class="t-z" x="586" y="90.8" text-anchor="middle">A</text><text class="t-z" x="14" y="227.5" text-anchor="middle">B</text><text class="t-z" x="586" y="227.5" text-anchor="middle">B</text><text class="t-z" x="14" y="364.2" text-anchor="middle">C</text><text class="t-z" x="586" y="364.2" text-anchor="middle">C</text></g><g class="s-fill"><path class="earth" fill="url(#h-drone)" d="M20,252 128,252 158,282 184,282 214,312 240,312 270,342 330,342 360,312 386,312 416,282 442,282 472,252 580,252L580 430L20 430Z"/><path class="hl-soft" d="M300,122 456.3,267.7L456.3,267.7L453.6,270.4L451,273L448.4,275.6L445.7,278.3L443.1,280.9L439.1,282L434.3,282L429.6,282L425,282L420.6,282L416.2,282L413.7,284.3L411.2,286.8L408.7,289.3L406.1,291.9L403.6,294.4L401,297L398.4,299.6L395.8,302.2L393.2,304.8L390.5,307.5L387.8,310.2L384.6,312L380.7,312L376.8,312L372.9,312L369.2,312L365.4,312L361.7,312L358.5,313.5L355.7,316.3L352.8,319.2L349.9,322.1L346.9,325.1L343.8,328.2L340.7,331.3L337.5,334.5L334.2,337.8L330.8,341.2L327,342L323.1,342L319.2,342L315.4,342L311.5,342L307.7,342L303.8,342L300,342L296.2,342L292.3,342L288.5,342L284.6,342L280.8,342L276.9,342L273,342L269.2,341.2L265.8,337.8L262.5,334.5L259.3,331.3L256.2,328.2L253.1,325.1L250.1,322.1L247.2,319.2L244.3,316.3L241.5,313.5L238.3,312L234.6,312L230.8,312L227.1,312L223.2,312L219.3,312L215.4,312L212.2,310.2L209.5,307.5L206.8,304.8L204.2,302.2L201.6,299.6L199,297L196.4,294.4L193.9,291.9L191.3,289.3L188.8,286.8L186.3,284.3L183.8,282L179.4,282L175,282L170.4,282L165.7,282L160.9,282L156.9,280.9L154.3,278.3L151.6,275.6L149,273L146.4,270.4L143.7,267.7L143.7,267.7Z"/><g class="pts"><circle cx="456.3" cy="267.7" r="1.9"/><circle cx="450.1" cy="273.9" r="1.9"/><circle cx="443.9" cy="280.1" r="1.9"/><circle cx="434" cy="282" r="1.9"/><circle cx="423.2" cy="282" r="1.9"/><circle cx="414.3" cy="283.7" r="1.9"/><circle cx="408.4" cy="289.6" r="1.9"/><circle cx="402.4" cy="295.6" r="1.9"/><circle cx="396.3" cy="301.7" r="1.9"/><circle cx="390.1" cy="307.9" r="1.9"/><circle cx="382.6" cy="312" r="1.9"/><circle cx="373.5" cy="312" r="1.9"/><circle cx="364.7" cy="312" r="1.9"/><circle cx="357" cy="315" r="1.9"/><circle cx="350.2" cy="321.8" r="1.9"/><circle cx="343" cy="329" r="1.9"/><circle cx="335.5" cy="336.5" r="1.9"/><circle cx="327.2" cy="342" r="1.9"/><circle cx="318.1" cy="342" r="1.9"/><circle cx="309" cy="342" r="1.9"/><circle cx="300" cy="342" r="1.9"/><circle cx="291" cy="342" r="1.9"/><circle cx="281.9" cy="342" r="1.9"/><circle cx="272.8" cy="342" r="1.9"/><circle cx="264.5" cy="336.5" r="1.9"/><circle cx="257" cy="329" r="1.9"/><circle cx="249.8" cy="321.8" r="1.9"/><circle cx="243" cy="315" r="1.9"/><circle cx="235.3" cy="312" r="1.9"/><circle cx="226.5" cy="312" r="1.9"/><circle cx="217.4" cy="312" r="1.9"/><circle cx="209.9" cy="307.9" r="1.9"/><circle cx="203.7" cy="301.7" r="1.9"/><circle cx="197.6" cy="295.6" r="1.9"/><circle cx="191.6" cy="289.6" r="1.9"/><circle cx="185.7" cy="283.7" r="1.9"/><circle cx="176.8" cy="282" r="1.9"/><circle cx="166" cy="282" r="1.9"/><circle cx="156.1" cy="280.1" r="1.9"/><circle cx="149.9" cy="273.9" r="1.9"/><circle cx="143.7" cy="267.7" r="1.9"/></g><rect class="hl" x="290" y="106" width="20" height="14" rx="2"/></g><g class="s-ink"><polyline points="20,252 128,252 158,282 184,282 214,312 240,312 270,342 330,342 360,312 386,312 416,282 442,282 472,252 580,252"/><rect x="270" y="88" width="60" height="18" rx="5"/><line x1="270" y1="96" x2="234" y2="90"/><rect x="229" y="80" width="10" height="12" rx="2"/><ellipse cx="234" cy="77" rx="34" ry="3.5"/><path d="M284 106l-8 16h-10"/><line x1="330" y1="96" x2="366" y2="90"/><rect x="361" y="80" width="10" height="12" rx="2"/><ellipse cx="366" cy="77" rx="34" ry="3.5"/><path d="M316 106l8 16h10"/><rect class="hl-ln" x="290" y="106" width="20" height="14" rx="2"/><circle class="hl-ln" cx="300" cy="118" r="3.5"/><path class="thin" d="M80 58a22 22 0 1 0 22 30a17 17 0 1 1 -22 -30z"/></g><g class="s-note"><line class="hid" x1="300" y1="122" x2="143.7" y2="267.7"/><line class="hid" x1="300" y1="122" x2="456.3" y2="267.7"/><line class="dl" x1="412" y1="77" x2="496" y2="77"/><path class="ah" d="M496,77L488,79.6L488,74.4Z"/><text class="t" x="412" y="69">Flight path</text><g class="dim"><line class="ext" x1="404" y1="122" x2="526" y2="122"/><line class="ext" x1="482" y1="252" x2="526" y2="252"/><line class="dl" x1="520" y1="122" x2="520" y2="252"/><path class="ah" d="M520,122L522.6,130L517.4,130Z"/><path class="ah" d="M520,252L517.4,244L522.6,244Z"/></g><text class="t t-dim" x="512" y="190.5" text-anchor="end">Altitude</text><line class="cl" x1="300" y1="342" x2="300" y2="342"/><line class="cl" x1="300" y1="342" x2="300" y2="342"/><line class="cl" x1="300" y1="52" x2="300" y2="362"/><g class="bn"><line class="ld" x1="236" y1="145.4" x2="291" y2="120"/><circle class="ld-dot" cx="291" cy="120" r="2.4"/><circle class="bn-c" cx="226" cy="150" r="11"/><text class="bn-t" x="226" y="154.2" text-anchor="middle">1</text></g><g class="bn"><line class="ld" x1="420.5" y1="173.6" x2="380.4" y2="197"/><circle class="ld-dot" cx="380.4" cy="197" r="2.4"/><circle class="bn-c" cx="430" cy="168" r="11"/><text class="bn-t" x="430" y="172.2" text-anchor="middle">2</text></g><g class="bn"><line class="ld" x1="300" y1="369" x2="300" y2="342"/><circle class="ld-dot" cx="300" cy="342" r="2.4"/><circle class="bn-c" cx="300" cy="380" r="11"/><text class="bn-t" x="300" y="384.2" text-anchor="middle">3</text></g><g class="bn"><line class="ld" x1="114" y1="307.5" x2="171" y2="282"/><circle class="ld-dot" cx="171" cy="282" r="2.4"/><circle class="bn-c" cx="104" cy="312" r="11"/><text class="bn-t" x="104" y="316.2" text-anchor="middle">4</text></g><g class="tb"><rect class="tb-bg" x="366" y="380" width="214" height="50"/><line class="tb-ln" x1="366" y1="398" x2="580" y2="398"/><line class="tb-ln" x1="530" y1="380" x2="530" y2="430"/><text class="t-tb" x="374" y="392.5">Crucible Ventures</text><text class="t-tb t-tb-b" x="538" y="392.5">Fig. 02</text><text class="t-tb t-tb-b" x="374" y="411">Low-light mapping, section</text><text class="t-tb" x="374" y="423">Illustration, not to scale</text><text class="t-tb" x="538" y="411">Sheet</text><text class="t-tb" x="538" y="423">02 of 03</text></g></g></svg><!-- /drawing -->
+          <figcaption><ol class="legend"><li><b>1</b>Sensor</li><li><b>2</b>Scan area</li><li><b>3</b>Mapped surface</li><li><b>4</b>Mine pit</li></ol><p class="lbl fig-note">Illustration only, not the actual design.</p></figcaption>
+        </figure>
+        <div class="case-body">
+          <p class="body-l" data-reveal>We're working on drone technology for mining and agriculture companies, including mapping mining operations in low light.</p>
+          <dl class="spec" data-reveal><div><dt class="lbl">Sector</dt><dd>Mining and agriculture</dd></div><div><dt class="lbl">Focus</dt><dd>Low-light mapping in mining</dd></div><div><dt class="lbl">Status</dt><dd>In development</dd></div></dl>
+
+        </div>
+      </article>
+
+      <article class="case" id="p-exo">
+        <header class="case-head">
+          <span class="case-n" data-reveal>03</span>
+          <h2 class="h2 case-title" data-split>An exoskeleton that could become a prosthetic</h2>
+        </header>
+        <figure class="fig case-fig" data-clip>
+          <!-- drawing:exo --><svg viewBox="0 0 600 450" data-draw aria-hidden="true"><defs><pattern id="h-exo" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hx" x1="0" y1="0" x2="0" y2="5"/></pattern></defs><g class="s-sheet"><rect class="fr-o" x="8" y="8" width="584" height="434"/><rect class="fr-i" x="20" y="20" width="560" height="410"/><line class="fr-t" x1="160" y1="8" x2="160" y2="20"/><line class="fr-t" x1="160" y1="430" x2="160" y2="442"/><line class="fr-t" x1="300" y1="8" x2="300" y2="20"/><line class="fr-t" x1="300" y1="430" x2="300" y2="442"/><line class="fr-t" x1="440" y1="8" x2="440" y2="20"/><line class="fr-t" x1="440" y1="430" x2="440" y2="442"/><line class="fr-t" x1="8" y1="156.7" x2="20" y2="156.7"/><line class="fr-t" x1="580" y1="156.7" x2="592" y2="156.7"/><line class="fr-t" x1="8" y1="293.3" x2="20" y2="293.3"/><line class="fr-t" x1="580" y1="293.3" x2="592" y2="293.3"/><text class="t-z" x="90" y="17" text-anchor="middle">1</text><text class="t-z" x="90" y="439" text-anchor="middle">1</text><text class="t-z" x="230" y="17" text-anchor="middle">2</text><text class="t-z" x="230" y="439" text-anchor="middle">2</text><text class="t-z" x="370" y="17" text-anchor="middle">3</text><text class="t-z" x="370" y="439" text-anchor="middle">3</text><text class="t-z" x="510" y="17" text-anchor="middle">4</text><text class="t-z" x="510" y="439" text-anchor="middle">4</text><text class="t-z" x="14" y="90.8" text-anchor="middle">A</text><text class="t-z" x="586" y="90.8" text-anchor="middle">A</text><text class="t-z" x="14" y="227.5" text-anchor="middle">B</text><text class="t-z" x="586" y="227.5" text-anchor="middle">B</text><text class="t-z" x="14" y="364.2" text-anchor="middle">C</text><text class="t-z" x="586" y="364.2" text-anchor="middle">C</text></g><g class="s-fill"><rect class="earth" fill="url(#h-exo)" x="40" y="376" width="320" height="10"/><circle class="hl" cx="300" cy="230" r="21"/></g><g class="s-ink"><line x1="40" y1="376" x2="360" y2="376"/><path d="M275.6,96.9L293.6,230.9A6.5 6.5 0 0 0 306.4,229.1L288.4,95.1A6.5 6.5 0 0 0 275.6,96.9Z"/><path d="M294.5,229.3L280.5,345.3A5.5 5.5 0 0 0 291.5,346.7L305.5,230.7A5.5 5.5 0 0 0 294.5,229.3Z"/><rect x="220" y="76" width="30" height="58" rx="5"/><line class="thin" x1="228" y1="88" x2="242" y2="88"/><line x1="250" y1="96" x2="269" y2="96"/><path d="M256 150C256 142 322 142 322 150V164C322 156 256 156 256 164Z"/><path d="M256 290C256 282 316 282 316 290V304C316 296 256 296 256 304Z"/><path d="M262 369H352q6 0 6 4v3H262z"/><line x1="286" y1="346" x2="288" y2="369"/><g><circle cx="282" cy="96" r="13"/><circle cx="282" cy="96" r="4"/><circle cx="286" cy="346" r="7"/></g><g class="hl-ln"><circle cx="300" cy="230" r="21"/><circle class="thin" cx="300" cy="230" r="14"/><circle cx="312.4" cy="242.4" r="1.4"/><circle cx="287.6" cy="242.4" r="1.4"/><circle cx="287.6" cy="217.6" r="1.4"/><circle cx="312.4" cy="217.6" r="1.4"/><circle cx="300" cy="230" r="6"/></g></g><g class="s-note"><path class="ph" d="M248 60C246 120 262 190 270 222C276 250 256 272 260 300C263 322 268 336 268 352C266 362 262 370 264 376H366C368 368 360 362 344 360C326 356 312 352 306 342C302 320 312 270 318 244C324 228 330 214 326 196C322 150 318 110 316 60"/><line class="cl" x1="262" y1="96" x2="302" y2="96"/><line class="cl" x1="282" y1="76" x2="282" y2="116"/><line class="cl" x1="273" y1="346" x2="299" y2="346"/><line class="cl" x1="286" y1="333" x2="286" y2="359"/><line class="cl" x1="268" y1="230" x2="332" y2="230"/><line class="cl" x1="300" y1="198" x2="300" y2="262"/><path class="hid" d="M297.8,224.9L190.4,270.8A5.5 5.5 0 0 0 194.7,280.9L302.2,235.1A5.5 5.5 0 0 0 297.8,224.9Z"/><circle class="hid" cx="192.5" cy="275.9" r="7"/><path class="dl" d="M291.1,303.5A74 74 0 0 1 231.9,259.1"/><path class="ah" d="M291.1,303.5L282.8,304.8L283.6,299.7Z"/><path class="ah" d="M231.9,259.1L237.7,265.2L233,267.4Z"/><text class="t t-dim k" x="237.6" y="316.7" text-anchor="middle">Bend</text><g class="bn"><line class="ld" x1="207.9" y1="164.3" x2="271" y2="103"/><circle class="ld-dot" cx="271" cy="103" r="2.4"/><circle class="bn-c" cx="200" cy="172" r="11"/><text class="bn-t" x="200" y="176.2" text-anchor="middle">1</text></g><g class="bn"><line class="ld" x1="409.3" y1="134.7" x2="321" y2="157"/><circle class="ld-dot" cx="321" cy="157" r="2.4"/><circle class="bn-c" cx="420" cy="132" r="11"/><text class="bn-t" x="420" y="136.2" text-anchor="middle">2</text></g><g class="bn"><line class="ld" x1="419" y1="220.6" x2="324" y2="226"/><circle class="ld-dot" cx="324" cy="226" r="2.4"/><circle class="bn-c" cx="430" cy="220" r="11"/><text class="bn-t" x="430" y="224.2" text-anchor="middle">3</text></g><g class="bn"><line class="ld" x1="409" y1="301.4" x2="316" y2="296"/><circle class="ld-dot" cx="316" cy="296" r="2.4"/><circle class="bn-c" cx="420" cy="302" r="11"/><text class="bn-t" x="420" y="306.2" text-anchor="middle">4</text></g><g class="bn"><line class="ld" x1="409.5" y1="355.2" x2="354" y2="372"/><circle class="ld-dot" cx="354" cy="372" r="2.4"/><circle class="bn-c" cx="420" cy="352" r="11"/><text class="bn-t" x="420" y="356.2" text-anchor="middle">5</text></g><g class="tb"><rect class="tb-bg" x="366" y="380" width="214" height="50"/><line class="tb-ln" x1="366" y1="398" x2="580" y2="398"/><line class="tb-ln" x1="530" y1="380" x2="530" y2="430"/><text class="t-tb" x="374" y="392.5">Crucible Ventures</text><text class="t-tb t-tb-b" x="538" y="392.5">Fig. 03</text><text class="t-tb t-tb-b" x="374" y="411">Exoskeleton, side elevation</text><text class="t-tb" x="374" y="423">Illustration, not to scale</text><text class="t-tb" x="538" y="411">Sheet</text><text class="t-tb" x="538" y="423">03 of 03</text></g></g></svg><!-- /drawing -->
+          <figcaption><ol class="legend"><li><b>1</b>Hip joint</li><li><b>2</b>Thigh cuff</li><li><b>3</b>Knee joint</li><li><b>4</b>Shin cuff</li><li><b>5</b>Foot plate</li></ol><p class="lbl fig-note">Illustration only, not the actual design.</p></figcaption>
+        </figure>
+        <div class="case-body">
+          <p class="body-l" data-reveal>We're working on an exoskeleton that could be used as a prosthetic in the future.</p>
+          <dl class="spec" data-reveal><div><dt class="lbl">Aim</dt><dd>Use as a prosthetic, in future</dd></div><div><dt class="lbl">Status</dt><dd>In development</dd></div></dl>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- NEXT PAGE -->
+  <a class='next' href='/community'>
+    <span class="wrap next-in"><span class="lbl label">Next</span><span class="next-title">Community</span><i aria-hidden="true">→</i></span>
+  </a>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a aria-label='Crucible Ventures, home' class='brand brand-light' href='/'>
+        <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+        <span>Crucible Ventures</span>
+      </a>
+      <p class="foot-line">Built, not discovered.</p>
+    </div>
+    <div class="foot-cols">
+      <div><p class="lbl">Site</p><a href='/'>Home</a><a href='/what-we-do'>What we do</a><a aria-current='page' href='/projects'>Projects</a><a href='/community'>Community</a><a href='/team'>Team</a></div>
+      <div><p class="lbl">Elsewhere</p><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram</a></div>
+      <div><p class="lbl">Contact</p><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a><span>Sydney, Australia</span></div>
+      <div class="asc foot-obj" data-asc="logo" data-asc-dark data-asc-tilt="-.2" data-asc-swing=".5" data-asc-speed=".45" data-asc-fit="1.6" aria-hidden="true"></div>
+    </div>
+    <div class="foot-base">
+      <p>We acknowledge the Traditional Custodians of the lands where we live and work, and pay our respects to Elders past and present.</p>
+      <p class="lbl">© 2026 Crucible Ventures</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="intro.js?v=3" defer></script>
+<script src="main.js?v=31" defer></script>
+<script src="seams.js?v=3" defer></script>
+<script src="board.js?v=11" defer></script>
+<script src="ascii.js?v=23" defer></script>
+<script src="ornaments.js?v=10" defer></script>
+<script src="linework.js?v=3" defer></script>
+</body>
+</html>
