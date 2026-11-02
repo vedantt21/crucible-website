@@ -1,0 +1,145 @@
+<!doctype html>
+<!-- Edit this page directly; see the repository README. -->
+<html lang="en-AU" data-cursor="frame" data-page="team">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team · Crucible Ventures</title>
+<meta name="description" content="The people behind Crucible Ventures, a deep tech venture studio in Sydney.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<script>
+  // Set state before first paint: motion and the intro.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('anim');
+      var seen = false;
+      try { seen = sessionStorage.getItem('cv-intro') === '1'; } catch (e) {}
+      // A refresh always plays it again; going back to Home from another page does not.
+      try { var nav = performance.getEntriesByType('navigation')[0]; if (nav && nav.type === 'reload') seen = false; } catch (e) {}
+      if (!seen && d.dataset.page === 'home') d.classList.add('intro-on');   // the opening animation lives on the home page only
+    }
+    // If the animation libraries fail to load, show everything.
+    setTimeout(function () { if (!window.gsap) d.classList.remove('anim', 'intro-on'); }, 4000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..600&family=Fragment+Mono&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=84">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-in wrap">
+    <a aria-label='Crucible Ventures, home' class='brand' href='/'>
+      <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+      <span>Crucible Ventures</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href='/what-we-do'>What we do</a>
+      <a href='/projects'>Projects</a>
+      <a href='/community'>Community</a>
+      <a aria-current='page' href='/team'>Team</a>
+    </nav>
+    <a class='btn btn-ink nav-cta' href='/contact'><span>Work with us</span><i aria-hidden="true">→</i></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="wrap menu-links" aria-label="Mobile">
+    <a href='/'>Home</a>
+    <a href='/what-we-do'>What we do</a>
+    <a href='/projects'>Projects</a>
+    <a href='/community'>Community</a>
+    <a aria-current='page' href='/team'>Team</a>
+  </nav>
+  <div class="wrap menu-foot">
+    <a class='btn btn-ink menu-cta' href='/contact'>Work with us <i aria-hidden="true">→</i></a>
+    <p class="lbl"><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a></p>
+    <p class="lbl menu-social"><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram ↗</a><span>Sydney, Australia</span></p>
+  </div>
+</div>
+
+<main id="main">
+  <!-- PAGE HEAD -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="lbl label" data-hero><span class="lbl-n">04</span>People</p>
+      <h1 class="page-title" data-hero-title>Team</h1>
+      <p class="lede page-lede" data-hero>Engineers who'd rather build than pitch.</p>
+    </div>
+  </section>
+
+  <!-- PEOPLE, one row each -->
+  <section class="crew">
+    <div class="wrap">
+      <ul class="crew-list">
+        <li class="crew-row" data-reveal>
+          <div class="ph crew-ph"><div class="ph-img"><img src="assets/img/team-nandit.jpg" alt="Nandit Shah" loading="lazy" style="object-position:50% 25%"></div></div>
+          <div class="crew-name"><p class="lbl crew-n">01</p><h2 class="h3">Nandit Shah</h2><p class="lbl role">Founder &amp; CEO</p></div>
+          <div class="crew-bio"><p>Mechatronics engineering and finance at UNSW. Started Crucible so technical builders could turn big ideas into real companies. Leads strategy, partnerships and commercialisation.</p></div>
+        </li>
+        <li class="crew-row" data-reveal>
+          <div class="ph crew-ph"><div class="ph-img"><img src="assets/img/team-vedant.jpg" alt="Vedant Tyagi" loading="lazy" style="object-position:40% 30%"></div></div>
+          <div class="crew-name"><p class="lbl crew-n">02</p><h2 class="h3">Vedant Tyagi</h2><p class="lbl role">Co-founder &amp; CTO</p></div>
+          <div class="crew-bio"><p>Aerospace engineering and computer science at UNSW. Runs Crucible's technical direction, from feasibility to prototypes, and leads the engineering teams.</p></div>
+        </li>
+        <li class="crew-row" data-reveal>
+          <div class="crew-ph initials"><span>AP</span><small class="lbl">Photo to come</small></div>
+          <div class="crew-name"><p class="lbl crew-n">03</p><h2 class="h3">Aaryan Parmar</h2><p class="lbl role">Venture &amp; Legal</p></div>
+          <div class="crew-bio"><p>Supports venture development, and the legal and commercial side of Crucible's projects and partnerships.</p></div>
+        </li>
+        <li class="crew-row" data-reveal>
+          <div class="crew-ph initials"><span>SP</span><small class="lbl">Photo to come</small></div>
+          <div class="crew-name"><p class="lbl crew-n">04</p><h2 class="h3">Smit Parikh</h2><p class="lbl role">Outreach &amp; Partnerships</p></div>
+          <div class="crew-bio"><p>Builds relationships with customers, partners and the wider Sydney startup community.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NEXT PAGE -->
+  <a class='next' href='/contact'>
+    <span class="wrap next-in"><span class="lbl label">Next</span><span class="next-title">Work with us</span><i aria-hidden="true">→</i></span>
+  </a>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a aria-label='Crucible Ventures, home' class='brand brand-light' href='/'>
+        <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+        <span>Crucible Ventures</span>
+      </a>
+      <p class="foot-line">Built, not discovered.</p>
+    </div>
+    <div class="foot-cols">
+      <div><p class="lbl">Site</p><a href='/'>Home</a><a href='/what-we-do'>What we do</a><a href='/projects'>Projects</a><a href='/community'>Community</a><a aria-current='page' href='/team'>Team</a></div>
+      <div><p class="lbl">Elsewhere</p><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram</a></div>
+      <div><p class="lbl">Contact</p><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a><span>Sydney, Australia</span></div>
+      <div class="asc foot-obj" data-asc="logo" data-asc-dark data-asc-tilt="-.2" data-asc-swing=".5" data-asc-speed=".45" data-asc-fit="1.6" aria-hidden="true"></div>
+    </div>
+    <div class="foot-base">
+      <p>We acknowledge the Traditional Custodians of the lands where we live and work, and pay our respects to Elders past and present.</p>
+      <p class="lbl">© 2026 Crucible Ventures</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="intro.js?v=3" defer></script>
+<script src="main.js?v=31" defer></script>
+<script src="seams.js?v=3" defer></script>
+<script src="board.js?v=11" defer></script>
+<script src="ascii.js?v=23" defer></script>
+<script src="ornaments.js?v=10" defer></script>
+<script src="linework.js?v=3" defer></script>
+</body>
+</html>

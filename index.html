@@ -1,385 +1,403 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crucible Ventures</title>
-    <meta
-      name="description"
-      content="Crucible Ventures finds overlooked early signal and helps turn it into durable companies across software, infrastructure, and applied AI."
-    />
-    <meta name="theme-color" content="#0a1614" />
-    <meta property="og:title" content="Crucible Ventures — Early conviction, built to endure" />
-    <meta
-      property="og:description"
-      content="A thesis-led venture studio bringing technical, operating, and financial judgement to company formation."
-    />
-    <meta property="og:type" content="website" />
-    <link rel="preload" href="assets/hero/hero-bg-desktop.webp" as="image" type="image/webp" />
-    <link rel="preload" href="assets/hero/hero-fore-desktop.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="styles.css?v=investor-motion-20260906" />
-  </head>
-  <body>
-    <header class="site-header" data-site-header>
-      <div class="site-width site-header-inner">
-        <a class="site-brand" href="index.html#top" aria-label="Crucible Ventures home">
-          <span class="brand-mark" aria-hidden="true">CV</span>
-          <span class="brand-text">Crucible Ventures</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <a href="what-we-do.html">What we do</a>
-          <a href="contact.html">Contact us</a>
-        </nav>
-        <div class="header-actions">
-          <a class="nav-cta" href="contact.html">Start a conversation</a>
-          <button
-            class="version-toggle"
-            type="button"
-            data-version-toggle
-            data-active-version="investor"
-            aria-pressed="false"
-            aria-label="Investor version selected. Switch to founder version"
-          >
-            <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-            <span class="version-toggle-switch" aria-hidden="true">
-              <span class="version-toggle-thumb"></span>
-            </span>
-            <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-            <span class="sr-only" data-version-status>Investor version selected</span>
-          </button>
-        </div>
-        <button
-          class="menu-toggle"
-          type="button"
-          data-menu-toggle
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          aria-label="Open menu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
+<!doctype html>
+<!-- Edit this page directly; see the repository README. -->
+<html lang="en-AU" data-cursor="frame" data-page="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crucible Ventures · Deep tech venture studio, Sydney</title>
+<meta name="description" content="Crucible is a Sydney venture studio for deep tech. We bring engineers and business builders together to test ideas, build working prototypes and find the first customers.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<script>
+  // Set state before first paint: motion and the intro.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('anim');
+      var seen = false;
+      try { seen = sessionStorage.getItem('cv-intro') === '1'; } catch (e) {}
+      // A refresh always plays it again; going back to Home from another page does not.
+      try { var nav = performance.getEntriesByType('navigation')[0]; if (nav && nav.type === 'reload') seen = false; } catch (e) {}
+      if (!seen && d.dataset.page === 'home') d.classList.add('intro-on');   // the opening animation lives on the home page only
+    }
+    // If the animation libraries fail to load, show everything.
+    setTimeout(function () { if (!window.gsap) d.classList.remove('anim', 'intro-on'); }, 4000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..600&family=Fragment+Mono&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=84">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Opening animation: drawn by intro.js on this canvas over the page, which is already in place underneath -->
+<div id="intro" aria-hidden="true">
+  <canvas class="intro-glyphs"></canvas>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div>
+
+<header class="nav">
+  <div class="nav-in wrap">
+    <a aria-current='page' aria-label='Crucible Ventures, home' class='brand' href='/'>
+      <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+      <span>Crucible Ventures</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href='/what-we-do'>What we do</a>
+      <a href='/projects'>Projects</a>
+      <a href='/community'>Community</a>
+      <a href='/team'>Team</a>
+    </nav>
+    <a class='btn btn-ink nav-cta' href='/contact'><span>Work with us</span><i aria-hidden="true">→</i></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="wrap menu-links" aria-label="Mobile">
+    <a aria-current='page' href='/'>Home</a>
+    <a href='/what-we-do'>What we do</a>
+    <a href='/projects'>Projects</a>
+    <a href='/community'>Community</a>
+    <a href='/team'>Team</a>
+  </nav>
+  <div class="wrap menu-foot">
+    <a class='btn btn-ink menu-cta' href='/contact'>Work with us <i aria-hidden="true">→</i></a>
+    <p class="lbl"><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a></p>
+    <p class="lbl menu-social"><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram ↗</a><span>Sydney, Australia</span></p>
+  </div>
+</div>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-meta lbl" data-hero>
+        <span class="hm-a">Deep tech venture studio</span>
+        <span class="hm-b">Sydney, Australia</span>
+        <span class="hm-c">Est. 2026</span>
       </div>
-      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
-        <div class="site-width mobile-menu-inner">
-          <nav class="mobile-nav" aria-label="Mobile primary">
-            <a href="about.html">About</a>
-            <a href="what-we-do.html">What we do</a>
-            <a href="contact.html">Contact us</a>
-          </nav>
-          <div class="mobile-menu-actions">
-            <a class="button button-primary" href="contact.html">Start a conversation</a>
-            <button
-              class="version-toggle"
-              type="button"
-              data-version-toggle
-              data-active-version="investor"
-              aria-pressed="false"
-              aria-label="Investor version selected. Switch to founder version"
-            >
-              <span class="version-toggle-label version-toggle-label-investor">Investor</span>
-              <span class="version-toggle-switch" aria-hidden="true">
-                <span class="version-toggle-thumb"></span>
-              </span>
-              <span class="version-toggle-label version-toggle-label-entrepreneur">Founder</span>
-              <span class="sr-only" data-version-status>Investor version selected</span>
-            </button>
+      <!-- 3D ASCII CV mark (ascii.js), solid ink, with a satellite on its orbit. Drag to spin it. -->
+      <div class="asc hero-obj" data-asc="logo" data-asc-notes="full" data-asc-orbit="satellite" data-asc-solid data-asc-tilt="-.2" data-asc-swing=".5" data-asc-speed=".45" data-asc-fit=".7" data-asc-y=".52" data-hero aria-hidden="true"></div>
+      <h1 class="hero-title" data-hero-title>Companies are <span class="hl">built</span>, not discovered.</h1>
+      <div class="hero-foot">
+        <div class="hero-intro" data-hero>
+          <p class="lede">Crucible is a Sydney venture studio for deep tech. We bring engineers and business builders together to test ideas, build working prototypes and find the first customers.</p>
+          <div class="cta-row">
+            <a class="btn btn-ink" href="#projects"><span>See what we're building</span><i aria-hidden="true">↓</i></a>
+            <a class="btn btn-line" href="#contact"><span>Work with us</span><i aria-hidden="true">→</i></a>
           </div>
-          <p class="mobile-menu-note">Sydney based. Remote friendly. Built for early conviction.</p>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <main id="top">
-      <section class="intro" aria-label="Crucible Ventures" data-scroll-intro>
-        <div class="intro-stage">
-          <div class="intro-atmosphere" aria-hidden="true">
-            <picture class="intro-layer intro-layer-bg">
-              <source media="(max-width: 700px)" srcset="assets/hero/hero-bg-mobile.webp" />
-              <img src="assets/hero/hero-bg-desktop.webp" alt="" fetchpriority="high" />
-            </picture>
-            <picture class="intro-layer intro-layer-far">
-              <source media="(max-width: 700px)" srcset="assets/hero/hero-far-mobile.webp" />
-              <img src="assets/hero/hero-far-desktop.webp" alt="" fetchpriority="high" />
-            </picture>
-            <picture class="intro-layer intro-layer-mid">
-              <source media="(max-width: 700px)" srcset="assets/hero/hero-mid-mobile.webp" />
-              <img src="assets/hero/hero-mid-desktop.webp" alt="" />
-            </picture>
-            <picture class="intro-layer intro-layer-fore">
-              <source media="(max-width: 700px)" srcset="assets/hero/hero-fore-mobile.webp" />
-              <img src="assets/hero/hero-fore-desktop.webp" alt="" />
-            </picture>
-            <span class="intro-glow" data-intro-glow></span>
-            <span class="intro-grain"></span>
-          </div>
-          <div class="intro-scrim" aria-hidden="true"></div>
-          <div class="site-width intro-topline">
-            <span class="intro-monogram" aria-hidden="true">CV</span>
-            <p>Thesis-led venture studio</p>
-            <p>Sydney · Australia</p>
-          </div>
-          <h1 class="sr-only">Crucible Ventures.</h1>
-          <div class="site-width intro-content">
-            <div class="intro-mark">
-              <p class="intro-kicker"><span></span> Early conviction, built to endure</p>
-              <div class="intro-line intro-line-top">
-                <span class="intro-text">Crucible</span>
-              </div>
-              <div class="intro-line intro-line-bottom">
-                <span class="intro-text">Ventures<span class="intro-period">.</span></span>
-              </div>
-              <p class="intro-deck">
-                We find the company-shaped signal hiding inside overlooked markets.
-              </p>
-            </div>
-            <div class="intro-resolution">
-              <p class="intro-kicker"><span></span> The Crucible thesis</p>
-              <p class="intro-resolution-title">
-                From early signal<br />to <em>enduring company.</em>
-              </p>
-              <p class="intro-resolution-copy">
-                Technical judgement, operating discipline, and financial clarity—aligned from day one.
-              </p>
-            </div>
-          </div>
-          <div class="site-width intro-progress-rail" aria-hidden="true">
-            <span class="intro-progress-fill"></span>
-            <div><b>01</b><span>Signal</span></div>
-            <div><b>02</b><span>Conviction</span></div>
-            <div><b>03</b><span>Company</span></div>
-          </div>
-          <a class="intro-scroll-cue" href="#home">
-            <span>Enter the thesis</span>
-            <i aria-hidden="true">↓</i>
-          </a>
-        </div>
-      </section>
-
-      <div class="website-shell">
-        <section class="hero-section" id="home" aria-label="Backing grounded startups">
-          <div class="site-width hero-layout">
-            <div class="hero-copy">
-              <p class="section-label"><span class="label-dot"></span> Venture studio and early capital</p>
-              <h2>
-                <span data-version-variant="investor">
-                  See the company before it becomes consensus.
-                </span>
-                <span data-version-variant="entrepreneur">
-                  Build the company your market has been waiting for.
-                </span>
-              </h2>
-              <p class="hero-text">
-                <span data-version-variant="investor">
-                  Crucible combines technical, operating, and financial judgement
-                  to turn noisy market signals into sharper early conviction.
-                </span>
-                <span data-version-variant="entrepreneur">
-                  We work with founders from the first rough wedge through
-                  product, market clarity, capital strategy, and launch discipline.
-                </span>
-              </p>
-              <div class="hero-actions" aria-label="Primary actions">
-                <a class="button button-primary" href="contact.html">Start a conversation</a>
-                <a class="button button-secondary" href="what-we-do.html">Explore our focus</a>
-              </div>
-            </div>
-            <div class="hero-visual" aria-label="Crucible Ventures investment signal" data-tilt-card>
-              <img
-                class="hero-image"
-                src="image.jpg"
-                alt="Layered mountain ranges in New South Wales at dusk"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="hero-visual-scan" aria-hidden="true"></div>
-              <div class="hero-visual-panel hero-visual-panel-top">
-                <p><span class="live-signal-dot"></span> Studio lens</p>
-                <strong>Evidence over theatre.</strong>
-                <span class="panel-caption">Software · Infrastructure · Applied AI</span>
-              </div>
-              <div class="hero-visual-panel hero-visual-panel-bottom">
-                <span><b>3</b> operator lenses</span>
-                <span><b>0→1</b> company formation</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="content-section stats-section" aria-label="Crucible snapshot">
-          <div class="site-width stats-grid">
-            <div class="stat-item">
-              <span class="stat-number">03</span>
-              <span class="stat-tag">Operator range</span>
-              <p>Operating partners across product, strategy, and finance.</p>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">0 to 1</span>
-              <span class="stat-tag">Formation stage</span>
-              <p>Hands-on company formation from idea to working product.</p>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">03</span>
-              <span class="stat-tag">Investment arenas</span>
-              <p>Focused categories where durable customer demand can compound.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="content-section split-section">
-          <div class="site-width section-grid">
-            <div class="section-copy-block">
-              <p class="section-label"><span class="label-dot"></span> What we do</p>
-              <h3 class="section-heading">We turn early signal into company momentum.</h3>
-              <p class="section-copy">
-                Crucible is built for founders and investors who prefer clear
-                thinking over theatre. We test markets, shape the product wedge,
-                map the capital path, and help teams move with discipline.
-              </p>
-            </div>
-            <div class="thesis-list" aria-label="Crucible operating model">
-              <article class="thesis-card">
-                <span class="card-index">01</span>
-                <h4>Find the wedge</h4>
-                <p>Frame the painful workflow, buyer, timing, and first proof point.</p>
-              </article>
-              <article class="thesis-card">
-                <span class="card-index">02</span>
-                <h4>Build the proof</h4>
-                <p>Create practical product paths that reveal demand quickly.</p>
-              </article>
-              <article class="thesis-card">
-                <span class="card-index">03</span>
-                <h4>Prepare the company</h4>
-                <p>Clarify financial, operational, and investor-facing foundations.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="content-section content-section-ink">
-          <div class="site-width section-header-row">
-            <div>
-              <p class="section-label"><span class="label-dot"></span> Focus areas</p>
-              <h3 class="section-heading">Where durable startups get forged.</h3>
-            </div>
-            <a class="text-link" href="what-we-do.html">See the full thesis</a>
-          </div>
-          <div class="site-width focus-grid">
-            <article class="focus-card">
-              <span class="focus-card-beam" aria-hidden="true"></span>
-              <p class="focus-card-kicker">Workflow depth</p>
-              <h4>Vertical software</h4>
-              <p>
-                Products that become core operating systems for teams inside
-                complex industries.
-              </p>
-            </article>
-            <article class="focus-card focus-card-featured">
-              <span class="focus-card-beam" aria-hidden="true"></span>
-              <p class="focus-card-kicker">Technical leverage</p>
-              <h4>Infrastructure</h4>
-              <p>
-                Practical systems that reduce friction for builders, operators,
-                and technical teams.
-              </p>
-            </article>
-            <article class="focus-card">
-              <span class="focus-card-beam" aria-hidden="true"></span>
-              <p class="focus-card-kicker">Better outcomes</p>
-              <h4>Applied AI</h4>
-              <p>
-                Automation that improves a workflow, a decision, or a customer
-                result in a measurable way.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="content-section team-preview-section">
-          <div class="site-width section-header-row">
-            <div>
-              <p class="section-label"><span class="label-dot"></span> Team</p>
-              <h3 class="section-heading">A small team with operator range.</h3>
-            </div>
-            <a class="text-link" href="about.html">Meet the team</a>
-          </div>
-          <div class="site-width team-preview-grid">
-            <a class="team-preview-card" href="vedant-tyagi.html">
-              <img src="images/team/vedant.jpeg" alt="Portrait of Vedant Tyagi" loading="lazy" />
-              <div>
-                <p class="team-preview-role">Chief Technology Officer</p>
-                <h4>Vedant Tyagi</h4>
-                <p>Technical strategy, product buildout, and 0 to 1 systems.</p>
-              </div>
-            </a>
-            <a class="team-preview-card" href="nandit-shah.html">
-              <img src="images/team/nandit.jpeg" alt="Portrait of Nandit Shah" loading="lazy" />
-              <div>
-                <p class="team-preview-role">Chief Executive Officer</p>
-                <h4>Nandit Shah</h4>
-                <p>Company direction, venture strategy, and operating plans.</p>
-              </div>
-            </a>
-            <a class="team-preview-card" href="dyashothan-suresh-kumar.html">
-              <img
-                src="images/team/dyashothan-suresh-kumar.jpeg"
-                alt="Portrait of Dyashothan Suresh Kumar"
-                loading="lazy"
-              />
-              <div>
-                <p class="team-preview-role">Chief Financial Officer</p>
-                <h4>Dyashothan Suresh Kumar</h4>
-                <p>Investment evaluation, business models, and financial structure.</p>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="content-section final-cta-section" id="contact">
-          <div class="site-width final-cta">
-            <div>
-              <p class="section-label"><span class="label-dot"></span> Get involved</p>
-              <h3>Bring the rough version. We will help sharpen it.</h3>
-              <p>
-                Send a concise note with the problem, the wedge, and what you
-                have learned so far.
-              </p>
-            </div>
-            <div class="final-cta-actions">
-              <a class="button button-primary" href="mailto:crucible.venture@gmail.com">
-                Email Crucible
-              </a>
-              <a class="button button-secondary" href="contact.html">View contact details</a>
-            </div>
-          </div>
-        </section>
-
-        <footer class="site-footer">
-          <div class="site-width footer-grid">
-            <div>
-              <a class="site-brand footer-brand" href="index.html#top">
-                <span class="brand-mark" aria-hidden="true">CV</span>
-                <span class="brand-text">Crucible Ventures</span>
-              </a>
-              <p>Backing practical founders building durable companies.</p>
-            </div>
-            <nav class="footer-nav" aria-label="Footer">
-              <a href="about.html">About</a>
-              <a href="what-we-do.html">What we do</a>
-              <a href="contact.html">Contact us</a>
-              <a href="https://au.linkedin.com/company/crucible-ventures">LinkedIn</a>
-            </nav>
-            <div class="footer-contact">
-              <p>Sydney and remote</p>
-              <a href="mailto:crucible.venture@gmail.com">crucible.venture@gmail.com</a>
-            </div>
-          </div>
-        </footer>
+  <!-- STATEMENT: the words beside a cropped slice of the foundry photo, on warm graphite (2026-10-23) -->
+  <section class="statement tone-graphite">
+    <div class="wrap statement-grid">
+      <div class="statement-copy">
+        <p class="lbl label" data-reveal><span class="lbl-n">01</span>Why we exist</p>
+        <p class="statement-text" data-scrub>Most deep tech ideas stall somewhere between the workbench and the first customer. So instead of writing a cheque and waiting, we put in people. Engineers to build it, and a team to test it with the customers who would pay for it.</p>
       </div>
-    </main>
+      <figure class="ph statement-ph" aria-hidden="true"><div class="ph-img"><img class="baked" src="assets/img/stock/foundry-pour-duo.jpg" alt="" loading="lazy" style="object-position:38% 50%"></div><div class="lw" data-lw="pour" aria-hidden="true"></div><figcaption class="lbl">Molten metal, poured</figcaption></figure>
+    </div>
+  </section>
 
-    <script src="script.js?v=investor-motion-20260906"></script>
-  </body>
+  <!-- WHAT WE DO -->
+  <section class="services" id="what-we-do">
+    <div class="wrap services-grid">
+      <div class="services-side">
+        <p class="lbl label" data-reveal><span class="lbl-n">02</span>What we do</p>
+        <h2 class="h2" data-split>Three steps from idea to company.</h2>
+        <p class="body-l" data-reveal>Every venture moves through the same three stages. We join at whichever one you're stuck on.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step-n lbl">01</span>
+          <div class="step-body">
+            <h3 class="h3">Test the idea</h3>
+            <p>We find out who has the problem, how often it happens and what it costs them. If there's no company worth building, we find that out early, while changing direction is still cheap.</p>
+            <button class="incl-btn lbl" type="button" aria-expanded="false">What's included <i aria-hidden="true">+</i></button>
+            <div class="incl"><div><ul class="tags">
+              <li>Customer interviews</li><li>Market research</li><li>Business model</li><li>Technical feasibility</li><li>Team formation</li>
+            </ul></div></div>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step-n lbl">02</span>
+          <div class="step-body">
+            <h3 class="h3">Build the prototype</h3>
+            <p>Our engineers find the riskiest technical question and build to answer it first. Then the prototype leaves the workbench and goes into a real site, like a mine, a farm or a factory.</p>
+            <button class="incl-btn lbl" type="button" aria-expanded="false">What's included <i aria-hidden="true">+</i></button>
+            <div class="incl"><div><ul class="tags">
+              <li>Robotics and autonomy</li><li>Electronics and embedded systems</li><li>Mechanical design and CAD</li><li>Software and AI</li><li>Pilot testing</li>
+            </ul></div></div>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step-n lbl">03</span>
+          <div class="step-body">
+            <h3 class="h3">Find the first customers</h3>
+            <p>We work out who buys, who signs off, and what it takes to turn a conversation into a paid pilot. Then we get the team ready to talk to investors.</p>
+            <button class="incl-btn lbl" type="button" aria-expanded="false">What's included <i aria-hidden="true">+</i></button>
+            <div class="incl"><div><ul class="tags">
+              <li>Pilot design</li><li>Founder-led sales</li><li>Pricing</li><li>Partnerships</li><li>Investor readiness</li>
+            </ul></div></div>
+          </div>
+        </li>
+        <li class="step step-note" data-reveal>
+          <span class="step-n lbl">+</span>
+          <div class="step-body">
+            <h3 class="h4">Going further</h3>
+            <p>For some ventures we join the founding team itself, and fill whichever gap is biggest: engineering, sales, hiring or operations.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PARTNERS: the teams Crucible works with, as a board (see board.js) -->
+  <section class="partners-sec" id="partners">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lbl label" data-reveal><span class="lbl-n">03</span>Partners</p>
+        <h2 class="h2" data-split>The teams we build with.</h2>
+      </div>
+<!-- PARTNER BOARD: shared by home and projects.
+     Teams and groups are from Crucible's Website Data doc. Links were checked on 2026-10-23: MacroChef, Enactus UNSW and
+     the UNSW AI Society are confirmed. After8 (after8.app) is a likely match that Crucible still needs to confirm.
+     No site was found for Tapback, Hailstrum Robotics (its .com is parked), Casecrest, Passionfruitfy, Hack for
+     Humanity or UTS TechSoc. Teams without a site open a small pop-up instead (board.js), with the blurb from their hidden .pb-more. The blurbs
+     only use facts from the Website Data doc. To add a site, turn its <button class="pb-card"> into an <a> like the
+     others and drop its .pb-more. -->
+      <div class="pboard" data-board>
+        <div class="pb-hub">
+          <svg class="pb-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+          <span class="lbl">Crucible Ventures</span>
+        </div>
+        <ul class="pb-grps" aria-hidden="true">
+          <li class="pb-grp lbl" data-g="portfolio">Portfolio</li>
+          <li class="pb-grp lbl" data-g="startups">Early-stage startups</li>
+          <li class="pb-grp lbl" data-g="incubator">Incubator teams</li>
+          <li class="pb-grp lbl" data-g="hack">Hackathon</li>
+          <li class="pb-grp lbl" data-g="soc">Societies</li>
+        </ul>
+        <ul class="pb-nodes">
+          <li class="pb-node pb-major" data-g="portfolio" data-n="after8"><a class="pb-card" href="https://after8.app" target="_blank" rel="noopener"><span class="pb-tag lbl">Portfolio</span><span class="pb-name">After8</span><span class="pb-desc">Same-night hotel deals</span><span class="pb-url">after8.app<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node pb-major" data-g="portfolio" data-n="tapback"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Portfolio</span><span class="pb-name">Tapback</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>One of our two main portfolio companies, alongside After8. A full write-up on what they're building and how we work with them is coming soon.</p><dl><div><dt>Group</dt><dd>Portfolio company</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="startups" data-n="hailstrum"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Early-stage startup</span><span class="pb-name">Hailstrum Robotics</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>An early-stage robotics team. We add the engineering, testing and commercial help that a young team doesn't have yet.</p><dl><div><dt>Group</dt><dd>Early-stage startup</dd></div><div><dt>Field</dt><dd>Robotics</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="startups" data-n="casecrest"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Early-stage startup</span><span class="pb-name">Casecrest</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>An early-stage startup we work with on engineering, testing the idea with customers, and getting it to market.</p><dl><div><dt>Group</dt><dd>Early-stage startup</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="incubator" data-n="macrochef"><a class="pb-card" href="https://www.macrochef.com.au" target="_blank" rel="noopener"><span class="pb-tag lbl">Incubator team</span><span class="pb-name">MacroChef</span><span class="pb-desc">Recipes that hit your macros</span><span class="pb-url">macrochef.com.au<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node" data-g="incubator" data-n="passionfruitfy"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Incubator team</span><span class="pb-name">Passionfruitfy</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>A team from one of our three incubators. We helped them build their first working version and get their pitch ready.</p><dl><div><dt>Group</dt><dd>Incubator team</dd></div><div><dt>With us</dt><dd>First version, pitch</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+          <li class="pb-node" data-g="hack" data-n="h4h"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Hackathon</span><span class="pb-name">Hack for Humanity</span><span class="pb-desc">We judged it, and now work with the winners</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>A student hackathon run by UTS TechSoc, NCS UNSW and others in September 2026. We were invited to judge, and now we're connecting the winning team with investors.</p><dl><div><dt>Group</dt><dd>Hackathon</dd></div><div><dt>With us</dt><dd>Judging, investor introductions</dd></div><div><dt>Website</dt><dd>Not public</dd></div></dl></div></li>
+          <li class="pb-node" data-g="soc" data-n="enactus"><a class="pb-card" href="https://enactusunsw.org" target="_blank" rel="noopener"><span class="pb-tag lbl">Society</span><span class="pb-name">Enactus UNSW</span><span class="pb-desc">Social impact projects</span><span class="pb-url">enactusunsw.org<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node" data-g="soc" data-n="aisoc"><a class="pb-card" href="https://unswaisoc.com" target="_blank" rel="noopener"><span class="pb-tag lbl">Society</span><span class="pb-name">UNSW AI Society</span><span class="pb-url">unswaisoc.com<i aria-hidden="true">↗</i></span></a></li>
+          <li class="pb-node" data-g="soc" data-n="techsoc"><button class="pb-card" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="pb-tag lbl">Society</span><span class="pb-name">UTS TechSoc</span><span class="pb-url pb-cue">About<i aria-hidden="true">+</i></span></button><div class="pb-more" hidden><p>The tech society at UTS, and one of the groups behind Hack for Humanity. We run pitching workshops with student societies like this one.</p><dl><div><dt>Group</dt><dd>Society</dd></div><div><dt>With us</dt><dd>Workshops, Hack for Humanity</dd></div><div><dt>Website</dt><dd>Not public yet</dd></div></dl></div></li>
+        </ul>
+      </div>
+      <p class="pb-note lbl" data-reveal>Startups, incubator teams and societies we've worked with. Teams marked ↗ link to their own site.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS: kept short on home, three small cards. The full spec sheets are on projects.html. -->
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lbl label" data-reveal><span class="lbl-n">04</span>Projects</p>
+        <h2 class="h2" data-split>What we're building right now.</h2>
+      </div>
+
+      <ul class="proj-row">
+        <li class="pcard" data-reveal>
+          <figure class="fig" data-clip>
+            <!-- drawing:forestry --><svg viewBox="0 0 600 450" data-draw aria-hidden="true"><defs><pattern id="h-forestry" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hx" x1="0" y1="0" x2="0" y2="7"/></pattern></defs><g class="s-sheet"><rect class="fr-o" x="8" y="8" width="584" height="434"/><rect class="fr-i" x="20" y="20" width="560" height="410"/><line class="fr-t" x1="160" y1="8" x2="160" y2="20"/><line class="fr-t" x1="160" y1="430" x2="160" y2="442"/><line class="fr-t" x1="300" y1="8" x2="300" y2="20"/><line class="fr-t" x1="300" y1="430" x2="300" y2="442"/><line class="fr-t" x1="440" y1="8" x2="440" y2="20"/><line class="fr-t" x1="440" y1="430" x2="440" y2="442"/><line class="fr-t" x1="8" y1="156.7" x2="20" y2="156.7"/><line class="fr-t" x1="580" y1="156.7" x2="592" y2="156.7"/><line class="fr-t" x1="8" y1="293.3" x2="20" y2="293.3"/><line class="fr-t" x1="580" y1="293.3" x2="592" y2="293.3"/><text class="t-z" x="90" y="17" text-anchor="middle">1</text><text class="t-z" x="90" y="439" text-anchor="middle">1</text><text class="t-z" x="230" y="17" text-anchor="middle">2</text><text class="t-z" x="230" y="439" text-anchor="middle">2</text><text class="t-z" x="370" y="17" text-anchor="middle">3</text><text class="t-z" x="370" y="439" text-anchor="middle">3</text><text class="t-z" x="510" y="17" text-anchor="middle">4</text><text class="t-z" x="510" y="439" text-anchor="middle">4</text><text class="t-z" x="14" y="90.8" text-anchor="middle">A</text><text class="t-z" x="586" y="90.8" text-anchor="middle">A</text><text class="t-z" x="14" y="227.5" text-anchor="middle">B</text><text class="t-z" x="586" y="227.5" text-anchor="middle">B</text><text class="t-z" x="14" y="364.2" text-anchor="middle">C</text><text class="t-z" x="586" y="364.2" text-anchor="middle">C</text></g><g class="s-fill"><path class="earth" fill="url(#h-forestry)" d="M20,369.5 580,165.6 580,430 20,430Z"/><path class="hl" d="M114.8,275.3 231.3,232.9 114.8,232.9Z"/></g><g class="s-ink"><line x1="20" y1="369.5" x2="580" y2="165.6"/><g transform="translate(187.8 282.8) rotate(-20)"><rect x="-104" y="-22" width="208" height="44" rx="22"/><rect class="thin" x="-96" y="-15" width="192" height="30" rx="15"/><circle cx="-82" cy="0" r="16"/><circle cx="82" cy="0" r="16"/><circle cx="-40" cy="7" r="7"/><circle cx="-13" cy="7" r="7"/><circle cx="13" cy="7" r="7"/><circle cx="40" cy="7" r="7"/><rect x="-66" y="-32" width="132" height="10"/></g><path class="hl-ln" d="M114.8,275.3 231.3,232.9 114.8,232.9Z"/><rect class="hl-ln" x="125.7" y="245.9" width="12" height="17.3" rx="2"/><line class="hl-ln" x1="131.7" y1="235.9" x2="131.7" y2="245.9"/><g class="hl-ln"><circle cx="131.7" cy="269.2" r="3.5"/><circle cx="131.7" cy="232.9" r="3.5"/><circle cx="231.3" cy="232.9" r="6"/></g><rect x="106" y="220.9" width="158" height="12"/><path d="M184,220.9 184,154.9 236,154.9 252,182.9 252,220.9"/><path class="thin" d="M193,164.9 231,164.9 242,183.9 242,202.9 193,202.9Z"/><rect x="114" y="188.9" width="66" height="32" rx="3"/><line class="thin" x1="124" y1="196.9" x2="124" y2="212.9"/><line class="thin" x1="131" y1="196.9" x2="131" y2="212.9"/><line class="thin" x1="138" y1="196.9" x2="138" y2="212.9"/><line class="thin" x1="145" y1="196.9" x2="145" y2="212.9"/><line class="thin" x1="152" y1="196.9" x2="152" y2="212.9"/><line class="thin" x1="159" y1="196.9" x2="159" y2="212.9"/><line class="thin" x1="166" y1="196.9" x2="166" y2="212.9"/><path d="M114 194.9H102V230.9H106"/><path d="M256.7,213.4L370.7,131.4A8 8 0 0 0 361.3,118.4L247.3,200.4A8 8 0 0 0 256.7,213.4Z"/><path d="M363.7,129.9L457.7,173.9A5.5 5.5 0 0 0 462.3,164L368.3,120A5.5 5.5 0 0 0 363.7,129.9Z"/><g><circle cx="252" cy="206.9" r="4"/><circle cx="366" cy="124.9" r="5"/><circle cx="460" cy="168.9" r="3.5"/></g><path class="thin" d="M238.1,219.7L281.2,187.2A3.5 3.5 0 0 0 277,181.6L233.9,214.1A3.5 3.5 0 0 0 238.1,219.7Z"/><line class="thin" x1="279.1" y1="184.4" x2="318" y2="154.9"/><path d="M480 202V64q4 -6 8 0t8 0V196.2"/><rect class="mask" x="456" y="162.9" width="28" height="50" rx="4"/><path d="M484 170.9q14 0 14 9M484 204.9q14 0 14 -9"/><line class="thin" x1="454" y1="218.9" x2="502" y2="218.9"/></g><g class="s-note"><g transform="translate(187.8 282.8) rotate(-20)"><line class="cl" x1="-104" y1="0" x2="-60" y2="0"/><line class="cl" x1="-82" y1="-22" x2="-82" y2="22"/><line class="cl" x1="60" y1="0" x2="104" y2="0"/><line class="cl" x1="82" y1="-22" x2="82" y2="22"/></g><line class="cl" x1="48" y1="232.9" x2="104" y2="232.9"/><line class="cl" x1="266" y1="232.9" x2="330" y2="232.9"/><text class="t" x="48" y="226.9">Level</text><line class="ext" x1="318" y1="261" x2="450" y2="261"/><path class="dl" d="M423.2,222.7A112 112 0 0 1 430,261"/><path class="ah" d="M423.2,222.7L428.2,229.5L423.2,231.1Z"/><path class="ah" d="M430,261L427.1,253.1L432.3,252.9Z"/><text class="t t-dim k" x="398.5" y="247.8" text-anchor="middle">Slope</text><g class="bn"><line class="ld" x1="69" y1="321.7" x2="114.2" y2="320.3"/><circle class="ld-dot" cx="114.2" cy="320.3" r="2.4"/><circle class="bn-c" cx="58" cy="322" r="11"/><text class="bn-t" x="58" y="326.2" text-anchor="middle">1</text></g><g class="bn"><line class="ld" x1="70.5" y1="264.7" x2="125.7" y2="247.2"/><circle class="ld-dot" cx="125.7" cy="247.2" r="2.4"/><circle class="bn-c" cx="60" cy="268" r="11"/><text class="bn-t" x="60" y="272.2" text-anchor="middle">2</text></g><g class="bn"><line class="ld" x1="311" y1="235.6" x2="237.3" y2="232.9"/><circle class="ld-dot" cx="237.3" cy="232.9" r="2.4"/><circle class="bn-c" cx="322" cy="236" r="11"/><text class="bn-t" x="322" y="240.2" text-anchor="middle">3</text></g><g class="bn"><line class="ld" x1="198.3" y1="102.8" x2="214" y2="176.9"/><circle class="ld-dot" cx="214" cy="176.9" r="2.4"/><circle class="bn-c" cx="196" cy="92" r="11"/><text class="bn-t" x="196" y="96.2" text-anchor="middle">4</text></g><g class="bn"><line class="ld" x1="540.2" y1="135.7" x2="482" y2="192.9"/><circle class="ld-dot" cx="482" cy="192.9" r="2.4"/><circle class="bn-c" cx="548" cy="128" r="11"/><text class="bn-t" x="548" y="132.2" text-anchor="middle">5</text></g><g class="tb"><rect class="tb-bg" x="366" y="380" width="214" height="50"/><line class="tb-ln" x1="366" y1="398" x2="580" y2="398"/><line class="tb-ln" x1="530" y1="380" x2="530" y2="430"/><text class="t-tb" x="374" y="392.5">Crucible Ventures</text><text class="t-tb t-tb-b" x="538" y="392.5">Fig. 01</text><text class="t-tb t-tb-b" x="374" y="411">Levelling device, side elevation</text><text class="t-tb" x="374" y="423">Illustration, not to scale</text><text class="t-tb" x="538" y="411">Sheet</text><text class="t-tb" x="538" y="423">01 of 03</text></g></g></svg><!-- /drawing -->
+          </figure>
+          <p class="lbl meta"><span>Forestry</span><span class="status">In development</span></p>
+          <h3 class="h4">A levelling device for logging machinery</h3>
+          <p>Keeps heavy machinery level on rugged terrain, for a logger in far north Queensland.</p>
+        </li>
+        <li class="pcard" data-reveal>
+          <figure class="fig" data-clip>
+            <!-- drawing:drone --><svg viewBox="0 0 600 450" data-draw aria-hidden="true"><defs><pattern id="h-drone" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hx" x1="0" y1="0" x2="0" y2="7"/></pattern></defs><g class="s-sheet"><rect class="fr-o" x="8" y="8" width="584" height="434"/><rect class="fr-i" x="20" y="20" width="560" height="410"/><line class="fr-t" x1="160" y1="8" x2="160" y2="20"/><line class="fr-t" x1="160" y1="430" x2="160" y2="442"/><line class="fr-t" x1="300" y1="8" x2="300" y2="20"/><line class="fr-t" x1="300" y1="430" x2="300" y2="442"/><line class="fr-t" x1="440" y1="8" x2="440" y2="20"/><line class="fr-t" x1="440" y1="430" x2="440" y2="442"/><line class="fr-t" x1="8" y1="156.7" x2="20" y2="156.7"/><line class="fr-t" x1="580" y1="156.7" x2="592" y2="156.7"/><line class="fr-t" x1="8" y1="293.3" x2="20" y2="293.3"/><line class="fr-t" x1="580" y1="293.3" x2="592" y2="293.3"/><text class="t-z" x="90" y="17" text-anchor="middle">1</text><text class="t-z" x="90" y="439" text-anchor="middle">1</text><text class="t-z" x="230" y="17" text-anchor="middle">2</text><text class="t-z" x="230" y="439" text-anchor="middle">2</text><text class="t-z" x="370" y="17" text-anchor="middle">3</text><text class="t-z" x="370" y="439" text-anchor="middle">3</text><text class="t-z" x="510" y="17" text-anchor="middle">4</text><text class="t-z" x="510" y="439" text-anchor="middle">4</text><text class="t-z" x="14" y="90.8" text-anchor="middle">A</text><text class="t-z" x="586" y="90.8" text-anchor="middle">A</text><text class="t-z" x="14" y="227.5" text-anchor="middle">B</text><text class="t-z" x="586" y="227.5" text-anchor="middle">B</text><text class="t-z" x="14" y="364.2" text-anchor="middle">C</text><text class="t-z" x="586" y="364.2" text-anchor="middle">C</text></g><g class="s-fill"><path class="earth" fill="url(#h-drone)" d="M20,252 128,252 158,282 184,282 214,312 240,312 270,342 330,342 360,312 386,312 416,282 442,282 472,252 580,252L580 430L20 430Z"/><path class="hl-soft" d="M300,122 456.3,267.7L456.3,267.7L453.6,270.4L451,273L448.4,275.6L445.7,278.3L443.1,280.9L439.1,282L434.3,282L429.6,282L425,282L420.6,282L416.2,282L413.7,284.3L411.2,286.8L408.7,289.3L406.1,291.9L403.6,294.4L401,297L398.4,299.6L395.8,302.2L393.2,304.8L390.5,307.5L387.8,310.2L384.6,312L380.7,312L376.8,312L372.9,312L369.2,312L365.4,312L361.7,312L358.5,313.5L355.7,316.3L352.8,319.2L349.9,322.1L346.9,325.1L343.8,328.2L340.7,331.3L337.5,334.5L334.2,337.8L330.8,341.2L327,342L323.1,342L319.2,342L315.4,342L311.5,342L307.7,342L303.8,342L300,342L296.2,342L292.3,342L288.5,342L284.6,342L280.8,342L276.9,342L273,342L269.2,341.2L265.8,337.8L262.5,334.5L259.3,331.3L256.2,328.2L253.1,325.1L250.1,322.1L247.2,319.2L244.3,316.3L241.5,313.5L238.3,312L234.6,312L230.8,312L227.1,312L223.2,312L219.3,312L215.4,312L212.2,310.2L209.5,307.5L206.8,304.8L204.2,302.2L201.6,299.6L199,297L196.4,294.4L193.9,291.9L191.3,289.3L188.8,286.8L186.3,284.3L183.8,282L179.4,282L175,282L170.4,282L165.7,282L160.9,282L156.9,280.9L154.3,278.3L151.6,275.6L149,273L146.4,270.4L143.7,267.7L143.7,267.7Z"/><g class="pts"><circle cx="456.3" cy="267.7" r="1.9"/><circle cx="450.1" cy="273.9" r="1.9"/><circle cx="443.9" cy="280.1" r="1.9"/><circle cx="434" cy="282" r="1.9"/><circle cx="423.2" cy="282" r="1.9"/><circle cx="414.3" cy="283.7" r="1.9"/><circle cx="408.4" cy="289.6" r="1.9"/><circle cx="402.4" cy="295.6" r="1.9"/><circle cx="396.3" cy="301.7" r="1.9"/><circle cx="390.1" cy="307.9" r="1.9"/><circle cx="382.6" cy="312" r="1.9"/><circle cx="373.5" cy="312" r="1.9"/><circle cx="364.7" cy="312" r="1.9"/><circle cx="357" cy="315" r="1.9"/><circle cx="350.2" cy="321.8" r="1.9"/><circle cx="343" cy="329" r="1.9"/><circle cx="335.5" cy="336.5" r="1.9"/><circle cx="327.2" cy="342" r="1.9"/><circle cx="318.1" cy="342" r="1.9"/><circle cx="309" cy="342" r="1.9"/><circle cx="300" cy="342" r="1.9"/><circle cx="291" cy="342" r="1.9"/><circle cx="281.9" cy="342" r="1.9"/><circle cx="272.8" cy="342" r="1.9"/><circle cx="264.5" cy="336.5" r="1.9"/><circle cx="257" cy="329" r="1.9"/><circle cx="249.8" cy="321.8" r="1.9"/><circle cx="243" cy="315" r="1.9"/><circle cx="235.3" cy="312" r="1.9"/><circle cx="226.5" cy="312" r="1.9"/><circle cx="217.4" cy="312" r="1.9"/><circle cx="209.9" cy="307.9" r="1.9"/><circle cx="203.7" cy="301.7" r="1.9"/><circle cx="197.6" cy="295.6" r="1.9"/><circle cx="191.6" cy="289.6" r="1.9"/><circle cx="185.7" cy="283.7" r="1.9"/><circle cx="176.8" cy="282" r="1.9"/><circle cx="166" cy="282" r="1.9"/><circle cx="156.1" cy="280.1" r="1.9"/><circle cx="149.9" cy="273.9" r="1.9"/><circle cx="143.7" cy="267.7" r="1.9"/></g><rect class="hl" x="290" y="106" width="20" height="14" rx="2"/></g><g class="s-ink"><polyline points="20,252 128,252 158,282 184,282 214,312 240,312 270,342 330,342 360,312 386,312 416,282 442,282 472,252 580,252"/><rect x="270" y="88" width="60" height="18" rx="5"/><line x1="270" y1="96" x2="234" y2="90"/><rect x="229" y="80" width="10" height="12" rx="2"/><ellipse cx="234" cy="77" rx="34" ry="3.5"/><path d="M284 106l-8 16h-10"/><line x1="330" y1="96" x2="366" y2="90"/><rect x="361" y="80" width="10" height="12" rx="2"/><ellipse cx="366" cy="77" rx="34" ry="3.5"/><path d="M316 106l8 16h10"/><rect class="hl-ln" x="290" y="106" width="20" height="14" rx="2"/><circle class="hl-ln" cx="300" cy="118" r="3.5"/><path class="thin" d="M80 58a22 22 0 1 0 22 30a17 17 0 1 1 -22 -30z"/></g><g class="s-note"><line class="hid" x1="300" y1="122" x2="143.7" y2="267.7"/><line class="hid" x1="300" y1="122" x2="456.3" y2="267.7"/><line class="dl" x1="412" y1="77" x2="496" y2="77"/><path class="ah" d="M496,77L488,79.6L488,74.4Z"/><text class="t" x="412" y="69">Flight path</text><g class="dim"><line class="ext" x1="404" y1="122" x2="526" y2="122"/><line class="ext" x1="482" y1="252" x2="526" y2="252"/><line class="dl" x1="520" y1="122" x2="520" y2="252"/><path class="ah" d="M520,122L522.6,130L517.4,130Z"/><path class="ah" d="M520,252L517.4,244L522.6,244Z"/></g><text class="t t-dim" x="512" y="190.5" text-anchor="end">Altitude</text><line class="cl" x1="300" y1="342" x2="300" y2="342"/><line class="cl" x1="300" y1="342" x2="300" y2="342"/><line class="cl" x1="300" y1="52" x2="300" y2="362"/><g class="bn"><line class="ld" x1="236" y1="145.4" x2="291" y2="120"/><circle class="ld-dot" cx="291" cy="120" r="2.4"/><circle class="bn-c" cx="226" cy="150" r="11"/><text class="bn-t" x="226" y="154.2" text-anchor="middle">1</text></g><g class="bn"><line class="ld" x1="420.5" y1="173.6" x2="380.4" y2="197"/><circle class="ld-dot" cx="380.4" cy="197" r="2.4"/><circle class="bn-c" cx="430" cy="168" r="11"/><text class="bn-t" x="430" y="172.2" text-anchor="middle">2</text></g><g class="bn"><line class="ld" x1="300" y1="369" x2="300" y2="342"/><circle class="ld-dot" cx="300" cy="342" r="2.4"/><circle class="bn-c" cx="300" cy="380" r="11"/><text class="bn-t" x="300" y="384.2" text-anchor="middle">3</text></g><g class="bn"><line class="ld" x1="114" y1="307.5" x2="171" y2="282"/><circle class="ld-dot" cx="171" cy="282" r="2.4"/><circle class="bn-c" cx="104" cy="312" r="11"/><text class="bn-t" x="104" y="316.2" text-anchor="middle">4</text></g><g class="tb"><rect class="tb-bg" x="366" y="380" width="214" height="50"/><line class="tb-ln" x1="366" y1="398" x2="580" y2="398"/><line class="tb-ln" x1="530" y1="380" x2="530" y2="430"/><text class="t-tb" x="374" y="392.5">Crucible Ventures</text><text class="t-tb t-tb-b" x="538" y="392.5">Fig. 02</text><text class="t-tb t-tb-b" x="374" y="411">Low-light mapping, section</text><text class="t-tb" x="374" y="423">Illustration, not to scale</text><text class="t-tb" x="538" y="411">Sheet</text><text class="t-tb" x="538" y="423">02 of 03</text></g></g></svg><!-- /drawing -->
+          </figure>
+          <p class="lbl meta"><span>Mining and agriculture</span><span class="status">In development</span></p>
+          <h3 class="h4">Drone mapping in low light</h3>
+          <p>Drone technology for mining and agriculture, including mapping mines in low light.</p>
+        </li>
+        <li class="pcard" data-reveal>
+          <figure class="fig" data-clip>
+            <!-- drawing:exo --><svg viewBox="0 0 600 450" data-draw aria-hidden="true"><defs><pattern id="h-exo" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hx" x1="0" y1="0" x2="0" y2="5"/></pattern></defs><g class="s-sheet"><rect class="fr-o" x="8" y="8" width="584" height="434"/><rect class="fr-i" x="20" y="20" width="560" height="410"/><line class="fr-t" x1="160" y1="8" x2="160" y2="20"/><line class="fr-t" x1="160" y1="430" x2="160" y2="442"/><line class="fr-t" x1="300" y1="8" x2="300" y2="20"/><line class="fr-t" x1="300" y1="430" x2="300" y2="442"/><line class="fr-t" x1="440" y1="8" x2="440" y2="20"/><line class="fr-t" x1="440" y1="430" x2="440" y2="442"/><line class="fr-t" x1="8" y1="156.7" x2="20" y2="156.7"/><line class="fr-t" x1="580" y1="156.7" x2="592" y2="156.7"/><line class="fr-t" x1="8" y1="293.3" x2="20" y2="293.3"/><line class="fr-t" x1="580" y1="293.3" x2="592" y2="293.3"/><text class="t-z" x="90" y="17" text-anchor="middle">1</text><text class="t-z" x="90" y="439" text-anchor="middle">1</text><text class="t-z" x="230" y="17" text-anchor="middle">2</text><text class="t-z" x="230" y="439" text-anchor="middle">2</text><text class="t-z" x="370" y="17" text-anchor="middle">3</text><text class="t-z" x="370" y="439" text-anchor="middle">3</text><text class="t-z" x="510" y="17" text-anchor="middle">4</text><text class="t-z" x="510" y="439" text-anchor="middle">4</text><text class="t-z" x="14" y="90.8" text-anchor="middle">A</text><text class="t-z" x="586" y="90.8" text-anchor="middle">A</text><text class="t-z" x="14" y="227.5" text-anchor="middle">B</text><text class="t-z" x="586" y="227.5" text-anchor="middle">B</text><text class="t-z" x="14" y="364.2" text-anchor="middle">C</text><text class="t-z" x="586" y="364.2" text-anchor="middle">C</text></g><g class="s-fill"><rect class="earth" fill="url(#h-exo)" x="40" y="376" width="320" height="10"/><circle class="hl" cx="300" cy="230" r="21"/></g><g class="s-ink"><line x1="40" y1="376" x2="360" y2="376"/><path d="M275.6,96.9L293.6,230.9A6.5 6.5 0 0 0 306.4,229.1L288.4,95.1A6.5 6.5 0 0 0 275.6,96.9Z"/><path d="M294.5,229.3L280.5,345.3A5.5 5.5 0 0 0 291.5,346.7L305.5,230.7A5.5 5.5 0 0 0 294.5,229.3Z"/><rect x="220" y="76" width="30" height="58" rx="5"/><line class="thin" x1="228" y1="88" x2="242" y2="88"/><line x1="250" y1="96" x2="269" y2="96"/><path d="M256 150C256 142 322 142 322 150V164C322 156 256 156 256 164Z"/><path d="M256 290C256 282 316 282 316 290V304C316 296 256 296 256 304Z"/><path d="M262 369H352q6 0 6 4v3H262z"/><line x1="286" y1="346" x2="288" y2="369"/><g><circle cx="282" cy="96" r="13"/><circle cx="282" cy="96" r="4"/><circle cx="286" cy="346" r="7"/></g><g class="hl-ln"><circle cx="300" cy="230" r="21"/><circle class="thin" cx="300" cy="230" r="14"/><circle cx="312.4" cy="242.4" r="1.4"/><circle cx="287.6" cy="242.4" r="1.4"/><circle cx="287.6" cy="217.6" r="1.4"/><circle cx="312.4" cy="217.6" r="1.4"/><circle cx="300" cy="230" r="6"/></g></g><g class="s-note"><path class="ph" d="M248 60C246 120 262 190 270 222C276 250 256 272 260 300C263 322 268 336 268 352C266 362 262 370 264 376H366C368 368 360 362 344 360C326 356 312 352 306 342C302 320 312 270 318 244C324 228 330 214 326 196C322 150 318 110 316 60"/><line class="cl" x1="262" y1="96" x2="302" y2="96"/><line class="cl" x1="282" y1="76" x2="282" y2="116"/><line class="cl" x1="273" y1="346" x2="299" y2="346"/><line class="cl" x1="286" y1="333" x2="286" y2="359"/><line class="cl" x1="268" y1="230" x2="332" y2="230"/><line class="cl" x1="300" y1="198" x2="300" y2="262"/><path class="hid" d="M297.8,224.9L190.4,270.8A5.5 5.5 0 0 0 194.7,280.9L302.2,235.1A5.5 5.5 0 0 0 297.8,224.9Z"/><circle class="hid" cx="192.5" cy="275.9" r="7"/><path class="dl" d="M291.1,303.5A74 74 0 0 1 231.9,259.1"/><path class="ah" d="M291.1,303.5L282.8,304.8L283.6,299.7Z"/><path class="ah" d="M231.9,259.1L237.7,265.2L233,267.4Z"/><text class="t t-dim k" x="237.6" y="316.7" text-anchor="middle">Bend</text><g class="bn"><line class="ld" x1="207.9" y1="164.3" x2="271" y2="103"/><circle class="ld-dot" cx="271" cy="103" r="2.4"/><circle class="bn-c" cx="200" cy="172" r="11"/><text class="bn-t" x="200" y="176.2" text-anchor="middle">1</text></g><g class="bn"><line class="ld" x1="409.3" y1="134.7" x2="321" y2="157"/><circle class="ld-dot" cx="321" cy="157" r="2.4"/><circle class="bn-c" cx="420" cy="132" r="11"/><text class="bn-t" x="420" y="136.2" text-anchor="middle">2</text></g><g class="bn"><line class="ld" x1="419" y1="220.6" x2="324" y2="226"/><circle class="ld-dot" cx="324" cy="226" r="2.4"/><circle class="bn-c" cx="430" cy="220" r="11"/><text class="bn-t" x="430" y="224.2" text-anchor="middle">3</text></g><g class="bn"><line class="ld" x1="409" y1="301.4" x2="316" y2="296"/><circle class="ld-dot" cx="316" cy="296" r="2.4"/><circle class="bn-c" cx="420" cy="302" r="11"/><text class="bn-t" x="420" y="306.2" text-anchor="middle">4</text></g><g class="bn"><line class="ld" x1="409.5" y1="355.2" x2="354" y2="372"/><circle class="ld-dot" cx="354" cy="372" r="2.4"/><circle class="bn-c" cx="420" cy="352" r="11"/><text class="bn-t" x="420" y="356.2" text-anchor="middle">5</text></g><g class="tb"><rect class="tb-bg" x="366" y="380" width="214" height="50"/><line class="tb-ln" x1="366" y1="398" x2="580" y2="398"/><line class="tb-ln" x1="530" y1="380" x2="530" y2="430"/><text class="t-tb" x="374" y="392.5">Crucible Ventures</text><text class="t-tb t-tb-b" x="538" y="392.5">Fig. 03</text><text class="t-tb t-tb-b" x="374" y="411">Exoskeleton, side elevation</text><text class="t-tb" x="374" y="423">Illustration, not to scale</text><text class="t-tb" x="538" y="411">Sheet</text><text class="t-tb" x="538" y="423">03 of 03</text></g></g></svg><!-- /drawing -->
+          </figure>
+          <p class="lbl meta"><span class="status">In development</span></p>
+          <h3 class="h4">An exoskeleton</h3>
+          <p>One that could be used as a prosthetic in the future.</p>
+        </li>
+      </ul>
+
+      <div class="proj-foot" data-reveal>
+        <p class="lbl fig-note">Drawings are illustrations, not the actual designs.</p>
+        <a class='btn btn-line' href='/projects'><span>All project details</span><i aria-hidden="true">→</i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community" id="community">
+    <figure class="band band-community"><img class="natural" src="assets/img/incubator-group.jpg" alt="The Crucible incubator cohort on a balcony" loading="lazy" style="object-position:50% 56%"><figcaption class="lbl">Incubator cohort · May 2026</figcaption></figure>
+    <div class="gallery">
+      <div class="wrap gallery-head">
+        <p class="lbl label"><span class="lbl-n">05</span>Community</p>
+        <h2 class="h2" data-split>Where the ideas come from.</h2>
+        <p class="body-l">We started by running three incubators. People had ideas but no idea where to start. Now we host weekly dinners with Sydney founders, teach pitching at uni hackathons, and keep working with the teams we meet.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="facts">
+        <li data-reveal><span class="fact-n">3</span><span>incubators run</span></li>
+        <li data-reveal><span class="fact-n">Weekly</span><span>founder dinners in Sydney</span></li>
+        <li data-reveal><span class="fact-n">Judges</span><span>at Hack for Humanity 2026</span></li>
+      </ul>
+      <p class="partners lbl" data-reveal>Worked with UNSW Enactus · UNSW AI Society · UTS TechSoc · Hack for Humanity</p>
+    </div>
+  </section>
+
+  <!-- WHO WE WORK WITH -->
+  <section class="audience tone-graphite">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lbl label" data-reveal><span class="lbl-n">06</span>Who we work with</p>
+        <h2 class="h2" data-split>Find yourself on this list.</h2>
+      </div>
+      <ul class="aud-list">
+        <li><a href="#contact" data-audience="startup" data-reveal><span class="aud-name">Early-stage startups</span><span class="aud-text">You have an idea or a product, and need engineering, testing or commercial help to move it forward.</span><i aria-hidden="true">→</i></a></li>
+        <li><a href="#contact" data-audience="founder" data-reveal><span class="aud-name">Technical founders</span><span class="aud-text">You can build the technology. We bring the business side and the team around it.</span><i aria-hidden="true">→</i></a></li>
+        <li><a href="#contact" data-audience="industry" data-reveal><span class="aud-name">Industry partners</span><span class="aud-text">Run a pilot, test new technology or sponsor a project. We're currently working in forestry and construction.</span><i aria-hidden="true">→</i></a></li>
+        <li><a href="#contact" data-audience="uni" data-reveal><span class="aud-name">Universities and societies</span><span class="aud-text">Bring us in for workshops, incubators, competitions and technical projects.</span><i aria-hidden="true">→</i></a></li>
+        <li><a href="#contact" data-audience="investor" data-reveal><span class="aud-name">Investors</span><span class="aud-text">Meet early teams with tested technology and real evidence from customers.</span><i aria-hidden="true">→</i></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lbl label" data-reveal><span class="lbl-n">07</span>Team</p>
+        <h2 class="h2" data-split>Engineers who'd rather build than pitch.</h2>
+      </div>
+      <ul class="people">
+        <li class="person" data-reveal>
+          <div class="ph person-ph"><div class="ph-img"><img src="assets/img/team-nandit.jpg" alt="Nandit Shah" loading="lazy" style="object-position:50% 25%"></div></div>
+          <h3 class="h4">Nandit Shah</h3>
+          <p class="lbl role">Founder &amp; CEO</p>
+          <p>Mechatronics engineering and finance at UNSW. Started Crucible so technical builders could turn big ideas into real companies. Leads strategy, partnerships and commercialisation.</p>
+        </li>
+        <li class="person" data-reveal>
+          <div class="ph person-ph"><div class="ph-img"><img src="assets/img/team-vedant.jpg" alt="Vedant Tyagi" loading="lazy" style="object-position:40% 30%"></div></div>
+          <h3 class="h4">Vedant Tyagi</h3>
+          <p class="lbl role">Co-founder &amp; CTO</p>
+          <p>Aerospace engineering and computer science at UNSW. Runs Crucible's technical direction, from feasibility to prototypes, and leads the engineering teams.</p>
+        </li>
+        <li class="person" data-reveal>
+          <div class="person-ph initials"><span>AP</span><small class="lbl">Photo to come</small></div>
+          <h3 class="h4">Aaryan Parmar</h3>
+          <p class="lbl role">Venture &amp; Legal</p>
+          <p>Supports venture development, and the legal and commercial side of Crucible's projects and partnerships.</p>
+        </li>
+        <li class="person" data-reveal>
+          <div class="person-ph initials"><span>SP</span><small class="lbl">Photo to come</small></div>
+          <h3 class="h4">Smit Parikh</h3>
+          <p class="lbl role">Outreach &amp; Partnerships</p>
+          <p>Builds relationships with customers, partners and the wider Sydney startup community.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact tone-graphite" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-side">
+        <p class="lbl label" data-reveal><span class="lbl-n">08</span>Contact</p>
+        <h2 class="h2" data-split>Got something worth building?</h2>
+        <p class="body-l" data-reveal>Tell us what you're working on and where you're stuck. We read every message and reply within a few days.</p>
+        <ul class="contact-links lbl" data-reveal>
+          <li><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a></li>
+          <li><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram ↗</a></li>
+        </ul>
+      </div>
+
+      <form class="contact-form" novalidate data-reveal>
+        <div class="field">
+          <label for="f-name" class="lbl">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email" class="lbl">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-who" class="lbl">I'm a</label>
+          <select id="f-who" name="who" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="startup">Early-stage startup</option>
+            <option value="founder">Technical founder</option>
+            <option value="industry">Industry partner</option>
+            <option value="uni">University or society</option>
+            <option value="investor">Investor</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg" class="lbl">What are you building?</label>
+          <textarea id="f-msg" name="message" rows="4" required></textarea>
+        </div>
+        <!-- Bot trap: hidden from people, filled in by bots -->
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-blue" type="submit"><span>Send message</span><i aria-hidden="true">→</i></button>
+        <p class="form-msg lbl" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a aria-current='page' aria-label='Crucible Ventures, home' class='brand brand-light' href='/'>
+        <svg class="brand-mark" viewBox="300 307 399.33 182" aria-hidden="true"><path class="mk-c" d="M532.64 314H391A84 84 0 0 0 391 482H511.61L533.94 440H395A42 42 0 0 1 395 356H554.97Z"/><path class="mk-v" d="M510.92 369L561.88 369L587 416.24L641.36 314L692.33 314L603 482L571 482Z"/></svg>
+        <span>Crucible Ventures</span>
+      </a>
+      <p class="foot-line">Built, not discovered.</p>
+    </div>
+    <div class="foot-cols">
+      <div><p class="lbl">Site</p><a aria-current='page' href='/'>Home</a><a href='/what-we-do'>What we do</a><a href='/projects'>Projects</a><a href='/community'>Community</a><a href='/team'>Team</a></div>
+      <div><p class="lbl">Elsewhere</p><a href="https://www.linkedin.com/company/113025657/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/crucible_venture/" target="_blank" rel="noopener">Instagram</a></div>
+      <div><p class="lbl">Contact</p><a href="mailto:admin@crucibleventures.vc">admin@crucibleventures.vc</a><span>Sydney, Australia</span></div>
+      <div class="asc foot-obj" data-asc="logo" data-asc-dark data-asc-tilt="-.2" data-asc-swing=".5" data-asc-speed=".45" data-asc-fit="1.6" aria-hidden="true"></div>
+    </div>
+    <div class="foot-base">
+      <p>We acknowledge the Traditional Custodians of the lands where we live and work, and pay our respects to Elders past and present.</p>
+      <p class="lbl">© 2026 Crucible Ventures</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="intro.js?v=3" defer></script>
+<script src="main.js?v=31" defer></script>
+<script src="seams.js?v=3" defer></script>
+<script src="board.js?v=11" defer></script>
+<script src="ascii.js?v=23" defer></script>
+<script src="ornaments.js?v=10" defer></script>
+<script src="linework.js?v=3" defer></script>
+</body>
 </html>
